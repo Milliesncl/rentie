@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_213603) do
+ActiveRecord::Schema.define(version: 2020_08_26_230050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 2020_08_26_213603) do
     t.integer "purchase_price"
     t.string "payment_method"
     t.date "renewal_date"
-    t.date "payment_date"
     t.integer "rent_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "payment_date"
     t.index ["building_id"], name: "index_units_on_building_id"
   end
 

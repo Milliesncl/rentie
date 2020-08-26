@@ -27,7 +27,23 @@ contractor3 = Contractor.create!(user: user2, phone_number: "+1 438 567 2365", s
 contractor4 = Contractor.create!(user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
 contractor5 = Contractor.create!(user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
 
-task1 = Task.create!(title: "Plumber needed", description: "My toilet exploded",urgency: "High")
-task2 = Task.create!(title: "Electrician needed", description: "Light switch doesn't work",urgency: "Medium")
+task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded",urgency: "High")
+task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work",urgency: "Medium")
 
-puts "4 users, 6 buildings, 2 tasks and 5 contractors"
+unit1 = Unit.create!(building: building1, unit_number: 4641, purchase_price: 400000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1000)
+unit2 = Unit.create!(building: building1, unit_number: 4643, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit3 = Unit.create!(building: building2, unit_number: 4251, purchase_price: 200000, payment_method: "Cheque", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1000)
+unit4 = Unit.create!(building: building2, unit_number: 4253, purchase_price: 150000, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
+unit5 = Unit.create!(building: building2, unit_number: 4255, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1400)
+unit6 = Unit.create!(building: building3, unit_number: 4421, purchase_price: 200090, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1000)
+unit7 = Unit.create!(building: building3, unit_number: 4423, purchase_price: 150000, payment_method: "Cheque", renewal_date: Date.new(2021,4,1), payment_date: 1, rent_amount: 1200)
+unit8 = Unit.create!(building: building3, unit_number: 4425, purchase_price: 156000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 800)
+unit9 = Unit.create!(building: building4, unit_number: 7074, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1000)
+unit10 = Unit.create!(building: building4, unit_number: 7076, purchase_price: 280000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit11 = Unit.create!(building: building4, unit_number: 7078, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit12 = Unit.create!(building: building5, unit_number: 7344, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1150)
+unit13 = Unit.create!(building: building5, unit_number: 7346, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
+unit14 = Unit.create!(building: building6, unit_number: 6250, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
+unit15 = Unit.create!(building: building6, unit_number: 6252, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
+
+puts "Done"
