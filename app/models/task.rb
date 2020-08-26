@@ -1,6 +1,11 @@
 class Task < ApplicationRecord
   belongs_to :contractor
 
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :urgency, presence: true,
+
+
   def assignee
     # building owner
     # call this with `task.assignee`
