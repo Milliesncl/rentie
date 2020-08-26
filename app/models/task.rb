@@ -11,4 +11,5 @@ class Task < ApplicationRecord
     # .unit.users - all users relating to one unit
     # call this with `task.assigner`
     Task.joins(:unit)
+  end
 end
