@@ -5,7 +5,6 @@ class Task < ApplicationRecord
   validates :description, presence: true
   validates :urgency, presence: true
 
-
   def assignee
     # building owner
     # call this with `task.assignee`
