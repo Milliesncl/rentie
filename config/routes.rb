@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :tasks, only: [:show, :index, :create, :edit, :update]
 
   resources :buildings, except: [:index] do
-    resources :units, only: [:new, :create, :edit, :update]
+    resources :units, only: [:show, :new, :create, :edit, :update]
   end
 
   resources :units, only: [:destroy]
