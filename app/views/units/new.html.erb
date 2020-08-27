@@ -10,5 +10,6 @@
   <%= f.input :rent_amount, label: "Rent amount" %>
   <%= f.input :payment_date, label: "Payment day" %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :lease, as: :file, label: "Lease contract" %>
   <%= f.submit "Create an unit", class:"btn btn-primary" %>
 <% end %>
