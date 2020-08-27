@@ -1,0 +1,39 @@
+.sidenav {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  background-color: #00486E;
+  display: flex;
+  justify-content: center;
+  .plus, .far {
+    background: none;
+    border: none;
+    color: white;
+    display: block;
+    margin-top: 36px;
+    font-size: 18px;
+
+  }
+
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(80deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
+  padding-left: 12px;
+  justify-content: start;
+  .fas {
+    color: white;
+    padding-left: 30px;
+  }
+}
+
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
