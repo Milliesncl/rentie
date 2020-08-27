@@ -9,13 +9,13 @@ class Task < ApplicationRecord
 
   def assignee
     # building owner
-    # call this with `task.assignee`
+    # call this with `Task.assignee`
     Task.joins(:unit).joins(:building)
   end
 
   def assigner
     # .unit.users - all users relating to one unit
-    # call this with `task.assigner`
+    # call this with `Task.assigner`
     Task.joins(:unit)
   end
 end

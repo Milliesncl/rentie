@@ -16,16 +16,15 @@ class TasksController < ApplicationController
       [building.address, building.id]
     end
 
-    # units = Building.where(user: current_user)
-    # units = units.Unit
-    # @units = units.map do |unit|
-    #   [unit.unit_number, unit.id]
-    # end
+    units = Unit.joins(:building)
+    @units = units.map do |unit|
+      [unit.unit_number, unit.id]
+    end
   end
 
   def create
     @task =  Task.new(params_task)
-    @task.user = current_user
+    assignee = current_user
 
     if @task.save
       redirect_to tasks_path

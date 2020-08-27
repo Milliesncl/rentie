@@ -8,7 +8,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.float :expense
       t.date :start_date
       t.date :end_date
-      t.references :contractor, null: false, foreign_key: true
+      t.references :contractor, null: true, foreign_key: true
 
       t.timestamps
     end

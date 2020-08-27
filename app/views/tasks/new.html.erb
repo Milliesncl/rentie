@@ -11,7 +11,7 @@
     <%= f.input :end_date, label: "End date" %>
     <%= f.input :contractor_id, label: "Contractor", collection: @contractors, as: :select %>
     <%= f.input :building_id, label: "Building", collection: @buildings, as: :select  %>
-    <%# <%= f.input :unit_id, label: "Unit", collection: @units, as: :select  %>  %>
+    <%= f.input :unit_id, label: "Unit", collection: @units, as: :select  %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photos" %>
     <%= f.input :bill_upload, as: :file, input_html: { multiple: true }, label: "Upload bill" %>
     <%= f.submit "Create a task", class:"btn btn-primary" %>
