@@ -1,6 +1,7 @@
 class BuildingsController < ApplicationController
   def show
     @building = Building.find(params[:id])
+    @units = Unit.where(building_id: @building.id)
   end
 
   def new

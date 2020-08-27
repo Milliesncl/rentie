@@ -1,2 +1,11 @@
 <h1>Units#show</h1>
 <p>Find me in app/views/units/show.html.erb</p>
+
+<p>Unit number: <%= @unit.unit_number %></p>
+<p>Purchase price: <%= @unit.purchase_price %></p>
+<p>Payment method: <%= @unit.payment_method %></p>
+<p>Renewal date: <%= @unit.renewal_date %></p>
+<p>Rent amount: <%= @unit.rent_amount %></p>
+<p>Payment day: <%= @unit.payment_date %></p>
+
+<p><%= link_to "edit this unit", edit_building_unit_path(@building.id, @unit.id)%></p>

@@ -1,2 +1,12 @@
 <h1>Units#edit</h1>
 <p>Find me in app/views/units/edit.html.erb</p>
+
+<%= simple_form_for [@building, @unit] do |f| %>
+  <%= f.input :unit_number, label: "Unit number" %>
+  <%= f.input :purchase_price, label: "Purchase price" %>
+  <%= f.input :payment_method, label: "Payment method" %>
+  <%= f.input :renewal_date, label: "Renewal date" %>
+  <%= f.input :rent_amount, label: "Rent amount" %>
+  <%= f.input :payment_date, label: "Payment day" %>
+  <%= f.submit "Update an unit", class:"btn btn-primary" %>
+<% end %>
