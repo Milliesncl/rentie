@@ -1,7 +1,10 @@
 class UnitsController < ApplicationController
   def show
-    @unit = Unit.find(params[:id])
-    @building = Building.find(params[:building_id])
+    buildings = current_user.buildings
+    buildings.each do |building|
+      @building = Building.find(params[:building_id])
+      @unit = Unit.find(params[:id])
+    end
   end
 
   def lease
