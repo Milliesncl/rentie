@@ -25,11 +25,11 @@ building6 = Building.create!(user: user4, address: "6250-6252 rue Dugas, H1N 1P2
 
 puts "Creating contractors"
 
-contractor1 = Contractor.create!(user: user4, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor2 = Contractor.create!(user: user1, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor3 = Contractor.create!(user: user2, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor4 = Contractor.create!(user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor5 = Contractor.create!(user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
+contractor1 = Contractor.create!(name: "Wince Shum", user: user4, phone_number: "+1 438 123 2345", speciality: "roofer")
+contractor2 = Contractor.create!(name: "Coriander Nasielski", user: user1, phone_number: "+1 514 343 9320", speciality: "plumber")
+contractor3 = Contractor.create!(name: "Nachiket Pusalkar", user: user2, phone_number: "+1 438 567 2365", speciality: "electrician")
+contractor4 = Contractor.create!(name: "Martin Giannakopolous", user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
+contractor5 = Contractor.create!(name: "Aline Gasparindo",user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
 
 puts "Creating tasks"
 
@@ -53,11 +53,5 @@ unit12 = Unit.create!(building: building5, unit_number: 7344, purchase_price: 25
 unit13 = Unit.create!(building: building5, unit_number: 7346, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
 unit14 = Unit.create!(building: building6, unit_number: 6250, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
 unit15 = Unit.create!(building: building6, unit_number: 6252, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
-
-# puts "Creating contractors"
-
-# contractor1 = Contractor.create!(name: "Meagan Butters", phone_number: "514-357-0575", speciality: "Plumber")
-# contractor2 = Contractor.create!(name: "Coriander Nasielski", phone_number: "514-925-1249", speciality: "Cleaner")
-# contractor3 = Contractor.create!(name: "Wince Shum", phone_number: "514-538-9103", speciality: "Electrician")
 
 puts "Done"
