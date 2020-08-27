@@ -35,7 +35,7 @@ class ContractorsController < ApplicationController
 
     redirect_to contractors_path
   end
-
+  
   private
 
   def params_contractor

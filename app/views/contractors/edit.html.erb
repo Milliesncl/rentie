@@ -1,2 +1,9 @@
 <h1>Contractors#edit</h1>
-<p>Find me in app/views/contractors/edit.html.erb</p>
+
+<%= simple_form_for [@contractor] do |f| %>
+  <%= f.input :first_name, label: "First Name" %>
+  <%= f.input :last_name, label: "Last Name" %>
+  <%= f.input :speciality, label: "Speciality" %>
+  <%= f.input :phone_number, label: "Phone Number" %>
+  <%= f.submit "Update contractor", class:"btn btn-primary" %>
+<% end %>
