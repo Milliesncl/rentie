@@ -3,7 +3,7 @@ class CreateContractors < ActiveRecord::Migration[6.0]
     create_table :contractors do |t|
       t.string :phone_number
       t.string :speciality
-      t.references :user, null: false, foreign_key: true
+      t.references :user, null: true, foreign_key: true
 
       t.timestamps
     end

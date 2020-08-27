@@ -4,6 +4,12 @@ class UnitsController < ApplicationController
     @building = Building.find(params[:building_id])
   end
 
+  def download
+    @unit = Unit.find(params[:unit_id])
+    @building = Building.find(params[:building_id])
+    send_file @unit.lease.key, type: "application/pdf", x_sendfile: true
+  end
+
   def new
     @unit = Unit.new
     @building = Building.find(params[:building_id])
@@ -41,11 +47,11 @@ class UnitsController < ApplicationController
   def destroy
     @unit = Unit.find(params[:id])
     @unit.destroy
-    redirect_to(:back)
+    redirect_to root_path
   end
 
   private
   def params_unit
-    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
+    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, :lease, photos: [])
   end
 end

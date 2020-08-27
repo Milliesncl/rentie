@@ -38,7 +38,8 @@ class BuildingsController < ApplicationController
     redirect_to root_path
   end
 
-  private
+private
+
   def params_building
     params.require(:building).permit(:address, :mortgage, :purchase_price, :purchase_date, :taxes, :photo)
   end

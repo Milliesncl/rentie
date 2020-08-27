@@ -1,0 +1,53 @@
+.form-background {
+  color: black;
+  background-color: white;
+  padding: 120px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 100px;
+  border-radius: 10px;
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.line-one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line-two {
+  display: flex;
+  justify-content: space-around;
+  .contractor {
+    width: 50%;
+    margin-right: 10px;
+  }
+}
+
+#urgency {
+flex-grow: 1;
+  margin-right: 135px;
+  width: 100%
+}
+
+#expense {
+flex-grow: 1;
+  margin-right: 135px;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}
+.task-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.uploads {
+  display: flex;
+  justify-content: space-around;
+}
