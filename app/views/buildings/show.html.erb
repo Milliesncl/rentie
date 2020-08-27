@@ -11,7 +11,6 @@
 
 <p><%= link_to "delete this building", building_path(@building.id), data: { confirm: "Are you sure to delete #{@building.address} ?" }, method: :delete, class:"btn btn-secondary" %>  <%= link_to "edit this building", edit_building_path(@building.id), class:"btn btn-primary"%></p>
 
-
 <% @units.each do |unit| %>
 <ul class="list-group">
 <h2>Unit number: <%= unit.unit_number %></h2>
