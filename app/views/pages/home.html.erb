@@ -1,2 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Homepage</h1>
+<%= link_to "tasks", tasks_path %>
+<%= link_to "building 1", building_path(Building.first) %>
+<%= link_to "contractors", contractors_path %>

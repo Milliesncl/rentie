@@ -54,4 +54,10 @@ unit13 = Unit.create!(building: building5, unit_number: 7346, purchase_price: 20
 unit14 = Unit.create!(building: building6, unit_number: 6250, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
 unit15 = Unit.create!(building: building6, unit_number: 6252, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
 
+# puts "Creating contractors"
+
+# contractor1 = Contractor.create!(name: "Meagan Butters", phone_number: "514-357-0575", speciality: "Plumber")
+# contractor2 = Contractor.create!(name: "Coriander Nasielski", phone_number: "514-925-1249", speciality: "Cleaner")
+# contractor3 = Contractor.create!(name: "Wince Shum", phone_number: "514-538-9103", speciality: "Electrician")
+
 puts "Done"
