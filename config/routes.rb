@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :contractors, except: [:destroy]
-  resources :tasks, only: [:show, :index, :create, :edit, :update]
+  resources :tasks, only: [:new, :index, :create, :edit, :update]
 
   resources :buildings, except: [:index] do
     resources :units, only: [:show, :new, :create, :edit, :update]

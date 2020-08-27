@@ -8,7 +8,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params_task)
+    @task =  Task.new(params_task)
+    @task.user = current_user
+
+    if @task.save
+      redirect_to tasks_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -32,6 +39,6 @@ class TasksController < ApplicationController
   private
 
   def params_task
-    params.require(:task).permit(:title, :description, :expense, :start_date, :end_date)
+    params.require(:task).permit(:title, :description, :status, :urgency, :expense, :start_date, :end_date, :contractor_id, :building_id, :unit_id, photos: [], bill_upload: [])
   end
 end

@@ -1,2 +1,27 @@
 <h1>Tasks#create</h1>
 <p>Find me in app/views/tasks/create.html.erb</p>
+
+<%# <% if current_user.renter == true %>
+  <%# <%= simple_form_for [@task] do |f| %>
+    <%# <%= f.input :title, label: "Title" %>
+    <%# <%= f.input :description, label: "Describe your request" %>
+    <%# <%= f.input :urgency, label: "Urgency" %> 
+    <%# <%= f.input :photos, label: "Upload photos" %> 
+    <%# <%= f.submit "Create a task", class:"btn btn-primary" %> 
+  <%# <% end %> 
+<%# <% else %>
+  <%= simple_form_for [@task] do |f| %>
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :description, label: "Describe your request" %>
+    <%= f.input :urgency, label: "Urgency" %>
+    <%= f.input :expense, label: "Expense" %>
+    <%= f.input :start_date, label: "Start date" %>
+    <%= f.input :end_date, label: "End date" %>
+    <%# <%= f.input :contractor_id, label: "Contractor" %> %>
+    <%# <%= f.input :building_id, label: "Building" %>
+    <%# <%= f.input :unit_id, label: "Unit" %> %> %>
+    <%# <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photos" %> %>
+    <%# <%= f.input :bill_upload, as: :file, input_html: { multiple: true }, label: "Upload bill" %> %>
+    <%= f.submit "Create a tassk", class:"btn btn-primary" %>
+  <% end %>
+<%# <% end %>

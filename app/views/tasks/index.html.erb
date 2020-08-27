@@ -1,2 +1,14 @@
 <h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<% @tasks.each do |task| %>
+<ul class="list-group">
+<h2><%= task.title %></h2>
+  <li class="list-group-item">Description: <%= task.description %></li>
+  <li class="list-group-item">Status: <%= task.status %></li>
+  <li class="list-group-item">Urgency: <%= task.urgency %></li>
+</ul>
+<% end %>
+
+    <%# t.string "title"
+    t.text "description"
+    t.boolean "status"
+    t.string "urgency" %>

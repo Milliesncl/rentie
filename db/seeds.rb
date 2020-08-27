@@ -33,8 +33,8 @@ contractor5 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",us
 
 puts "Creating tasks"
 
-task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded",urgency: "High")
-task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work",urgency: "Medium")
+task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", urgency: "High")
+task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", urgency: "Medium")
 
 puts "Creating units"
 
