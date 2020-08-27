@@ -9,6 +9,13 @@ class ContractorsController < ApplicationController
 
   def create
     @contractor =  Contractor.new(params_contractor)
+    @contractor.user = current_user
+
+    if @contractor.save
+      redirect_to contractors_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -32,6 +39,6 @@ class ContractorsController < ApplicationController
   private
 
   def params_contractor
-    params.require(:contractor).permit(:name, :phone_number, :specialty)
+    params.require(:contractor).permit(:first_name, :last_name, :phone_number, :speciality)
   end
 end
