@@ -15,7 +15,7 @@ class UnitsController < ApplicationController
     @unit.building = @building
 
     if @unit.save
-      redirect_to building_unit_path(@building)
+      redirect_to building_path(@building)
     else
       render :new
     end
