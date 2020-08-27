@@ -12,6 +12,7 @@ class UnitsController < ApplicationController
   def create
     @unit = Unit.new(params_unit)
     @building = Building.find(params[:building_id])
+    @unit.building = @building
 
     if @unit.save
       redirect_to building_unit_path(@building)
@@ -34,6 +35,9 @@ class UnitsController < ApplicationController
   end
 
   def destroy
+    @unit = Unit.find(params[:id])
+    @unit.destroy
+    redirect_to(:back)
   end
 
   private

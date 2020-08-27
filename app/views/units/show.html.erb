@@ -8,4 +8,5 @@
 <p>Rent amount: <%= @unit.rent_amount %></p>
 <p>Payment day: <%= @unit.payment_date %></p>
 
-<p><%= link_to "edit this unit", edit_building_unit_path(@building.id, @unit.id)%></p>
+<p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
+<p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
