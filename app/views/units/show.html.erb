@@ -10,11 +10,10 @@
 
 <% if @unit.photos.attached? %>
   <% @unit.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 350, crop: :fill %>
+    <%= cl_image_tag photo.key, weigh: 200, height: 200, crop: :fill %>
   <% end %>
 <% end %>
 
-<%= link_to "download", units_lease_path(@unit), target: "_blank" %>
-
+<%= link_to "download the leasing contract", units_lease_path(@unit), target: "_blank" %>
 <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
 <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
