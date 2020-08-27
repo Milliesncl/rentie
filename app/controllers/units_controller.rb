@@ -1,5 +1,7 @@
 class UnitsController < ApplicationController
   def show
+    @unit = Unit.find(params[:id])
+    @building = Building.find(params[:building_id])
   end
 
   def new
@@ -12,16 +14,23 @@ class UnitsController < ApplicationController
     @building = Building.find(params[:building_id])
 
     if @unit.save
-      redirect_to building_unit_path(@building.id, @unit)
+      redirect_to building_unit_path(@building)
     else
       render :new
     end
   end
 
   def edit
+    @unit = Unit.find(params[:id])
   end
 
   def update
+    @unit = Unit.find(params[:id])
+    if Unit.update(params_unit)
+      redirect_to building_unit_path([@building, @unit])
+    else
+      render :edit
+    end
   end
 
   def destroy
