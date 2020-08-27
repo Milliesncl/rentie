@@ -34,7 +34,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building = Building.find(params[:id])
     @building.destroy
-    redirect_to root
+    redirect_to root_path
   end
 
   private
