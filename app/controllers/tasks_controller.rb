@@ -5,6 +5,22 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+
+    contractors = Contractor.where(user: current_user)
+    @contractors = contractors.map do |contractor|
+      [contractor.first_name, contractor.id]
+    end
+
+    buildings = Building.where(user: current_user)
+    @buildings = buildings.map do |building|
+      [building.address, building.id]
+    end
+
+    # units = Building.where(user: current_user)
+    # units = units.Unit
+    # @units = units.map do |unit|
+    #   [unit.unit_number, unit.id]
+    # end
   end
 
   def create

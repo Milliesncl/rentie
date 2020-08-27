@@ -7,6 +7,10 @@
   <li class="list-group-item">Purchase price: <%= @building.purchase_price %></li>
   <li class="list-group-item">Purchase date: <%= @building.purchase_date %></li>
   <li class="list-group-item">Taxes: <%= @building.taxes %></li>
+  <% if @building.photo.attached? %>
+    <li class="list-group-item"><%= cl_image_tag @building.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  </li>
 </ul>
 
 <p><%= link_to "delete this building", building_path(@building.id), data: { confirm: "Are you sure to delete #{@building.address} ?" }, method: :delete, class:"btn btn-secondary" %>  <%= link_to "edit this building", edit_building_path(@building.id), class:"btn btn-primary"%></p>

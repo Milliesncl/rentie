@@ -7,6 +7,11 @@
 <p>Renewal date: <%= @unit.renewal_date %></p>
 <p>Rent amount: <%= @unit.rent_amount %></p>
 <p>Payment day: <%= @unit.payment_date %></p>
+<% if @unit.photos.attached? %>
+  <% @unit.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
 
 <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
 <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
