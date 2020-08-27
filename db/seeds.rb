@@ -25,11 +25,11 @@ building6 = Building.create!(user: user4, address: "6250-6252 rue Dugas, H1N 1P2
 
 puts "Creating contractors"
 
-contractor1 = Contractor.create!(user: user4, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor2 = Contractor.create!(user: user1, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor3 = Contractor.create!(user: user2, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor4 = Contractor.create!(user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor5 = Contractor.create!(user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
+contractor1 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user4, phone_number: "+1 438 123 2345", speciality: "roofer")
+contractor2 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user1, phone_number: "+1 514 343 9320", speciality: "plumber")
+contractor3 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user2, phone_number: "+1 438 567 2365", speciality: "electrician")
+contractor4 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
+contractor5 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
 
 puts "Creating tasks"
 
