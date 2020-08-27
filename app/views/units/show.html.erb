@@ -14,15 +14,7 @@
   <% end %>
 <% end %>
 
-<!-- Need to be changed -->
-<% if @unit.lease.attached? %>
-<iframe src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598563324/carte_ville_marie_escwby.pdf" width="200" height="250"></iframe>
-  <p>Lease: <%= cl_image_tag @unit.lease.key, format: 'pdf', width: 200, height:250, flag:"attachment", target: "_blank" %></p>
-  <%= link_to "download key", building_unit_download_path(@building, @unit), target: "_blank"%>
-  <% else %>
-  <p>No lease</p>
-<% end %>
-<!-- End of need to be changed -->
+<%= link_to "download", units_lease_path(@unit), target: "_blank" %>
 
 <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
 <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
