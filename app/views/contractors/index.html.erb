@@ -1,2 +1,8 @@
 <h1>Contractors#index</h1>
-<p>Find me in app/views/contractors/index.html.erb</p>
+<% @contractors.each do |contractor| %>
+<ul class="list-group">
+<h2><%= contractor.first_name %> <%= contractor.last_name %></h2>
+  <li class="list-group-item">Speciality: <%= contractor.speciality %></li>
+  <li class="list-group-item">Phone Number: <%= contractor.phone_number %></li>
+</ul>
+<% end %>
