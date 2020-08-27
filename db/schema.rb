@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_191748) do
+ActiveRecord::Schema.define(version: 2020_08_27_202821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,7 +95,9 @@ ActiveRecord::Schema.define(version: 2020_08_27_191748) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "payment_date"
+    t.bigint "user_id"
     t.index ["building_id"], name: "index_units_on_building_id"
+    t.index ["user_id"], name: "index_units_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -119,4 +121,5 @@ ActiveRecord::Schema.define(version: 2020_08_27_191748) do
   add_foreign_key "rent_payments", "users"
   add_foreign_key "tasks", "contractors"
   add_foreign_key "units", "buildings"
+  add_foreign_key "units", "users"
 end
