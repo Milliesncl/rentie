@@ -8,3 +8,4 @@
 <p>Taxes: <%= @building.taxes %></p>
 
 <p><%= link_to "delete this building", building_path(@building.id), data: { confirm: "Are you sure to delete #{@building.address} ?" }, method: :delete %></p>
+<p><%= link_to "edit this building", edit_building_path(@building.id)%></p>
