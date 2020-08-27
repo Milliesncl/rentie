@@ -24,6 +24,9 @@
   <%= link_to "See this unit", building_unit_path(@building.id, unit.id), class:"btn btn-primary" %>
 </ul>
 
+
 <!-- puts tenants infos -->
 <!-- puts expenses infos -->
 <% end %>
+
+<p><%= link_to "Add a unit", new_building_unit_path(@building.id, {from: "building_show"}), class: "btn btn-primary" %>
