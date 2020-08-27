@@ -8,5 +8,6 @@
   <%= f.input :renewal_date, label: "Renewal date" %>
   <%= f.input :rent_amount, label: "Rent amount" %>
   <%= f.input :payment_date, label: "Payment day" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Update an unit", class:"btn btn-primary" %>
 <% end %>
