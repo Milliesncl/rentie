@@ -12,7 +12,7 @@ class UnitsController < ApplicationController
     @building = Building.find(params[:building_id])
 
     if @unit.save
-      redirect_to building_unit_path(@building.id, @unit)
+      redirect_to building_path(@building)
     else
       render :new
     end
