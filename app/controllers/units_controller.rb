@@ -4,10 +4,9 @@ class UnitsController < ApplicationController
     @building = Building.find(params[:building_id])
   end
 
-  def download
-    @unit = Unit.find(params[:unit_id])
-    @building = Building.find(params[:building_id])
-    send_file @unit.lease.key, type: "application/pdf", x_sendfile: true
+  def lease
+    @unit = Unit.find(params[:id])
+    send_data @unit.lease, filename: "unit-lease-#{@unit.unit_number}.pdf", type: :pdf, disposition: :inline
   end
 
   def new
@@ -19,6 +18,7 @@ class UnitsController < ApplicationController
     @unit = Unit.new(params_unit)
     @building = Building.find(params[:building_id])
     @unit.building = @building
+    @unit.lease = params[:unit][:lease].read
 
     if @unit.save
       redirect_to building_path(@building)
@@ -52,6 +52,6 @@ class UnitsController < ApplicationController
 
   private
   def params_unit
-    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, :lease, photos: [])
+    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
   end
 end
