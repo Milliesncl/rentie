@@ -8,15 +8,13 @@ class Task < ApplicationRecord
   validates :description, presence: true
   validates :urgency, presence: true, inclusion: { in: %w(High Medium Low) }
 
-  def assignee
+  def self.assignee
     # building owner
-    # call this with `Task.assignee`
     Task.joins(:unit).joins(:building)
   end
 
-  def assigner
+  def self.assigner
     # .unit.users - all users relating to one unit
-    # call this with `Task.assigner`
     Task.joins(:unit)
   end
 end

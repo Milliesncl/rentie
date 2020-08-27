@@ -16,7 +16,7 @@ class TasksController < ApplicationController
       [building.address, building.id]
     end
 
-    units = Unit.joins(:building).where(user_id: current_user.id)
+    units = Unit.joins(:building).where(buildings: { user: current_user })
     @units = units.map do |unit|
       [unit.unit_number, unit.id]
     end
