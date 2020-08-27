@@ -1,9 +1,11 @@
 class Task < ApplicationRecord
   belongs_to :contractor
+  has_many_attached :photos
+  has_many_attached :bill_upload
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :urgency, presence: true
+  validates :urgency, presence: true, inclusion: { in: %w(High Medium Low) }
 
   def assignee
     # building owner

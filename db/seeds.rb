@@ -1,4 +1,5 @@
 require 'date'
+require 'open-uri'
 
 puts "Deleting everything"
   Building.destroy_all
@@ -16,12 +17,27 @@ user4 = User.create!(email: "meagan@email.com", password: "123456", first_name: 
 
 puts "Creating buildings"
 
-building1 = Building.create!(user: user1, address: "4641-4643 rue Chambord, H2J 3M8, Montréal, QC", mortgage: 4000, purchase_price: 700000, purchase_date: Date.new(2019,9,1), taxes: 800)
+file1 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
+file2 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598550518/mtl-house-2_les824.jpg')
+file3 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598550633/building3_essoo3.jpg')
+file4 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598550636/building4_lyo6kh.jpg')
+file5 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598550638/building5_n8wcmi.jpg')
+file6 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598550643/building6_wsbmyd.jpg')
+
+
+building1 = Building.create!(user: user1, address: "4641-4643 rue Chambord, H2J 3M8, Montréal, QC", mortgage: 4000, purchase_price: 700000, purchase_date: Date.new(2019,9,1), taxes: 800, )
 building2 = Building.create!(user: user1, address: "4251-4255 rue Marquette, H2J 3W8, Montréal, QC", mortgage: 3500, purchase_price: 600000, purchase_date: Date.new(2017,3,19), taxes: 500)
 building3 = Building.create!(user: user2, address: "4421-4425 rue Saint-Urbain, H2W 1V7, Montréal, QC", mortgage: 2000, purchase_price: 506090, purchase_date: Date.new(2017,4,6), taxes: 1000)
 building4 = Building.create!(user: user2, address: "7074-7078 rue de la Roche, H2S 2E6, Montréal, QC", mortgage: 1600, purchase_price: 780000, purchase_date: Date.new(2020,5,27), taxes: 1200)
 building5 = Building.create!(user: user3, address: "7344-7346 2e avenue, H2A 3H1, Montréal, QC", mortgage: 1000, purchase_price: 450000, purchase_date: Date.new(2016,8,20), taxes: 600)
 building6 = Building.create!(user: user4, address: "6250-6252 rue Dugas, H1N 1P2, Montréal, QC", mortgage: 1190, purchase_price: 400900, purchase_date: Date.new(2014,4,9), taxes: 300)
+
+building1.photo.attach(io: file1, filename: 'building1.jpg', content_type: 'image/jpg')
+building2.photo.attach(io: file2, filename: 'building2.jpg', content_type: 'image/jpg')
+building3.photo.attach(io: file3, filename: 'building3.jpg', content_type: 'image/jpg')
+building4.photo.attach(io: file4, filename: 'building4.jpg', content_type: 'image/jpg')
+building5.photo.attach(io: file5, filename: 'building5.jpg', content_type: 'image/jpg')
+building6.photo.attach(io: file6, filename: 'building6.jpg', content_type: 'image/jpg')
 
 puts "Creating contractors"
 
@@ -33,8 +49,8 @@ contractor5 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",us
 
 puts "Creating tasks"
 
-task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded",urgency: "High")
-task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work",urgency: "Medium")
+task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", urgency: "High")
+task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", urgency: "Medium")
 
 puts "Creating units"
 
