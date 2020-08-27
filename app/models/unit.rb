@@ -1,5 +1,6 @@
 class Unit < ApplicationRecord
   belongs_to :building
+  has_many :tasks
   has_many_attached :photos
   has_one_attached :lease
 
