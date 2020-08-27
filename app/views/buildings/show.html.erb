@@ -1,2 +1,10 @@
 <h1>Buildings#show</h1>
 <p>Find me in app/views/buildings/show.html.erb</p>
+
+<p>Address: <%= @building.address %></p>
+<p>Mortgage: <%= @building.mortgage %></p>
+<p>Purchase price: <%= @building.purchase_price %></p>
+<p>Purchase date: <%= @building.purchase_date %></p>
+<p>Taxes: <%= @building.taxes %></p>
+
+<p><%= link_to "delete this building", destroy_building_path(@building.id), data: { confirm: "Are you sure to delete #{building.address} ?" }, method: :delete %></p>

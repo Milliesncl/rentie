@@ -1,2 +1,10 @@
 <h1>Buildings#new</h1>
 <p>Find me in app/views/buildings/new.html.erb</p>
+
+  <%= simple_form_for [@building] do |f| %>
+    <%= f.input :address, label: "Address" %>
+    <%= f.input :mortgage, label: "Mortgage" %>
+    <%= f.input :purchase_price, label: "Purchase price" %>
+    <%= f.input :purchase_date, label: "Purchase date" %>
+    <%= f.submit "Create a building", class:"btn btn-primary" %>
+  <% end %>
