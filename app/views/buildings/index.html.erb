@@ -5,7 +5,7 @@
 
 <% @buildings.each do |building| %>
   <div class="building-index">
-  <h2><%= building.address %></h2>
+  <h1><%= building.address %></h1>
     <div class="top-cards">
       <div class="information">
         <h3>Information</h3>
@@ -14,7 +14,7 @@
           <p>Owner since: <%= building.purchase_date %></p>
           <p>Purchase price: <%= building.purchase_price %></p>
           <p>Overall expenses: $10 000</p>
-          <p>Taxes to pay this year: <%= building.taxes %></p>
+          <p>Taxes to pay this year: $<%= building.taxes %></p>
         </div>
       </div>
       <div class="accounting">
