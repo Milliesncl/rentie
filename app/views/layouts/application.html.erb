@@ -12,11 +12,7 @@
   </head>
 
   <body>
-    <%  if current_user.renter == true %>
-      <%= render 'shared/owner_navbar' %>
-    <% else  %>
-      <%= render 'shared/renter_navbar' %>
-    <% end %>
-    <%= yield %>
+    <%= render 'shared/owner_navbar' %>
+   <%= yield %>
   </body>
 </html>
