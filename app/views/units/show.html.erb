@@ -23,6 +23,7 @@
     </div>
   </div>
 </div>
+
 <% if @unit.photos.attached? %>
   <% @unit.photos.each do |photo| %>
     <%= cl_image_tag photo.key, weigh: 200, height: 200, crop: :fill %>
