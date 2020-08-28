@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :contractors, except: [:destroy]
   resources :tasks, only: [:new, :index, :create, :edit, :update]
 
-  resources :buildings, except: [:index] do
+  resources :buildings, except: [:show] do
     resources :units, only: [:show, :new, :create, :edit, :update]
   end
 
