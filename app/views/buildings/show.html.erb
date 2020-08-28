@@ -2,10 +2,10 @@
 <p>Find me in app/views/buildings/show.html.erb</p>
 
 <ul class="list-group">
-  <li class="list-group-item">User: <%= @building.user.first_name %> (just to help with development)</li>
+  <li class="list-group-item">User: <%= @building.user.first_name %>(help for development, to remove)</li>
   <li class="list-group-item">Address: <%= @building.address %></li>
   <li class="list-group-item">Mortgage: <%= @building.mortgage %></li>
-  <li class="list-group-item">Purchase price: <%= @building.purchase_price %></li>
+  <li class="list-group-item">Purchase price: $<%= @building.purchase_price %></li>
   <li class="list-group-item">Purchase date: <%= @building.purchase_date %></li>
   <li class="list-group-item">Taxes: <%= @building.taxes %></li>
 </ul>
@@ -15,10 +15,10 @@
 <% @units.each do |unit| %>
 <ul class="list-group">
 <h2>Unit number: <%= unit.unit_number %></h2>
-  <li class="list-group-item">Purchase price: <%= unit.purchase_price %></li>
+  <li class="list-group-item">Purchase price: $<%= unit.purchase_price %></li>
   <li class="list-group-item">Payment methode: <%= unit.payment_method %></li>
   <li class="list-group-item">Renewal date: <%= unit.renewal_date %></li>
-  <li class="list-group-item">Rent amount: <%= unit.rent_amount %></li>
+  <li class="list-group-item">Rent amount: $<%= unit.rent_amount %></li>
   <li class="list-group-item">Payment day: <%= unit.payment_date %></li>
   <%= link_to "Edit this unit", edit_building_unit_path(@building.id, unit.id), class:"btn btn-primary" %>
   <%= link_to "See this unit", building_unit_path(@building.id, unit.id), class:"btn btn-primary" %>

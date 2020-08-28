@@ -23,6 +23,7 @@ user3 = User.create!(email: "millie@email.com", password: "123456", first_name: 
 user4 = User.create!(email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
 user5 = User.create!(email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
 
+
 user1.photo.attach(io: picture1, filename: 'francesca.jpg', content_type: 'image/jpg')
 user2.photo.attach(io: picture2, filename: 'kyle.jpg', content_type: 'image/jpg')
 user3.photo.attach(io: picture3, filename: 'millie.jpg', content_type: 'image/jpg')
