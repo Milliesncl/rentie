@@ -1,7 +1,10 @@
 class BuildingsController < ApplicationController
   def show
-    @building = Building.find(params[:id])
-    @units = Unit.where(building_id: @building.id)
+    buildings = current_user.buildings
+    buildings.each do |building|
+      @building = Building.find(params[:id])
+      @units = Unit.where(building_id: @building.id)
+    end
   end
 
   def new
@@ -38,8 +41,9 @@ class BuildingsController < ApplicationController
     redirect_to root_path
   end
 
-  private
+private
+
   def params_building
-    params.require(:building).permit(:address, :mortgage, :purchase_price, :purchase_date, :taxes, :photo)
+    params.require(:building).permit(:address, :mortgage, :purchase_price, :purchase_date, :taxes)
   end
 end
