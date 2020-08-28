@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+    # @tasks = Task.assignee.where(user: current_user)
   end
 
   def new
@@ -8,7 +9,7 @@ class TasksController < ApplicationController
 
     contractors = Contractor.where(user: current_user)
     @contractors = contractors.map do |contractor|
-      [contractor.first_name, contractor.id]
+      ["#{contractor.first_name} #{contractor.last_name } - #{contractor.speciality} ", contractor.id]
     end
 
     buildings = Building.where(user: current_user)
@@ -21,6 +22,7 @@ class TasksController < ApplicationController
       [unit.unit_number, unit.id]
     end
   end
+
 
   def create
     @task =  Task.new(params_task)

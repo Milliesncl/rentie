@@ -10,7 +10,7 @@ class Task < ApplicationRecord
 
   def self.assignee
     # building owner
-    Task.joins(:unit).joins(:building)
+    joins(:unit).joins(:building)
   end
 
   def self.assigner

@@ -1,4 +1,4 @@
-<h1>Tasks#index</h1>
+<h1>Tasks</h1>
 <% @tasks.each do |task| %>
 <ul class="list-group">
 <h2><%= task.title %></h2>
@@ -7,8 +7,3 @@
   <li class="list-group-item">Urgency: <%= task.urgency %></li>
 </ul>
 <% end %>
-
-    <%# t.string "title"
-    t.text "description"
-    t.boolean "status"
-    t.string "urgency" %>
