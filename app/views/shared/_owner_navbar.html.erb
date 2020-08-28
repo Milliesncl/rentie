@@ -5,21 +5,22 @@
   <% else %>
     <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
   <% end %>
-  <i class="fas fa-house-user"></i>
+  <%= link_to '<i class="fas fa-house-user"></i>'.html_safe, '/' %>
 </div>
 
 
 <div class="sidenav">
   <div class="icons">
-    <a href="" ><i class="far fa-building"></i></a>
-    <a href=""><i class="far fa-address-book"></i></a>
-    <a href=""><i class="far fa-calendar-alt"></i></a>
+    <%= link_to '<i class="far fa-building"></i>'.html_safe, buildings_path %>
+    <%= link_to '<i class="far fa-address-book"></i>'.html_safe, contractors_path %>
+    <%= link_to '<i class="far fa-calendar-alt"></i>'.html_safe, tasks_path %>
     <button class="plus" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></button>
     <div class="dropdown-menu">
           <!-- Dropdown menu links -->
-          <a class="dropdown-item" href="">Task</a>
-          <a class="dropdown-item" href="">Building</a>
-          <a class="dropdown-item" href="">Contacts</a>
+          <%= link_to 'Task', new_task_path %><br>
+          <%= link_to 'Building', new_building_path %><br>
+          <%= link_to 'Tenant', new_tenant_path %><br>
+          <%= link_to 'Contractor', new_contractor_path %>
     </div>
   </div>
 </div>

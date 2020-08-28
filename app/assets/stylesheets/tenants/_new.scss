@@ -13,43 +13,50 @@
   border-radius: 8px;
 }
 
-.line-one {
+.tenant-line-one {
   display: flex;
   justify-content: space-between;
 }
 
-.line-two {
+.tenant-line-two {
   display: flex;
   justify-content: space-around;
-  .contractor {
-    width: 50%;
-    margin-right: 10px;
-  }
 }
 
-#urgency {
-flex-grow: 1;
-  margin-right: 135px;
+#first-name {
+  flex-grow: 1;
+  margin-right: 130px;
   width: 100%
 }
 
-#expense {
+#last-name {
 flex-grow: 1;
-  margin-right: 135px;
+  margin-right: 130px;
+  margin-left: 10px;
 }
 
 .btn-primary {
   border-radius: 10px;
 }
 
-.task-btn {
+// .unit-number {
+//   display: flex;
+//   justify-content: center;
+// }
+
+.tenant-task-btn {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
 }
 
-.uploads {
-  display: flex;
-  justify-content: space-around;
+#email {
+  flex-grow: 1;
+  margin-right: 130px;
+  width: 100%
 }
 
+#password {
+  flex-grow: 1;
+  margin-right: 130px;
+  margin-left: 10px;
+}
