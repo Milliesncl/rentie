@@ -1,13 +1,28 @@
-<h1>Units#show</h1>
-<p>Find me in app/views/units/show.html.erb</p>
-
-<p>Unit number: <%= @unit.unit_number %></p>
-<p>Purchase price: <%= @unit.purchase_price %></p>
-<p>Payment method: <%= @unit.payment_method %></p>
-<p>Renewal date: <%= @unit.renewal_date %></p>
-<p>Rent amount: <%= @unit.rent_amount %></p>
-<p>Payment day: <%= @unit.payment_date %></p>
-
+<div class="container">
+<div class="unit-id-header">
+<h1>Unit <%= @unit.unit_number%></h1>
+</div>
+<div class="unit-page">
+  <div class="lease-info">
+    <p>Renewal date: <%= @unit.renewal_date %></p>
+    <p>Payment day: <%= @unit.payment_date %></p>
+  </div>
+  <div class="info-page-right">
+    <div class="top-unit-card">
+      <p>Purchase price: <%= @unit.purchase_price %></p>
+      <p>SQ M: 50</p>
+      <p>Bedsrooms: 1</p>
+      <p>Rent amount: <%= @unit.rent_amount %></p>
+      <p>Bathrooms: 1.5</p>
+    </div>
+    <div class="first-tenant">
+      <h3>Tenant 1</h3>
+      <p>Name: Francesca Hall</p>
+      <p>Email: email@email.com</p>
+      <p>Number: 1-800-555-5555</p>
+    </div>
+  </div>
+</div>
 <% if @unit.photos.attached? %>
   <% @unit.photos.each do |photo| %>
     <%= cl_image_tag photo.key, weigh: 200, height: 200, crop: :fill %>
@@ -15,5 +30,9 @@
 <% end %>
 
 <%= link_to "download the leasing contract", units_lease_path(@unit), target: "_blank" %>
-<p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
-<p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
+<div class="task-btn">
+  <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
+</div>
+  <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
+</div>
+</div>
