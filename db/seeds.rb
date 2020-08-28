@@ -38,6 +38,8 @@ building3 = Building.create!(user: user2, address: "4421-4425 rue Saint-Urbain, 
 building4 = Building.create!(user: user2, address: "7074-7078 rue de la Roche, H2S 2E6, Montréal, QC", mortgage: 1600, purchase_price: 780000, purchase_date: Date.new(2020,5,27), taxes: 1200)
 building5 = Building.create!(user: user3, address: "7344-7346 2e avenue, H2A 3H1, Montréal, QC", mortgage: 1000, purchase_price: 450000, purchase_date: Date.new(2016,8,20), taxes: 600)
 building6 = Building.create!(user: user4, address: "6250-6252 rue Dugas, H1N 1P2, Montréal, QC", mortgage: 1190, purchase_price: 400900, purchase_date: Date.new(2014,4,9), taxes: 300)
+building7 = Building.create!(user: user4, address: "4419-4423 rue Saint-Urbain, H2W 1V7, Montréal, QC", mortgage: 2000, purchase_price: 750000, purchase_date: Date.new(2019,4,9), taxes: 800)
+building8 = Building.create!(user: user3, address: "7074-7078 rue de la Roche, H2S 2E6, Montréal, QC", mortgage: 1600, purchase_price: 780000, purchase_date: Date.new(2020,5,27), taxes: 1200)
 
 puts "Creating contractors"
 
@@ -64,6 +66,9 @@ unit12 = Unit.create!(building: building5, unit_number: 7344, purchase_price: 25
 unit13 = Unit.create!(building: building5, unit_number: 7346, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
 unit14 = Unit.create!(building: building6, unit_number: 6250, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
 unit15 = Unit.create!(building: building6, unit_number: 6252, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
+unit16 = Unit.create!(building: building7, unit_number: 4419, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1100)
+unit17 = Unit.create!(building: building7, unit_number: 4421, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1200)
+unit18 = Unit.create!(building: building7, unit_number: 4423, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1200)
 
 puts "Creating tasks"
 
