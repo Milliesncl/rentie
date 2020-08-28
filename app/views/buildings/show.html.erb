@@ -1,17 +1,14 @@
 <h1>Buildings#show</h1>
 <p>Find me in app/views/buildings/show.html.erb</p>
 
-    <ul class="list-group">
-    <li class="list-group-item">Address: <%= @building.address %></li>
-    <li class="list-group-item">Mortgage: <%= @building.mortgage %></li>
-    <li class="list-group-item">Purchase price: <%= @building.purchase_price %></li>
-    <li class="list-group-item">Purchase date: <%= @building.purchase_date %></li>
-    <li class="list-group-item">Taxes: <%= @building.taxes %></li>
-    <% if @building.photo.attached? %>
-      <li class="list-group-item"><%= cl_image_tag @building.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    </li>
-    </ul>
+<ul class="list-group">
+  <li class="list-group-item">User: <%= @building.user.first_name %>(help for development, to remove)</li>
+  <li class="list-group-item">Address: <%= @building.address %></li>
+  <li class="list-group-item">Mortgage: <%= @building.mortgage %></li>
+  <li class="list-group-item">Purchase price: $<%= @building.purchase_price %></li>
+  <li class="list-group-item">Purchase date: <%= @building.purchase_date %></li>
+  <li class="list-group-item">Taxes: <%= @building.taxes %></li>
+</ul>
 
     <p><%= link_to "delete this building", building_path(@building.id), data: { confirm: "Are you sure to delete #{@building.address} ?" }, method: :delete, class:"btn btn-secondary" %>  <%= link_to "edit this building", edit_building_path(@building.id), class:"btn btn-primary"%></p>
 
@@ -26,7 +23,6 @@
     <%= link_to "Edit this unit", edit_building_unit_path(@building.id, unit.id), class:"btn btn-primary" %>
     <%= link_to "See this unit", building_unit_path(@building.id, unit.id), class:"btn btn-primary" %>
     </ul>
-
 
     <!-- puts tenants infos -->
     <!-- puts expenses infos -->
