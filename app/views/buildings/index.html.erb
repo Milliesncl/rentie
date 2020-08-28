@@ -1,21 +1,27 @@
 <h1>Buildings#show</h1>
 <p>Find me in app/views/buildings/show.html.erb</p>
 
+<div class="header-buildings">
+  <p class="button-navigation" id="previous">< previous</p>
+  <p class="button-navigation" id="next">next ></p>
+</div>
+
 <% @buildings.each do |building| %>
-  <ul class="list-group">
-    <li class="list-group-item">User: <%= building.user.first_name %>(help for development, to remove)</li>
-    <li class="list-group-item">Address: <%= building.address %></li>
-    <li class="list-group-item">Mortgage: <%= building.mortgage %></li>
-    <li class="list-group-item">Purchase price: $<%= building.purchase_price %></li>
-    <li class="list-group-item">Purchase date: <%= building.purchase_date %></li>
-    <li class="list-group-item">Taxes: <%= building.taxes %></li>
-  </ul>
+  <div class="building-index">
+    <ul class="list-group">
+      <li class="list-group-item">User: <%= building.user.first_name %>(help for development, to remove)</li>
+      <li class="list-group-item">Address: <%= building.address %></li>
+      <li class="list-group-item">Mortgage: <%= building.mortgage %></li>
+      <li class="list-group-item">Purchase price: $<%= building.purchase_price %></li>
+      <li class="list-group-item">Purchase date: <%= building.purchase_date %></li>
+      <li class="list-group-item">Taxes: <%= building.taxes %></li>
+    </ul>
 
     <p><%= link_to "delete this building", building_path(building), data: { confirm: "Are you sure to delete #{building.address} ?" }, method: :delete, class:"btn btn-secondary" %>  <%= link_to "edit this building", edit_building_path(building), class:"btn btn-primary"%></p>
 
 
-  <% building.units.each do |unit| %>
-       <div class="dropdown">
+    <% building.units.each do |unit| %>
+      <div class="dropdown">
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= unit.unit_number %>
         </button>
@@ -56,15 +62,16 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Tenant</h5>
-              <p class="card-text">Mille Senecal</p>
+              <p class="card-text">Millie Senecal</p>
               <p class="card-text">418-566-7778</p>
               <p class="card-text">millie@email.com</p>
               <a class="btn btn-primary" href="">Edit</a>
             </div>
           </div>
         </div>
-          </div>
-      <% end %>
+      </div>
+    </div>
+    <% end %>
+    <p><%= link_to "Add a unit", new_building_unit_path(building, {from: "building_show"}), class: "btn btn-primary" %>
   </div>
-<p><%= link_to "Add a unit", new_building_unit_path(building, {from: "building_show"}), class: "btn btn-primary" %>
 <% end %>
