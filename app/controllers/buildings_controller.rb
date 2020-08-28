@@ -1,10 +1,6 @@
 class BuildingsController < ApplicationController
-  def show
-    buildings = current_user.buildings
-    buildings.each do |building|
-      @building = Building.find(params[:id])
-      @units = Unit.where(building_id: @building.id)
-    end
+  def index
+    @buildings = current_user.buildings
   end
 
   def new
@@ -16,7 +12,7 @@ class BuildingsController < ApplicationController
     @building.user = current_user
 
     if @building.save
-      redirect_to building_path(@building)
+      redirect_to buildings_path
     else
       render :new
     end
