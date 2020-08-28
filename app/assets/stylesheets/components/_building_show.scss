@@ -11,3 +11,32 @@ background-color: $button;
   justify-content: center;
   margin-top: 25px;
 }
+
+.building-index {
+  display: none;
+}
+
+.building-index.active {
+  display: block !important;
+}
+
+.button-navigation {
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  &:hover {
+    color: grey;
+  }
+}
+
+.button-navigation.disable {
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.header-buildings {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
