@@ -17,9 +17,10 @@
     <button class="plus" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></button>
     <div class="dropdown-menu">
           <!-- Dropdown menu links -->
-          <a class="dropdown-item" href="">Task</a>
-          <a class="dropdown-item" href="">Building</a>
-          <a class="dropdown-item" href="">Contacts</a>
+          <%= link_to 'Task', new_task_path %><br>
+          <%= link_to 'Building', new_building_path %><br>
+          <%= link_to 'Tenant', new_tenant_path %><br>
+          <%= link_to 'Contractor', new_contractor_path %>
     </div>
   </div>
 </div>
