@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
+  resources :tenants, only: [:create, :new]
   resources :contractors, except: [:destroy]
   resources :tasks, only: [:new, :index, :create, :edit, :update]
 

@@ -1,0 +1,12 @@
+<h1>Tenants#new</h1>
+<p>Find me in app/views/tenants/new.html.erb</p>
+
+<%= simple_form_for(@user, url: tenants_path) do |f|  %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= select_tag :units, options_from_collection_for_select(@units, "id", "unit_number") %>
+  <%#= f.input :renter %>
+  <%= f.submit %>
+<% end %>
