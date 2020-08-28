@@ -10,10 +10,24 @@ puts "Deleting everything"
   RentPayment.destroy_all
 puts "Creating users"
 
+picture1 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
+picture2 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598041192/ies3hxqv1okfvx7c2ahb1lfyyf7t.jpg')
+picture3 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598041193/1y4eb367yfhmwmt88r4sxdw5p0or.jpg')
+picture4 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598041194/ae2zdctipjermztlk8xya6bgcxp4.jpg')
+picture5 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
+
+
 user1 = User.create!(email: "francesca@email.com", password: "123456", first_name: "Francesca", last_name: "Hall")
 user2 = User.create!(email: "kyle@email.com", password: "123456", first_name: "Kyle", last_name: "Masterson")
 user3 = User.create!(email: "millie@email.com", password: "123456", first_name: "Millie", last_name: "Senecal")
 user4 = User.create!(email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
+user5 = User.create!(email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
+
+user1.photo.attach(io: picture1, filename: 'francesca.jpg', content_type: 'image/jpg')
+user2.photo.attach(io: picture2, filename: 'kyle.jpg', content_type: 'image/jpg')
+user3.photo.attach(io: picture3, filename: 'millie.jpg', content_type: 'image/jpg')
+user4.photo.attach(io: picture4, filename: 'meagan.jpg', content_type: 'image/jpg')
+user5.photo.attach(io: picture5, filename: 'rentie.jpg', content_type: 'image/jpg')
 
 puts "Creating buildings"
 
