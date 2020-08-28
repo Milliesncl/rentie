@@ -24,7 +24,7 @@ class UnitsController < ApplicationController
     @unit.lease = params[:unit][:lease].read
 
     if @unit.save
-      redirect_to building_path(@building)
+      redirect_to buildings_path
     else
       render :new
     end
