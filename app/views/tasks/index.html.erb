@@ -1,12 +1,23 @@
 <h1>All tasks</h1>
 <% @tasks.each do |task| %>
-<ul class="list-group">
-<h2><%= task.title %></h2>
-  <li class="list-group-item">Description: <%= task.description %></li>
-  <li class="list-group-item">Status: <%= task.status %></li>
-  <li class="list-group-item">Urgency: <%= task.urgency %></li>
-</ul>
+
+<div class="card-product">
+  <div class="card-product-infos">
+    <div class="head-card">
+    <h2>Building - Unit</h2>
+    <h3><%= task.created_at %></h3>
+    </div>
+    <p>Task: <%= task.title %></p>
+    <p>Status: <%= task.status %></p>
+    <p>Urgency: <%= task.urgency %></p>
+    <p>Renter: <%=  %></p>
+  </div>
+  <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+</div>
 <% end %>
+
+
+
 
     <%# t.string "title"
     t.text "description"
