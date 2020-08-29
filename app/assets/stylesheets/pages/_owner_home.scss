@@ -1,0 +1,98 @@
+// Specific CSS for your home-page
+.container{
+  padding-left: 60px;
+  padding-top: 60px;
+}
+
+.dashboard {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "header header header header"
+  "expenses expenses expenses expenses"
+  "profits-loss profits-loss tasks tasks";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  .header{
+    grid-area: header;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .expenses {
+    grid-area: expenses;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+    width: 100%
+  }
+
+  .tasks {
+    text-align: center;
+    grid-area: tasks;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+  }
+
+  .profits-loss {
+    text-align: center;
+    grid-area: profits-loss;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+    .profit, .loss {
+      text-align: left;
+      display:flex;
+    }
+  }
+}
+
+// body {
+//   background-color: #F8F8F8;
+// }
+
+
+  // .tasks-profits {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   background-color: white;
+  //   margin-left: 20px;
+  //   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+  //   .tasks li {
+  //     margin: 15px;
+  //   }
+  // }
+  // .profits-and-loss {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   background-color: white;
+  //   width: 50%;
+  //   margin-left: 20px;
+  //   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+  //   .loss {
+  //     display: flex;
+  //     flex-grow: 1;
+  //     margin-top: 20px;
+  //     padding-right: 125px;
+  //   }
+  // }
+
+  // .profit {
+  //   display: flex;
+  //   flex-grow: 1;
+  // }
