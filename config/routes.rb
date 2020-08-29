@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # if current_user.renter == false 
-    root to: 'pages#owner_home'
-  # else
-    # root to: 'pages#renter_home'
-  # end
+  root to: 'pages#owner_home'
 
   resources :tenants, only: [:create, :new]
   resources :contractors, except: [:destroy]
