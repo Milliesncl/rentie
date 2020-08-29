@@ -46,36 +46,3 @@ body {
     flex-grow: 1;
   }
 }
-
-//renter scss
-
-.renter {
-  //position: absolute;
-  //width: 905px;
-  //height: 561px;
-  //left: 268px;
-  //top: 210px;
-  background: #FFFFFF;
-  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
-  border-radius: 10px;
-.dashboard{
-  margin-top: 120px;
-}
-.pro-com {
-  display: flex;
-  justify-content: space-around;
-  }
-.payment {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 50%;
-  }
-.avatar-large {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  }
-}
-
-
