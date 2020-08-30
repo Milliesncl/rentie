@@ -41,7 +41,9 @@
         <p class="col-4">SQ M: 50</p>
         <p class="col-4">Bathrooms: 1.5</p>
         <p class="col-4">Bedsrooms: 1</p>
-        <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
+        <% if @unit.lease != nil %>
+          <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
+        <% end %>
     </div>
 </div>
 
