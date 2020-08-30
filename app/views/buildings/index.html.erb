@@ -106,7 +106,7 @@
                 <p class="card-text">Lease end date: <%= unit.renewal_date %></p>
                 <p class="card-text">Purchase price: $<%= unit.purchase_price %></p>
                 <p class="card-text">Rent: $<%= unit.rent_amount %></p>
-                <a class="btn btn-primary" href="">Edit</a>
+                <%= link_to "Edit", building_unit_path(building, unit), class:"btn btn-primary" %>
               </div>
             </div>
             <div class="card">
