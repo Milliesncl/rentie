@@ -23,3 +23,33 @@
     t.text "description"
     t.boolean "status"
     t.string "urgency" %>
+
+<!-- renter -->
+
+<h1>Inbox</h1>
+<% @tasks.each do |task| %>
+
+<div class="card-product-r">
+  <div class="head-card-r">
+    <h2>Building - Unit</h2>
+    <p><%= task.created_at %></p>
+  </div>
+  <div class="product-info-r">
+    <div class="task-info-r">
+      <p>Task: <%= task.title %></p>
+      <p>Renter: <%=  %></p>
+      <p>Urgency: <%= task.urgency %></p>
+      <p>Status: <%= task.status %></p>
+    </div>
+    <div class="task-description-r">
+      <p>Description:
+      Pellentesque habitant morbi tristique senectus et netus.</p>
+    </div>
+    <div class="img-r">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+      <img src="https://questden.org/kusaba/icons/src/wthamiseeingplz.gif" />
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+    </div>
+  </div>
+</div>
+<% end %>
