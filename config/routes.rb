@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#owner_home'
 
-  resources :tenants, only: [:create, :new]
+  resources :tenants, only: [:create, :new, :edit, :update]
   resources :contractors, except: [:destroy]
   resources :tasks, only: [:new, :index, :create, :edit, :update]
 

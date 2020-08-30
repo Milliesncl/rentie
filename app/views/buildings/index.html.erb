@@ -134,11 +134,15 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Tenant</h5>
-                <p class="card-text">Millie Senecal</p>
-                <p class="card-text">418-566-7778</p>
-                <p class="card-text">millie@email.com</p>
-                <a class="btn btn-primary" href="">Edit</a>
+                <% if unit.user != nil %>
+                  <h5 class="card-title">Tenant</h5>
+                  <p class="card-text"><%= unit.user.first_name %> <%= unit.user.last_name %></p>
+                  <p class="card-text"><%= unit.user.email %></p>
+                  <%= link_to "Edit tenant", edit_tenant_path(unit.user), class:"btn btn-primary"%>
+                <% else %>
+                  <h5 class="card-title">No tenant</h5>
+                  <%= link_to "Add a tenant", new_tenant_path %>
+                <% end %>
               </div>
             </div>
           </div>
