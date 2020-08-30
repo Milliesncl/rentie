@@ -4,25 +4,37 @@
 <div class="card-product">
   <div class="card-product-infos">
     <div class="head-card">
-    <h2>Building - Unit</h2>
-    <p><%= task.created_at %></p>
+      <h2>Building - Unit</h2>
+      <p><%= task.created_at %></p>
     </div>
-    <p>Task: <%= task.title %></p>
+    <p class="task-subtitle">Task: <%= task.title %></p>
     <p>Status: <% if task.status == false %>
-      <%= "Incomplete" %>
-    <% else %>
-      <%= "Complete" %>
-    <% end %>
+        Incomplete
+      <% else %>
+        Complete
+      <% end %>
     </p>
     <p>Urgency: <%= task.urgency %></p>
-    <p>Renter: <%=  %></p>
+    <p>Renter: <%= task.unit_id %></p>
+    <% if task.status == false %>
+<div>
+      <button class="btn btn-success btn-sm" id="task-complete">
+        <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
+      </button>
+      <button class="btn btn-secondary btn-sm">
+        <%= link_to "Edit task", edit_task_path(task) %>
+      </button>
+    </div>
+      <% end %>
+    
   </div>
   <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
 </div>
+
 <% end %>
 
 <!-- renter -->
-
+<!-- >
 <h1>Inbox</h1>
 <% @tasks.each do |task| %>
 

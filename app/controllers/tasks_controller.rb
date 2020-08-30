@@ -51,6 +51,13 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def update_status
+    @task = Task.find(params[:id])
+    @task.update_attribute(:status, true)
+
+    redirect_to tasks_path
+  end
+
   private
 
   def params_task
