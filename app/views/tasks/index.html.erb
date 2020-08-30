@@ -16,7 +16,8 @@
     </p>
     <p>Urgency: <%= task.urgency %></p>
     <p>Renter: <%= task.unit_id %></p>
-    <div>
+    <% if task.status == false %>
+<div>
       <button class="btn btn-success btn-sm" id="task-complete">
         <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
       </button>
@@ -24,6 +25,8 @@
         <%= link_to "Edit task", edit_task_path(task) %>
       </button>
     </div>
+      <% end %>
+    
   </div>
   <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
 </div>
