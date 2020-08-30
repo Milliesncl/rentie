@@ -1,6 +1,6 @@
 class ContractorsController < ApplicationController
   def index
-    @contractors = Contractor.order("LOWER(first_name)")
+    @contractors = current_user.contractors.order("LOWER(first_name)")
   end
 
   def new
