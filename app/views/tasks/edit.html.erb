@@ -1,0 +1,33 @@
+<div class="form-background">
+  <h1>Edit a task</h1>
+
+  <% if current_user.renter == false %>
+    <%= simple_form_for [@task] do |f| %>
+      <%= f.input :title, label: "Title" %>
+      <%= f.input :description, label: "Description" %>
+      <div class="line-one">
+        <%= f.input :urgency, label: "Urgency" %>
+        <%= f.input :expense, label: "Expense" %>
+      </div>
+      <%= f.input :start_date, label: "Start date", include_blank: true %>
+      <%= f.input :end_date, label: "End date", include_blank: true %>
+      <%= f.input :contractor_id, label: "Contractor", collection: @contractors, as: :select %>
+      <div class="uploads">
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photos" %>
+        <%= f.input :bill_upload, as: :file, input_html: { multiple: true }, label: "Upload bill" %>
+      </div>
+      <div class="task-btn">
+        <%= f.submit "Create a task", class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= simple_form_for [@task] do |f| %>
+      <%= f.input :title, label: "Title" %>
+      <%= f.input :description, label: "Describe your request" %>
+      <%= f.input :urgency, label: "Urgency"  %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photos" %>
+      <%= f.submit "Create a task", class:"btn btn-primary" %>
+    <% end %>
+  <% end %>
+  </div>
+</div>

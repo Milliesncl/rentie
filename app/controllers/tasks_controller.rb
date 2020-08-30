@@ -39,7 +39,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
+    @task.update(params_task)
+    @contractors = Contractor.where(user: current_user)
 
     redirect_to tasks_path
   end
