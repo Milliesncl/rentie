@@ -91,11 +91,12 @@
         </div>
       </div>
 
+<div class="collapse-menu">
       <% building.units.each do |unit| %>
         <div class="dropdown">
           <button class="btn accordion">
             <%= unit.unit_number %>
-          <span>V</span>
+            <i class="fas fa-chevron-down"></i>
           </button>
         <div class="panel">
               <div class="card-deck">
@@ -144,6 +145,9 @@
         </div>
       </div>
       <% end %>
+      </div>
+
       <p><%= link_to "Add a unit", new_building_unit_path(building, {from: "building_show"}), class: "btn btn-primary" %>
+
     </div>
 <% end %>
