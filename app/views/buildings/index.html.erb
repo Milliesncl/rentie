@@ -80,7 +80,7 @@
           <path d="M74.5 10C38.8776 10 10 38.8776 10 74.5C10 101.508 26.5993 124.638 50.1523 134.246" stroke="#55ADAE" stroke-width="20"/>
           </svg>
         </div>
-        <div class="tasks-to-do">
+        <div class="tasks-to-do col-sm-12 col-md-6">
           <h3>Tasks to do</h3>
           <ul>
             <li>Unit 1- Leaky Faucet</li>
@@ -90,6 +90,9 @@
           </ul>
         </div>
       </div>
+      <% if building.units.count > 0 %>
+        <h3>Units</h3>
+      <% end %>
 
 <div class="collapse-menu">
       <% building.units.each do |unit| %>

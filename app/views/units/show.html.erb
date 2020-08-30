@@ -35,8 +35,8 @@
   </div>
 
     <div class="top-unit-card col-sm-12 col-md-6 col-lg-8 row">
-        <p class="col-4">Purchase price: <%= @unit.purchase_price %></p>
-        <p class="col-4">Rent amount: <%= @unit.rent_amount %></p>
+        <p class="col-4">Purchase price: $<%= @unit.purchase_price %></p>
+        <p class="col-4">Rent amount: $<%= @unit.rent_amount %></p>
         <p class="col-4">Expenses: None </p>
         <p class="col-4">SQ M: 50</p>
         <p class="col-4">Bathrooms: 1.5</p>
@@ -54,10 +54,14 @@
       <p>Payment day: <%= @unit.payment_date %></p>
     </div>
     <div class="first-tenant col-lg-8 col-md-8 col-sm-12">
-      <h3>Tenant 1</h3>
-      <p>Name: Francesca Hall</p>
-      <p>Email: email@email.com</p>
-      <p>Number: 1-800-555-5555</p>
+      <% if @unit.user != nil %>
+        <h3>Tenant infos</h3>
+        <p>Name: <%= @unit.user.first_name %> <%= @unit.user.last_name %></p>
+        <p>Email: <%= @unit.user.email %></p>
+      <% else %>
+        <h3>No tenant</h3>
+        <%= link_to "Add a tenant", new_tenant_path %>
+      <% end %>
     </div>
 </div>
 
