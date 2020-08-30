@@ -1,6 +1,6 @@
 class ContractorsController < ApplicationController
   def index
-    @contractors = Contractor.all
+    @contractors = Contractor.all.order(:first_name)
   end
 
   def new
