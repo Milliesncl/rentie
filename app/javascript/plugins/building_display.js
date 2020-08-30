@@ -1,4 +1,4 @@
-const coucou = () => {
+const carouselBuildings = () => {
   const allBuildings = document.querySelectorAll(".building-index");
   const previousBtn = document.querySelector("#previous")
   const nextBtn = document.querySelector("#next")
@@ -31,4 +31,4 @@ const coucou = () => {
 
 }
 
-export { coucou };
+export { carouselBuildings };
