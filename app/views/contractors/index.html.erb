@@ -3,7 +3,12 @@
   <h1>Contractors list</h1>
   <% @contractors.each do |contractor| %>
   <ul class="list-group contractors">
-  <h3><%= contractor.first_name %> <%= contractor.last_name %></h3>
+  <div class="row justify-content-between">
+    <h3><%= contractor.first_name %> <%= contractor.last_name %></h3>
+    <a href="<%= edit_contractor_path(contractor) %>">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+  </div>
     <li class="list-group-item">Speciality: <%= contractor.speciality %></li>
     <li class="list-group-item">Phone Number: <%= contractor.phone_number %></li>
   </ul>
