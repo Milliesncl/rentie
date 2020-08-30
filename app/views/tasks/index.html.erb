@@ -15,16 +15,15 @@
       <% end %>
     </p>
     <p>Urgency: <%= task.urgency %></p>
-    <p>Renter: <%=  %></p>
-    <button class="btn btn-primary btn-sm">
-      <%= link_to "Edit task", edit_task_path(task) %>
-    </button>
-    <button class="btn btn-secondary btn-sm">
-      <%= link_to "Edit task", edit_task_path(task) %>
-    </button>
-    <button class="btn btn-danger btn-sm">
-      <%= link_to "Delete task", delete_task_path(task) %>
-    </button>
+    <p>Renter: <%= task.unit_id %></p>
+    <div>
+      <button class="btn btn-success btn-sm" id="task-complete">
+        <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
+      </button>
+      <button class="btn btn-secondary btn-sm">
+        <%= link_to "Edit task", edit_task_path(task) %>
+      </button>
+    </div>
   </div>
   <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
 </div>

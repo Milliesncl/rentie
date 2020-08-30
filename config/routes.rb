@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :tenants, only: [:create, :new]
   resources :contractors, except: [:destroy]
-  resources :tasks, only: [:new, :index, :create, :edit, :update]
+  resources :tasks, only: [:new, :index, :create, :edit, :update] do
+    patch :update_status, on: :member
+  end
 
   resources :buildings, except: [:show] do
     resources :units, only: [:show, :new, :create, :edit, :update]
