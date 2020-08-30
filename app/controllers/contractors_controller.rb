@@ -1,6 +1,6 @@
 class ContractorsController < ApplicationController
   def index
-    @contractors = Contractor.all.order(:first_name)
+    @contractors = Contractor.order("LOWER(first_name)")
   end
 
   def new
@@ -35,7 +35,7 @@ class ContractorsController < ApplicationController
 
     redirect_to contractors_path
   end
-  
+
   private
 
   def params_contractor
