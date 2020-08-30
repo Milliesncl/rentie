@@ -1,23 +1,22 @@
-<div class="container">
-  <div class="form-background">
+<div class="form-background">
   <h1>Create a Tenant</h1>
 
-<%= simple_form_for(@user, url: tenants_path) do |f|  %>
-<div class="tenant-line-one">
-  <%= f.input :first_name, input_html: { id: "first-name" }%>
-  <%= f.input :last_name, input_html: { id: "last-name" } %>
-</div>
-<div class="tenant-line-two">
-  <%= f.input :email , input_html: { id: "email" }%>
-  <%= f.input :password , input_html: { id: "password" }%>
-</div>
-<div class="unit-number">
-  <p>Unit Number: <%= select_tag :units, options_from_collection_for_select(@units, "id", "unit_number") %></p>
-</div>
-  <%#= f.input :renter %>
-<div class="tenant-task-btn">
-  <%= f.submit "Create a tenant", class:"btn btn-primary"%>
-</div>
-<% end %>
-</div>
+  <%= simple_form_for(@user, url: tenants_path) do |f|  %>
+  <div class="tenant-line-one">
+    <%= f.input :first_name, input_html: { id: "first-name" }%>
+    <%= f.input :last_name, input_html: { id: "last-name" } %>
+  </div>
+  <div class="tenant-line-two">
+    <%= f.input :email , input_html: { id: "email" }%>
+    <%= f.input :password , input_html: { id: "password" }%>
+  </div>
+  <div class="unit-number">
+    <p>Unit Number: <%= select_tag :units, options_from_collection_for_select(@units, "id", "unit_number") %></p>
+  </div>
+    <%#= f.input :renter %>
+  <div class="tenant-task-btn">
+    <%= f.submit "Create a tenant", class:"btn btn-primary"%>
+  </div>
+  <% end %>
+  </div>
 </div>
