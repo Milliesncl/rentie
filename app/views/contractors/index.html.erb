@@ -1,8 +1,12 @@
-<h1>Contractors list</h1>
-<% @contractors.each do |contractor| %>
-<ul class="list-group">
-<h2><%= contractor.first_name %> <%= contractor.last_name %></h2>
-  <li class="list-group-item">Speciality: <%= contractor.speciality %></li>
-  <li class="list-group-item">Phone Number: <%= contractor.phone_number %></li>
-</ul>
-<% end %>
+<div class="form-background">
+
+  <h1>Contractors list</h1>
+  <% @contractors.each do |contractor| %>
+  <ul class="list-group contractors">
+  <h3><%= contractor.first_name %> <%= contractor.last_name %></h3>
+    <li class="list-group-item">Speciality: <%= contractor.speciality %></li>
+    <li class="list-group-item">Phone Number: <%= contractor.phone_number %></li>
+  </ul>
+  <% end %>
+  <%= link_to "Add a contractor", new_contractor_path, class:"btn btn-primary" %>
+</div>
