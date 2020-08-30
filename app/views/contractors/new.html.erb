@@ -1,9 +1,12 @@
-<h1>Add contractor</h1>
+<div class="form-background">
 
-<%= simple_form_for [@contractor] do |f| %>
-  <%= f.input :first_name, label: "First Name" %>
-  <%= f.input :last_name, label: "Last Name" %>
-  <%= f.input :speciality, label: "Speciality" %>
-  <%= f.input :phone_number, label: "Phone Number" %>
-  <%= f.submit "Create a contractor", class:"btn btn-primary" %>
-<% end %>
+  <h1>Add contractor</h1>
+
+  <%= simple_form_for [@contractor] do |f| %>
+    <%= f.input :first_name, label: "First Name" %>
+    <%= f.input :last_name, label: "Last Name" %>
+    <%= f.input :speciality, label: "Speciality" %>
+    <%= f.input :phone_number, label: "Phone Number" %>
+    <%= f.submit "Create a contractor", class:"btn btn-primary" %>
+  <% end %>
+</div>

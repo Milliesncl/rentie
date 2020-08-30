@@ -1,14 +1,16 @@
-<h1>Add unit</h1>
+<div class="form-background">
+  <h1>Add unit</h1>
 
-<%= simple_form_for [@building, @unit] do |f| %>
-  <%= hidden_field_tag :from, params[:from] %>
-  <%= f.input :unit_number, label: "Unit number" %>
-  <%= f.input :purchase_price, label: "Purchase price" %>
-  <%= f.input :payment_method, label: "Payment method" %>
-  <%= f.input :renewal_date, label: "Renewal date" %>
-  <%= f.input :rent_amount, label: "Rent amount" %>
-  <%= f.input :payment_date, label: "Payment day" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.input :lease, as: :file, label: "Lease contract" %>
-  <%= f.submit "Create an unit", class:"btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [@building, @unit] do |f| %>
+    <%= hidden_field_tag :from, params[:from] %>
+    <%= f.input :unit_number, label: "Unit number" %>
+    <%= f.input :purchase_price, label: "Purchase price" %>
+    <%= f.input :payment_method, label: "Payment method" %>
+    <%= f.input :renewal_date, label: "Renewal date" %>
+    <%= f.input :rent_amount, label: "Rent amount" %>
+    <%= f.input :payment_date, label: "Payment day" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :lease, as: :file, label: "Lease contract" %>
+    <%= f.submit "Create an unit", class:"btn btn-primary" %>
+  <% end %>
+</div>
