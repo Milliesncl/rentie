@@ -90,15 +90,16 @@
           </ul>
         </div>
       </div>
-      <% if building.units.count > 0 %>
-        <h3>Units</h3>
-      <% end %>
 
-<div class="collapse-menu">
+  <% if building.units.count > 0 %>
+    <h3>Units</h3>
+  <% end %>
+
+  <div class="collapse-menu">
       <% building.units.each do |unit| %>
         <div class="dropdown">
-          <button class="btn accordion">
-            <%= unit.unit_number %>
+          <button class="btn accordion col-12 d-flex justify-content-between">
+            <%= unit.unit_number%>
             <i class="fas fa-chevron-down"></i>
           </button>
         <div class="panel">
