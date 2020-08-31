@@ -20,10 +20,6 @@
         </div>
         <div class="accounting">
           <h3>Accounting</h3>
-          <%# <div id="income">
-            <p>Income</p>
-            <p>August</p> %>
-          <%# </div> %>
           <table class="building-accounting">
             <thead>
               <tr>
@@ -35,7 +31,7 @@
               <tr>
                 <td>Rental Income</td>
                 <td>
-                  $<%= Unit.calculate_income(building) %>
+                  <%= number_to_currency(Unit.calculate_income(building)) %>
                 </td>
               </tr>
               <tr>
@@ -43,16 +39,16 @@
               </tr>
               <tr>
                 <td>Mortgage</td>
-                <td>$<%= building.mortgage.to_f %></td>
+                <td><%= number_to_currency(building.mortgage) %></td>
               </tr>
               <% if building.tasks.exists? %>
                 <% Task.calculate_expenses_for_building(building).each do |expense| %>
                   <tr>
                     <% expense.each do |category, expense| %>
-                    <% if expense > 0 %>
-                      <td><%= category %></td>
-                      <td>$<%= expense %></td>
-                    <% end %>
+                      <% if expense > 0 %>
+                        <td><%= category %></td>
+                        <td><%= number_to_currency(expense) %></td>
+                      <% end %>
                     <% end %>
                   </tr>
                 <% end %>
@@ -60,11 +56,11 @@
               <% end %>
                 <th>All expenses</th>
                 <th>
-                  $<%= Task.calculate_overall_expenses_for_building(building) %>
+                  <%= number_to_currency(Task.calculate_overall_expenses_for_building(building)) %>
                 </th>
               </tr>
               <th>Balance</th>
-              <th></th>
+              <th><%= number_to_currency(Unit.calculate_income(building) - Task.calculate_overall_expenses_for_building(building)) %></th>
             </tbody>
           </table>
         </div>
