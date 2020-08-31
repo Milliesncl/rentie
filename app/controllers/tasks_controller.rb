@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task =  Task.new(params_task)
     assignee = current_user
 
-    if @task.save
+    if @task.save!
       redirect_to tasks_path
     else
       render :new
