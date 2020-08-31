@@ -80,9 +80,15 @@
           <path d="M74.5 10C38.8776 10 10 38.8776 10 74.5C10 101.508 26.5993 124.638 50.1523 134.246" stroke="#55ADAE" stroke-width="20"/>
           </svg>
           <% if building.tasks.exists? %>
-            <% building.tasks.each do |task| %>
-              <li><%= task.category %> - $<%= task.expense %></li>
+            <% Task.calculate_expenses_for_building(building).each do |expense| %>
+              <% expense.each do |category, expense| %>
+                <li><%= category %> - $<%= expense %></li>
+              <% end %>
             <% end %>
+            <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
+          <% else %>
+            <p>No expenses yet</p>
+            <%= link_to "Add an expense", new_task_path, class:"btn btn-primary" %>
           <% end %>
         </div>
         <div class="tasks-to-do col-sm-12 col-md-6">

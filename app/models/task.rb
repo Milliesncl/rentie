@@ -19,4 +19,15 @@ class Task < ApplicationRecord
     # .unit.users - all users relating to one unit
     Task.joins(:unit)
   end
+
+  def self.calculate_expenses_for_building(building)
+    categories = Task.pluck(:category).uniq
+    all_expenses_breakdown = []
+    categories.each do |category|
+      expense_hash = Hash.new
+      expense_hash[category] = Task.where(building: building, category: category).sum { |task| task.expense }
+      all_expenses_breakdown << expense_hash
+    end
+    all_expenses_breakdown
+  end
 end
