@@ -56,6 +56,6 @@ class UnitsController < ApplicationController
 
   private
   def params_unit
-    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
+    params.require(:unit).permit(:unit_number, :bathrooms, :bedrooms, :square_meters, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
   end
 end

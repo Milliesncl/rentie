@@ -7,6 +7,7 @@ class Task < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :urgency, presence: true, inclusion: { in: %w(High Medium Low) }
+  validates :category, presence: true, inclusion: { in: %w(Renovation Hydro Electricity Plumbing Furniture Other) }
 
   def self.assignee
     # building owner

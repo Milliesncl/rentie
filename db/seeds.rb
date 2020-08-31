@@ -17,11 +17,11 @@ picture4 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v15980411
 picture5 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
 
 
-user1 = User.create!(email: "francesca@email.com", password: "123456", first_name: "Francesca", last_name: "Hall")
-user2 = User.create!(email: "kyle@email.com", password: "123456", first_name: "Kyle", last_name: "Masterson")
-user3 = User.create!(email: "millie@email.com", password: "123456", first_name: "Millie", last_name: "Senecal")
-user4 = User.create!(email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
-user5 = User.create!(email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
+user1 = User.create!(phone_number: "+1 438 123 2345", email: "francesca@email.com", password: "123456", first_name: "Francesca", last_name: "Hall")
+user2 = User.create!(phone_number: "+1 438 123 2345", email: "kyle@email.com", password: "123456", first_name: "Kyle", last_name: "Masterson")
+user3 = User.create!(phone_number: "+1 438 123 2345", email: "millie@email.com", password: "123456", first_name: "Millie", last_name: "Senecal")
+user4 = User.create!(phone_number: "+1 438 123 2345", email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
+user5 = User.create!(phone_number: "+1 438 123 2345", email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
 
 puts "Add photos for users"
 
@@ -44,26 +44,26 @@ building8 = Building.create!(user: user3, address: "7074-7078 rue de la Roche, H
 
 puts "Creating contractors"
 
-contractor1 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user1, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor2 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user2, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor3 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user3, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor4 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user4, phone_number: "+1 438 123 2345", speciality: "roofer")
-contractor5 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user1, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor6 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user2, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor7 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user3, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor8 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user4, phone_number: "+1 514 343 9320", speciality: "plumber")
-contractor9 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user1, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor10 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user2, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor11 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user3, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor12 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user4, phone_number: "+1 438 567 2365", speciality: "electrician")
-contractor13 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user1, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor14 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user2, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor15 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user3, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor16 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user4, phone_number: "+1 438 890 8976", speciality: "electrician")
-contractor17 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user1, phone_number: "+1 438 245 2323", speciality: "plumber")
-contractor18 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user2, phone_number: "+1 438 245 2323", speciality: "plumber")
-contractor19 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user3, phone_number: "+1 438 245 2323", speciality: "plumber")
-contractor20 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user4, phone_number: "+1 438 245 2323", speciality: "plumber")
+contractor1 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user1, phone_number: "+1 438 123 2345", email: "wince@email.com", speciality: "roofer")
+contractor2 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user2, phone_number: "+1 438 123 2345", email: "wince@email.com", speciality: "roofer")
+contractor3 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user3, phone_number: "+1 438 123 2345", email: "wince@email.com", speciality: "roofer")
+contractor4 = Contractor.create!(first_name: "Wince", last_name: "Shum", user: user4, phone_number: "+1 438 123 2345", email: "wince@email.com", speciality: "roofer")
+contractor5 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user1, phone_number: "+1 514 343 9320", email: "coriander@email.com", speciality: "plumber")
+contractor6 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user2, phone_number: "+1 514 343 9320", email: "coriander@email.com", speciality: "plumber")
+contractor7 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user3, phone_number: "+1 514 343 9320", email: "coriander@email.com", speciality: "plumber")
+contractor8 = Contractor.create!(first_name: "Coriander", last_name: "Nasielski", user: user4, phone_number: "+1 514 343 9320", email: "coriander@email.com", speciality: "plumber")
+contractor9 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user1, phone_number: "+1 438 567 2365", email: "nachiket@email.com", speciality: "electrician")
+contractor10 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user2, phone_number: "+1 438 567 2365", email: "nachiket@email.com", speciality: "electrician")
+contractor11 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user3, phone_number: "+1 438 567 2365", email: "nachiket@email.com", speciality: "electrician")
+contractor12 = Contractor.create!(first_name: "Nachiket", last_name: "Pusalkar", user: user4, phone_number: "+1 438 567 2365", email: "nachiket@email.com", speciality: "electrician")
+contractor13 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user1, phone_number: "+1 438 890 8976", email: "martin@email.com", speciality: "electrician")
+contractor14 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user2, phone_number: "+1 438 890 8976", email: "martin@email.com", speciality: "electrician")
+contractor15 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user3, phone_number: "+1 438 890 8976", email: "martin@email.com", speciality: "electrician")
+contractor16 = Contractor.create!(first_name: "Martin", last_name: "Giannakopolous", user: user4, phone_number: "+1 438 890 8976", email: "martin@email.com", speciality: "electrician")
+contractor17 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user1, phone_number: "+1 438 245 2323", email: "aline@email.com", speciality: "plumber")
+contractor18 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user2, phone_number: "+1 438 245 2323", email: "aline@email.com", speciality: "plumber")
+contractor19 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user3, phone_number: "+1 438 245 2323", email: "aline@email.com", speciality: "plumber")
+contractor20 = Contractor.create!(first_name: "Aline", last_name: "Gasparindo",user: user4, phone_number: "+1 438 245 2323", email: "aline@email.com", speciality: "plumber")
 
 puts "Creating units"
 
@@ -139,24 +139,24 @@ picture1unit18 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v15
 picture2unit18 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598811816/rentie/unit2/image2_dlk1ev.jpg')
 picture3unit18 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598811816/rentie/unit2/image3_qzzd3l.jpg')
 
-unit1 = Unit.create!(building: building1, unit_number: 4641, purchase_price: 400000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1000)
-unit2 = Unit.create!(building: building1, unit_number: 4643, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
-unit3 = Unit.create!(building: building2, unit_number: 4251, purchase_price: 200000, payment_method: "Cheque", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1000)
-unit4 = Unit.create!(building: building2, unit_number: 4253, purchase_price: 150000, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
-unit5 = Unit.create!(building: building2, unit_number: 4255, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1400)
-unit6 = Unit.create!(building: building3, unit_number: 4421, purchase_price: 200090, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1000)
-unit7 = Unit.create!(building: building3, unit_number: 4423, purchase_price: 150000, payment_method: "Cheque", renewal_date: Date.new(2021,4,1), payment_date: 1, rent_amount: 1200)
-unit8 = Unit.create!(building: building3, unit_number: 4425, purchase_price: 156000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 800)
-unit9 = Unit.create!(building: building4, unit_number: 7074, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1000)
-unit10 = Unit.create!(building: building4, unit_number: 7076, purchase_price: 280000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
-unit11 = Unit.create!(building: building4, unit_number: 7078, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
-unit12 = Unit.create!(building: building5, unit_number: 7344, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1150)
-unit13 = Unit.create!(building: building5, unit_number: 7346, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
-unit14 = Unit.create!(building: building6, unit_number: 6250, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
-unit15 = Unit.create!(building: building6, unit_number: 6252, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
-unit16 = Unit.create!(building: building7, unit_number: 4419, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1100)
-unit17 = Unit.create!(building: building7, unit_number: 4421, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1200)
-unit18 = Unit.create!(building: building7, unit_number: 4423, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1200)
+unit1 = Unit.create!(building: building1, unit_number: 4641, square_meters: 900.0, bathrooms: 1.5, bedrooms: 3.5, purchase_price: 400000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1000)
+unit2 = Unit.create!(building: building1, unit_number: 4643, square_meters: 889.2, bathrooms: 1.5, bedrooms: 3.5, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit3 = Unit.create!(building: building2, unit_number: 4251, square_meters: 962.0, bathrooms: 1.5, bedrooms: 3.5, purchase_price: 200000, payment_method: "Cheque", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1000)
+unit4 = Unit.create!(building: building2, unit_number: 4253, square_meters: 921.0, bathrooms: 1.5, bedrooms: 3.5, purchase_price: 150000, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
+unit5 = Unit.create!(building: building2, unit_number: 4255, square_meters: 984.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 5, rent_amount: 1400)
+unit6 = Unit.create!(building: building3, unit_number: 4421, square_meters: 901.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 200090, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1000)
+unit7 = Unit.create!(building: building3, unit_number: 4423, square_meters: 904.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 150000, payment_method: "Cheque", renewal_date: Date.new(2021,4,1), payment_date: 1, rent_amount: 1200)
+unit8 = Unit.create!(building: building3, unit_number: 4425, square_meters: 913.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 156000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 800)
+unit9 = Unit.create!(building: building4, unit_number: 7074, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1000)
+unit10 = Unit.create!(building: building4, unit_number: 7076, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 280000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit11 = Unit.create!(building: building4, unit_number: 7078, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
+unit12 = Unit.create!(building: building5, unit_number: 7344, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1150)
+unit13 = Unit.create!(building: building5, unit_number: 7346, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
+unit14 = Unit.create!(building: building6, unit_number: 6250, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
+unit15 = Unit.create!(building: building6, unit_number: 6252, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
+unit16 = Unit.create!(building: building7, unit_number: 4419, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1100)
+unit17 = Unit.create!(building: building7, unit_number: 4421, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1200)
+unit18 = Unit.create!(building: building7, unit_number: 4423, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 1, rent_amount: 1200)
 
 puts "Add photos for units"
 
@@ -254,8 +254,8 @@ unit18.photos.attach(io: picture3unit18, filename: 'image3.jpg', content_type: '
 
 puts "Creating tasks"
 
-task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", urgency: "High", unit: unit3)
-task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", urgency: "Medium", unit: unit2)
+task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", category: "Plumbing", urgency: "High", unit: unit3)
+task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", urgency: "Medium", unit: unit2)
 
 
 puts "Done"
