@@ -13,7 +13,7 @@ class Unit < ApplicationRecord
       income = Unit.where(building: building).sum { |unit| unit.rent_amount }
       all_income_of_building << income
     end
-    all_income_of_building.first
+    all_income_of_building.first.to_f
   end
 
 end
