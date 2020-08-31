@@ -92,7 +92,10 @@
                     <% end %>
                   <% end %>
               <% end %>
+              <%= link_to "Add a new task", new_task_path, class:"btn btn-primary" %>
               </ul>
+              <% else %>
+              <%= link_to "Add a task", new_task_path, class:"btn btn-primary" %>
             <% end %>
 
 
