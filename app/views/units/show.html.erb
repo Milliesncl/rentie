@@ -1,39 +1,72 @@
 <div class="container">
-<div class="unit-id-header">
-<h1>Unit <%= @unit.unit_number%></h1>
-</div>
-<div class="unit-page">
-  <div class="lease-info">
-    <p>Renewal date: <%= @unit.renewal_date %></p>
-    <p>Payment day: <%= @unit.payment_date %></p>
+  <div class="unit-id-header">
+  <h1>Unit <%= @unit.unit_number%></h1>
   </div>
-  <div class="info-page-right">
-    <div class="top-unit-card">
-      <p>Purchase price: <%= @unit.purchase_price %></p>
-      <p>SQ M: 50</p>
-      <p>Bedsrooms: 1</p>
-      <p>Rent amount: <%= @unit.rent_amount %></p>
-      <p>Bathrooms: 1.5</p>
-    </div>
-    <div class="first-tenant">
-      <h3>Tenant 1</h3>
-      <p>Name: Francesca Hall</p>
-      <p>Email: email@email.com</p>
-      <p>Number: 1-800-555-5555</p>
-    </div>
+
+<div class="unit-page row">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <% if @unit.photos.attached? %>
+      <div id="unitCarousel" class="carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag @unit.photos.first.key, height: 250, crop: :fill %>
+          </div>
+
+          <div class="carousel-item">
+            <%= cl_image_tag @unit.photos.second.key, height: 250, crop: :fill %>
+          </div>
+
+          <div class="carousel-item">
+            <%= cl_image_tag @unit.photos.third.key, height: 250, crop: :fill %>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#unitCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <% end %>
   </div>
+
+    <div class="top-unit-card col-sm-12 col-md-6 col-lg-8 row">
+        <p class="col-4">Purchase price: $<%= @unit.purchase_price %></p>
+        <p class="col-4">Rent amount: $<%= @unit.rent_amount %></p>
+        <p class="col-4">Expenses: None </p>
+        <p class="col-4">SQ M: 50</p>
+        <p class="col-4">Bathrooms: 1.5</p>
+        <p class="col-4">Bedsrooms: 1</p>
+        <% if @unit.lease != nil %>
+          <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
+        <% end %>
+    </div>
 </div>
 
-<% if @unit.photos.attached? %>
-  <% @unit.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, weigh: 200, height: 200, crop: :fill %>
-  <% end %>
-<% end %>
 
-<%= link_to "download the leasing contract", units_lease_path(@unit), target: "_blank" %>
-<div class="task-btn">
-  <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary"%></p>
+<div class="unit-page row">
+    <div class="lease-info col-lg-4 col-md-4 col-sm-12">
+      <p>Renewal date: <%= @unit.renewal_date %></p>
+      <p>Payment day: <%= @unit.payment_date %></p>
+    </div>
+    <div class="first-tenant col-lg-8 col-md-8 col-sm-12">
+      <% if @unit.user != nil %>
+        <h3>Tenant infos</h3>
+        <p>Name: <%= @unit.user.first_name %> <%= @unit.user.last_name %></p>
+        <p>Email: <%= @unit.user.email %></p>
+      <% else %>
+        <h3>No tenant</h3>
+        <%= link_to "Add a tenant", new_tenant_path %>
+      <% end %>
+    </div>
 </div>
-  <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
-</div>
+
+  <div class="row unit-btn">
+    <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary c"%></p>
+    <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
+  </div>
 </div>

@@ -19,7 +19,21 @@ class TenantsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @units = Unit.joins(:building).where(buildings: { user: current_user })
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @units = Unit.joins(:building).where(buildings: { user: current_user })
+    @user = User.find(params[:id])
+    if @user.update(params_user)
+      redirect_to buildings_path
+    else
+      render :edit
+    end
   end
 
   private

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :buildings
   has_many :contractors
   has_many :tasks, through: :units
+  has_many :units
   has_one_attached :photo
 
   # Include default devise modules. Others available are:

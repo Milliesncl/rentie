@@ -39,6 +39,7 @@ class UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     @building = Building.find(params[:building_id])
     @unit.building = @building
+    @unit.lease = params[:unit][:lease].read
 
     if @unit.update(params_unit)
       redirect_to building_unit_path(@building, @unit)
@@ -55,6 +56,6 @@ class UnitsController < ApplicationController
 
   private
   def params_unit
-    params.require(:unit).permit(:unit_number, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
+    params.require(:unit).permit(:unit_number, :bathrooms, :bedrooms, :square_meters, :purchase_price, :payment_method, :renewal_date, :rent_amount, :payment_date, photos: [])
   end
 end
