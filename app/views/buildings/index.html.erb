@@ -34,39 +34,37 @@
             <tbody>
               <tr>
                 <td>Rental Income</td>
-                <td>100000</td>
+                <td>
+                  $<%= Unit.calculate_income(building) %>
+                </td>
               </tr>
               <tr>
                 <th colspan="2">Expenses</th>
               </tr>
               <tr>
                 <td>Mortgage</td>
-                <td>$<%= building.mortgage %></td>
+                <td>$<%= building.mortgage.to_f %></td>
               </tr>
+              <% if building.tasks.exists? %>
+                <% Task.calculate_expenses_for_building(building).each do |expense| %>
+                  <tr>
+                    <% expense.each do |category, expense| %>
+                    <% if expense > 0 %>
+                      <td><%= category %></td>
+                      <td>$<%= expense %></td>
+                    <% end %>
+                    <% end %>
+                  </tr>
+                <% end %>
               <tr>
-                <td>Renovation</td>
-                <td>$<%= building.mortgage %></td>
+              <% end %>
+                <th>All expenses</th>
+                <th>
+                  $<%= Task.calculate_overall_expenses_for_building(building) %>
+                </th>
               </tr>
-              <tr>
-                <td>Heating and A/C</td>
-                <td>$<%= building.mortgage %></td>
-              </tr>
-              <tr>
-                <td>Electrician</td>
-                <td>$<%= building.mortgage %></td>
-              </tr>
-              <tr>
-                <td>Furniture</td>
-                <td>$<%= building.mortgage %></td>
-              </tr>
-              <tr>
-                <td>TOTAL</td>
-                <td>$6000</td>
-              </tr>
-              <tr>
-                <th>Balance</th>
-                <th>$14000</th>
-              </tr>
+              <th>Balance</th>
+              <th></th>
             </tbody>
           </table>
         </div>
