@@ -33,6 +33,11 @@ class TasksController < ApplicationController
   end
 
   def edit
+    contractors = Contractor.where(user: current_user)
+    @contractors = contractors.map do |contractor|
+      [contractor.first_name, contractor.id]
+    end
+
     @task = Task.find(params[:id])
   end
 
