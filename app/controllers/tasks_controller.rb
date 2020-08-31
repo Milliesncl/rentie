@@ -25,6 +25,14 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params_task)
 
+    if current_user.renter == true
+      unit = Unit.find_by(user: current_user)
+      building = unit.building
+
+      @task.unit = unit
+      @task.building = building
+    end
+
     if @task.save!
       redirect_to tasks_path
     else
