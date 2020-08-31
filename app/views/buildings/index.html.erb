@@ -6,7 +6,6 @@
 <% @buildings.each do |building| %>
   <div class="building-index">
     <h1><%= building.address %></h1>
-    <p class=""> <%= link_to "edit this building", edit_building_path(building), class:"btn btn-secondary btn-sm"%> <%= link_to "delete this building", building_path(building), data: { confirm: "Are you sure to delete #{building.address} ?" }, method: :delete, class:"btn btn-danger btn-sm" %></p>
       <div class="top-cards">
         <div class="information">
           <h3>Information</h3>
@@ -155,7 +154,9 @@
       <% end %>
       </div>
 
-      <p><%= link_to "Add a unit", new_building_unit_path(building, {from: "building_show"}), class: "btn btn-primary" %>
-
+      <div class="building-btn">
+        <p><%= link_to "Add a unit", new_building_unit_path(building, {from: "building_show"}), class: "btn btn-primary" %></p>
+      </div>
+        <p class=""> <%= link_to "edit this building", edit_building_path(building), class:"btn btn-secondary btn-sm"%> <%= link_to "delete this building", building_path(building), data: { confirm: "Are you sure to delete #{building.address} ?" }, method: :delete, class:"btn btn-danger btn-sm" %></p>
     </div>
 <% end %>
