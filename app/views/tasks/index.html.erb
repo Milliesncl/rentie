@@ -1,40 +1,85 @@
 <h1>All tasks</h1>
 <% @tasks.each do |task| %>
 
-<div class="card-product">
-  <div class="card-product-infos">
-    <div class="head-card">
+<div class="card-product-s">
+    <div class="card-product-infos">
+    <div class="task-line-one">
+      <div class="task-label">
+        <p>Task</p>
+      </div>
+      <p>
+        <%= task.title %>
+      </p>
+    </div>
+    <div class="task-line-one">
+      <div class="task-label">
+        <p>Status</p>
+      </div>
+      <p>
+        <% if task.status == false %>
+          Incomplete
+        <% else %>
+          Complete
+        <% end %>
+      </p>
+    </div>
+    <div class="task-line-one">
+      <div class="task-label">
+        <p>Urgency</p>
+      </div>
+      <p>
+        <%= task.urgency %>
+      </p>
+    </div>
+    <div class="task-line-one">
+      <div class="task-label">
+        <p>Renter</p>
+      </div>
+      <p>
+        <%= task.unit_id %>
+      </p>
+      <% if task.status == false %>
+    </div>
+  </div>
+  <div class="task-middle-s">
+    <div class="card-title-top">
       <h2>Building - Unit</h2>
       <p><%= task.created_at %></p>
     </div>
-    <p class="task-subtitle">Task: <%= task.title %></p>
-    <p>Status: <% if task.status == false %>
-        Incomplete
-      <% else %>
-        Complete
-      <% end %>
-    </p>
-    <p>Urgency: <%= task.urgency %></p>
-    <p>Renter: <%= task.unit_id %></p>
-    <% if task.status == false %>
-<div>
+    <div class="task-description-s">
+      <p>Description
+        Pellentesque habitant morbi tristique et netus.
+      </p>
+    </div>
+  </div>
+  <div class="right-side-card">
+    <div class="edit-status">
       <button class="btn btn-success btn-sm" id="task-complete">
         <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
       </button>
-      <button class="btn btn-secondary btn-sm">
-        <%= link_to "Edit task", edit_task_path(task) %>
-      </button>
+      <a href="<%= edit_task_path(task) %>">
+        <i class="fas fa-pencil-alt"></i>
+      </a>
     </div>
-      <% end %>
-    
+    <div class="img-s">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+        <img src="https://questden.org/kusaba/icons/src/wthamiseeingplz.gif" />
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+      <div>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+        <img src="https://questden.org/kusaba/icons/src/wthamiseeingplz.gif" />
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/61823bca-5449-4cb2-a81b-3380fbc18fbf/d52q49j-3103d1f6-a3bd-469f-8c0d-1c4a0fd7dd55.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi82MTgyM2JjYS01NDQ5LTRjYjItYTgxYi0zMzgwZmJjMThmYmYvZDUycTQ5ai0zMTAzZDFmNi1hM2JkLTQ2OWYtOGMwZC0xYzRhMGZkN2RkNTUucG5nIn1dXX0.RD65FbsMaDia38VSb9wxkT3JtU-MSJDcnruQlOhOFAw" />
+      </div>
+    </div>
   </div>
+      <% end %>
   <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
 </div>
 
 <% end %>
 
 <!-- renter -->
-<!-- >
+<!--
 <h1>Inbox</h1>
 <% @tasks.each do |task| %>
 
@@ -45,13 +90,33 @@
   </div>
   <div class="product-info-r">
     <div class="task-info-r">
-      <p>Task: <%= task.title %></p>
-      <p>Renter: <%=  %></p>
-      <p>Urgency: <%= task.urgency %></p>
-      <p>Status: <%= task.status %></p>
+      <div class="task-label">
+        <p>Task</p>
+      </div>
+      <p>
+        <%= task.title %>
+      </p>
+      <div class="task-label">
+        <p>Renter</p>
+      </div>
+      <p>
+        <%= %>
+      </p>
+      <div class="task-label">
+        <p>Urgency:</p>
+      </div>
+      <p>
+        <%= task.urgency %>
+      </p>
+      <div class="task-label">
+        <p>Status:</p>
+      </div>
+      <p>
+        <%= task.status %>
+      </p>
     </div>
     <div class="task-description-r">
-      <p>Description:
+      <p>Description
       Pellentesque habitant morbi tristique senectus et netus.</p>
     </div>
     <div class="img-r">
@@ -61,4 +126,4 @@
     </div>
   </div>
 </div>
-<% end %>
+<% end %> -->

@@ -30,23 +30,32 @@
 }
 
 #last-name {
-flex-grow: 1;
+  flex-grow: 1;
   margin-right: 130px;
   margin-left: 10px;
 }
 
-.btn-primary {
-  border-radius: 10px;
+.btn-primary:hover {
+  background: linear-gradient(300deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
 }
-
 // .unit-number {
 //   display: flex;
 //   justify-content: center;
 // }
 
-.tenant-task-btn {
+.tenant-task-btn .btn-primary{
   display: flex;
   justify-content: center;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: linear-gradient(120deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
+}
+
+.tenant-task-btn .btn-primary:hover {
+  background: linear-gradient(300deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
 }
 
 #email {
