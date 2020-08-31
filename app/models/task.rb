@@ -30,4 +30,16 @@ class Task < ApplicationRecord
     end
     all_expenses_breakdown
   end
+
+  def self.calculate_overall_expenses_for_building(building)
+    mortgage_building = building.mortgage
+    categories = Task.pluck(:category).uniq
+    all_overall_expenses_breakdown = []
+    categories.each do |category|
+      expense_hash = Hash.new
+      expense_hash = Task.where(building: building).sum { |task| task.expense }
+      all_overall_expenses_breakdown << expense_hash + mortgage_building
+    end
+    all_overall_expenses_breakdown.first
+  end
 end
