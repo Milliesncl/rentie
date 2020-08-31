@@ -13,9 +13,9 @@
           <div id="home-page-info">
             <p>Number of Units: <%= building.units.count %></p>
             <p>Owner since: <%= building.purchase_date %></p>
-            <p>Purchase price: <%= building.purchase_price %></p>
-            <p>Overall expenses: $10 000</p>
-            <p>Taxes to pay this year: $<%= building.taxes %></p>
+            <p>Purchase price: <%= number_to_currency(building.purchase_price, precision: 0) %></p>
+            <p>Overall expenses: <%= number_to_currency(Task.calculate_overall_expenses_for_building(building)) %></p>
+            <p>Taxes to pay this year: <%= number_to_currency(building.taxes) %></p>
           </div>
         </div>
         <div class="accounting">
@@ -76,7 +76,9 @@
           <% if building.tasks.exists? %>
             <% Task.calculate_expenses_for_building(building).each do |expense| %>
               <% expense.each do |category, expense| %>
-                <li><%= category %> - $<%= expense %></li>
+                <% if expense > 0 %>
+                  <li><%= category %> - $<%= expense %></li>
+                <% end %>
               <% end %>
             <% end %>
             <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
