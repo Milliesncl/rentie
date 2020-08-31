@@ -98,10 +98,10 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "payment_date"
     t.bigint "user_id"
+    t.binary "lease"
     t.float "square_meters"
     t.float "bathrooms"
     t.float "bedrooms"
-    t.binary "lease"
     t.index ["building_id"], name: "index_units_on_building_id"
     t.index ["user_id"], name: "index_units_on_user_id"
   end
