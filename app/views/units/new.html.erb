@@ -4,6 +4,9 @@
   <%= simple_form_for [@building, @unit] do |f| %>
     <%= hidden_field_tag :from, params[:from] %>
     <%= f.input :unit_number, label: "Unit number" %>
+    <%= f.input :square_meters, label: "Size (in square meters)" %>
+    <%= f.input :bedrooms, label: "Number of bedrooms" %>
+    <%= f.input :bathrooms, label: "Number of bathrooms" %>
     <%= f.input :purchase_price, label: "Purchase price" %>
     <%= f.input :payment_method, label: "Payment method" %>
     <%= f.input :renewal_date, label: "Renewal date" %>

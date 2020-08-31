@@ -1,17 +1,26 @@
-<div class="form-background">
+<div class="container-contacts">
+    <div class="contact-hearder">
+      <div class="header-plus"><h1>Contractors</h1>
+        <%= link_to new_contractor_path do %>
+          <i class="fas fa-plus plus"></i>
+        <% end -%>
+      </div>
+      <div class="searchbar"><input type="text" name="search" placeholder="Search.."></div>
+    </div>
 
-  <h1>Contractors list</h1>
-  <% @contractors.each do |contractor| %>
-  <ul class="list-group contractors">
-  <div class="row justify-content-between">
-    <h3><%= contractor.first_name %> <%= contractor.last_name %></h3>
-    <a href="<%= edit_contractor_path(contractor) %>">
-      <i class="fas fa-pencil-alt"></i>
-    </a>
-  </div>
-    <li class="list-group-item">Speciality: <%= contractor.speciality %></li>
-    <li class="list-group-item">Phone Number: <%= contractor.phone_number %></li>
-  </ul>
+    <% @contractors.each do |contractor| %>
+    <div class="contractors-list">
+      <div class="grid">
+        <div><img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"></div>
+        <div class="name-sp">
+          <p><strong><%= contractor.first_name %> <%= contractor.last_name %></strong></p>
+          <p><%= contractor.speciality %></p>
+        </div>
+        <div class="num-email">
+          <p>Phone Number: <%= contractor.phone_number %></p>
+          <p>Email: <%= contractor.phone_number %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <%= link_to "Add a contractor", new_contractor_path, class:"btn btn-primary" %>
 </div>

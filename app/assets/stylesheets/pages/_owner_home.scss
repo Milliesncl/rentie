@@ -24,7 +24,7 @@
     text-align: center;
   }
 
-  .expenses {
+  .dashboard-expenses-chart {
     grid-area: expenses;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,10 @@
     padding: 20px;
     margin: 20px;
     box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
-    width: 100%
+  }
+  #expense-chart {
+    width: 100%;
+    height:100%;
   }
 
   .tasks {
