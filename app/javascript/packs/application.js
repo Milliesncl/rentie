@@ -29,10 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { accordian } from '../plugins/unit_accordian';
 import { carouselBuildings } from "../plugins/building_display"
+import { createExpenseChart } from "../plugins/charts";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   carouselBuildings();
   accordian();
+  createExpenseChart();
 });

@@ -1,5 +1,8 @@
 const carouselBuildings = () => {
   const allBuildings = document.querySelectorAll(".building-index");
+  if (allBuildings.length === 0) {
+    return;
+  };
   const previousBtn = document.querySelector("#previous")
   const nextBtn = document.querySelector("#next")
   const maxBuildings = allBuildings.length - 1
@@ -20,10 +23,10 @@ const carouselBuildings = () => {
 
   previousBtn.addEventListener('click', () => {
     if (activeIndex > 0) {
-    activeIndex = activeIndex - 1
-    nextBtn.classList.remove("disable")
-    allBuildings[activeIndex + 1].classList.remove("active")
-    allBuildings[activeIndex].classList.add("active")
+      activeIndex = activeIndex - 1
+      nextBtn.classList.remove("disable")
+      allBuildings[activeIndex + 1].classList.remove("active")
+      allBuildings[activeIndex].classList.add("active")
     } else {
       previousBtn.classList.add("disable")
     }
