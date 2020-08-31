@@ -24,14 +24,14 @@ class ContractorsController < ApplicationController
 
   def update
     @contractor = Contractor.find(params[:id])
-    @contractor = Contractor.update
+    @contractor.update(params_contractor)
 
     redirect_to contractors_path
   end
 
   def destroy
     @contractor = Contractor.find(params[:id])
-    @contractor = Contractor.destroy
+    @contractor.destroy
 
     redirect_to contractors_path
   end
@@ -39,6 +39,6 @@ class ContractorsController < ApplicationController
   private
 
   def params_contractor
-    params.require(:contractor).permit(:first_name, :last_name, :phone_number, :speciality)
+    params.require(:contractor).permit(:first_name, :last_name, :phone_number, :email, :speciality)
   end
 end

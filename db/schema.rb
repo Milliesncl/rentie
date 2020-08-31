@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_144600) do
+ActiveRecord::Schema.define(version: 2020_08_31_144319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_144600) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
     t.index ["user_id"], name: "index_contractors_on_user_id"
   end
 
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_144600) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "building_id"
     t.bigint "unit_id"
+    t.string "category"
     t.index ["building_id"], name: "index_tasks_on_building_id"
     t.index ["contractor_id"], name: "index_tasks_on_contractor_id"
     t.index ["unit_id"], name: "index_tasks_on_unit_id"
@@ -96,6 +98,9 @@ ActiveRecord::Schema.define(version: 2020_08_30_144600) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "payment_date"
     t.bigint "user_id"
+    t.float "square_meters"
+    t.float "bathrooms"
+    t.float "bedrooms"
     t.binary "lease"
     t.index ["building_id"], name: "index_units_on_building_id"
     t.index ["user_id"], name: "index_units_on_user_id"
@@ -112,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_144600) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "renter", default: false
+    t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
