@@ -1,0 +1,75 @@
+.container-contacts {
+  background-color: white;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+}
+
+.contact-hearder {
+  width: 1000px;
+  background-color: $owner-blue;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  margin-left: 25px;
+
+h1 {
+  color: white;
+  padding-bottom: 30px;
+}
+.plus {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px 10px;
+  }
+.header-plus {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  }
+.searchbar {
+  padding-bottom: 20px;
+  }
+}
+
+.contractors-list {
+  width: 1000px;
+  height: 100px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 10px;
+  margin-left: 25px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  margin-top: 15px;
+  }
+.avatar-large {
+  margin-left: 30px;
+  }
+.name-sp {
+
+  }
+.num-email {
+  }
+}
+
+input[type=text] {
+  width: 1000px;
+  border-radius: 5px;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
+}
