@@ -28,7 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { accordian } from '../plugins/unit_accordian';
-import { carouselBuildings } from "../plugins/building_display"
+import { carouselBuildings } from "../plugins/building_display";
 import { createExpenseChart } from "../plugins/charts";
 
 document.addEventListener('turbolinks:load', () => {
