@@ -23,10 +23,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task =  Task.new(params_task)
-    assignee = current_user
+    @task = Task.new(params_task)
 
-    if @task.save
+    if @task.save!
       redirect_to tasks_path
     else
       render :new
@@ -34,6 +33,11 @@ class TasksController < ApplicationController
   end
 
   def edit
+    contractors = Contractor.where(user: current_user)
+    @contractors = contractors.map do |contractor|
+      [contractor.first_name, contractor.id]
+    end
+
     @task = Task.find(params[:id])
   end
 
@@ -62,6 +66,6 @@ class TasksController < ApplicationController
   private
 
   def params_task
-    params.require(:task).permit(:title, :description, :status, :urgency, :expense, :start_date, :end_date, :contractor_id, :building_id, :unit_id, photos: [], bill_upload: [])
+    params.require(:task).permit(:title, :description, :status, :urgency, :expense, :start_date, :end_date, :building_id, :contractor_id, :unit_id, photos: [], bill_upload: [])
   end
 end
