@@ -23,10 +23,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task =  Task.new(params_task)
-    assignee = current_user
+    @task = Task.new(params_task)
 
-    if @task.save
+    if @task.save!
       redirect_to tasks_path
     else
       render :new
@@ -34,6 +33,11 @@ class TasksController < ApplicationController
   end
 
   def edit
+    contractors = Contractor.where(user: current_user)
+    @contractors = contractors.map do |contractor|
+      [contractor.first_name, contractor.id]
+    end
+
     @task = Task.find(params[:id])
   end
 

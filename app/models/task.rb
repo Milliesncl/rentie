@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :contractor, optional: true
-  belongs_to :unit
+  belongs_to :unit, optional: true
+  belongs_to :building
   has_many_attached :photos
   has_many_attached :bill_upload
 

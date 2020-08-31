@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
   create_table "contractors", force: :cascade do |t|
     t.string "phone_number"
     t.string "speciality"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
     t.float "expense"
     t.date "start_date"
     t.date "end_date"
-    t.bigint "contractor_id", null: false
+    t.bigint "contractor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "building_id"
@@ -97,11 +97,11 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "payment_date"
-    t.binary "lease"
     t.bigint "user_id"
     t.float "square_meters"
     t.float "bathrooms"
     t.float "bedrooms"
+    t.binary "lease"
     t.index ["building_id"], name: "index_units_on_building_id"
     t.index ["user_id"], name: "index_units_on_user_id"
   end

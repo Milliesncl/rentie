@@ -7,7 +7,7 @@ puts "Deleting everything"
   Contractor.destroy_all
   Task.destroy_all
   User.destroy_all
-  RentPayment.destroy_all
+  # RentPayment.destroy_all
 puts "Creating users"
 
 picture1 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
@@ -251,11 +251,9 @@ unit18.photos.attach(io: picture1unit18, filename: 'image1.jpg', content_type: '
 unit18.photos.attach(io: picture2unit18, filename: 'image2.jpg', content_type: 'image/jpg')
 unit18.photos.attach(io: picture3unit18, filename: 'image3.jpg', content_type: 'image/jpg')
 
-
 puts "Creating tasks"
 
-task1 = Task.create!(contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", category: "Plumbing", urgency: "High", unit: unit3)
-task2 = Task.create!(contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", urgency: "Medium", unit: unit2)
-
+task1 = Task.create!(building: building1, contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", category: "Plumbing", urgency: "High", unit: unit3)
+task2 = Task.create!(building: building2, contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", urgency: "Medium", unit: unit2)
 
 puts "Done"
