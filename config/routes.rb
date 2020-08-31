@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#owner_home'
+  get "welcome", to: 'pages#home'
+  root to: 'pages#home'
 
   resources :tenants, only: [:create, :new, :edit, :update]
   resources :contractors, except: [:destroy]
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :units, only: [:destroy]
-  get "units/:id/lease", to: 'units#lease', as: 'units_lease'
+  get "units/:id/lease", to: 'units#lease', as: 'units_lease'    
 end
