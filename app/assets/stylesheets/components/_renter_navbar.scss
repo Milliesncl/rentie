@@ -7,13 +7,14 @@
   margin-top: 50px;
   z-index: 1;
   justify-content: center;
-  .far, .fab {
+  .far, .fab, .fas {
     background: none;
     border: none;
     color: white;
     display: block;
     margin-top: 36px;
     font-size: 18px;
+    text-decoration: none;
   }
 }
 
@@ -40,5 +41,8 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  a {
+    text-decoration: none;
+  }
 }
 
