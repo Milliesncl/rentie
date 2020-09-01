@@ -27,15 +27,37 @@
       </filter>
       </defs>
     </svg>
-    <div class="tasklist">
       <h3>Tasks to do</h3>
-      <ul>
-      <%# @tasks.each do |task| %>
-        <li><%#= task.unit.unit_number %> <%#= task.title %></li>
-      <%#last-name end %>
+      <ul class="list-group">
+        <% Task.last(5).each do |task| %>
+          <% if task.status != true %>
+            <% if task.unit != nil %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Unit <%= task.unit.unit_number %> - <%= task.title %>
+                <% if task.urgency == "High" %>
+                  <span class="badge badge-info badge-pill"><%= task.urgency %></span>
+                <% elsif task.urgency == "Medium" %>
+                  <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
+                <% else %>
+                  <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
+                <% end %>
+              </li>
+            <% else %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Building - <%= task.title %>
+              <% if task.urgency == "High" %>
+                <span class="badge badge-info badge-pill"><%= task.urgency %></span>
+              <% elsif task.urgency == "Medium" %>
+                <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
+              <% else %>
+                <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
+              <% end %>
+            </li>
+            <% end %>
+          <% end %>
+        <% end %>
       </ul>
     </div>
-  </div>
 
   <div class="profits-loss">
     <div class="total">
