@@ -45,6 +45,8 @@ const config = {
 
 const createExpenseChart = () => {
   const expenseChartElement = document.getElementById("expense-chart");
+  if (expenseChartElement === null)
+    return;
   const data = JSON.parse(expenseChartElement.dataset.expenseData);
   config.data.datasets[0].data = data
   const expenseChart = new Chart(expenseChartElement, config);
