@@ -30,11 +30,13 @@ import "bootstrap";
 import { accordian } from '../plugins/unit_accordian';
 import { carouselBuildings } from "../plugins/building_display";
 import { createExpenseChart } from "../plugins/charts";
+import { createBuildingExpensesChart } from "../plugins/building_expenses";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   carouselBuildings();
   accordian();
-  createExpenseChart();
+  // createExpenseChart();
+  createBuildingExpensesChart();
 });
