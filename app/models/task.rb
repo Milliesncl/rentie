@@ -25,7 +25,7 @@ class Task < ApplicationRecord
     all_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
-      expense_hash[category] = Task.where(building: building, category: category).sum { |task| task.expense }
+      expense_hash[category] = Task.where(building: building, category: category).sum { |task| task.expense.to_i }
       all_expenses_breakdown << expense_hash
     end
     all_expenses_breakdown
@@ -37,7 +37,7 @@ class Task < ApplicationRecord
     all_overall_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
-      expense_hash = Task.where(building: building).sum { |task| task.expense }
+      expense_hash = Task.where(building: building).sum { |task| task.expense.to_i }
       all_overall_expenses_breakdown << expense_hash + mortgage_building
     end
     all_overall_expenses_breakdown.first
@@ -50,7 +50,7 @@ class Task < ApplicationRecord
     all_expenses_array_breakdown << categories
     all_expenses_array = []
     categories.each do |category|
-      all_expenses_array << Task.where(building: building, category: category).sum(&:expense)
+      all_expenses_array << Task.where(building: building, category: category).sum { |task| task.expense.to_i }
     end
     all_expenses_array_breakdown << all_expenses_array
     all_expenses_array_breakdown
@@ -63,7 +63,7 @@ class Task < ApplicationRecord
     overall_expenses_array = []
     categories.each do |category|
       # next if category.expense.nil?
-      overall_expenses_array << Task.where(category: category).sum(&:expense)
+      overall_expenses_array << Task.where(category: category).sum { |task| task.expense.to_i }
     end
     overall_expenses_array_breakdown << overall_expenses_array
     overall_expenses_array_breakdown
