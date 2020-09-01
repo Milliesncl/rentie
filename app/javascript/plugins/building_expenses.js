@@ -2,6 +2,8 @@ import Chart from 'chart.js';
 
 const createBuildingExpensesChart = () => {
   const buildingExpenseChartElement = document.getElementById("building-expense-chart");
+  if (buildingExpenseChartElement === null)
+    return;
   const buildingExpenseData = JSON.parse(buildingExpenseChartElement.dataset.buildingExpenseData);
   const data = {
   datasets: [{
