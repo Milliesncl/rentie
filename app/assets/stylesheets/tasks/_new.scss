@@ -45,17 +45,14 @@ flex-grow: 1;
   padding-right: 20px;
   padding-top: 7px;
   padding-bottom: 7px;
-  background: linear-gradient(120deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
   position: relative;
 }
 
+.btn-primary:hover {
+  transition: all .5s ease-in-out;
+}
+
 .task-btn .btn-primary {
-  border-radius: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  background: linear-gradient(120deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
   position: relative;
   left: 35%;
   margin-top: 20px;
