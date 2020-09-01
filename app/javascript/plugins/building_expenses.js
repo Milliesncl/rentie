@@ -18,19 +18,19 @@ const createBuildingExpensesChart = () => {
     type: 'doughnut',
     data: data,
     options: {
-    tooltips: {
-      mode: 'index',
-      intersect: false,
-      callbacks: {
-        label: function(tooltipItems, data) {
-          return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
-        }
+      tooltips: {
+        mode: 'index',
+        intersect: false,
+        callbacks: {
+          label: function(tooltipItems, data) {
+            return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
+          }
+        },
       },
-    },
-    hover: {
-      mode: 'nearest',
-      intersect: true
-    },
+      hover: {
+        mode: 'nearest',
+        intersect: true
+      },
     }
   });
 };
