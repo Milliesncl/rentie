@@ -1,41 +1,18 @@
 @import "new";
 //renter
-.card-product-r{
-  width: 1065px;
-  height: 250px;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin: 10px;
-  padding-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
 
-.head-card-r{
-  position: absolute;
-  left: 45%;
-}
-
-.product-info-r {
-  padding-top: 90px;
+.card-product-s {
+  // height: 280px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
+  flex-wrap: no-wrap;
   flex-direction: row;
-  justify-content: space-around;
-  }
-.task-info-r {
-  width: 177px;
-  height: 140px;
-
-  }
-.task-description-r {
-  width: 177px;
-  height: 140px;
-  }
-.img-r {
-  width: 177px;
-  height: 140px;
-  }
+  align-items: center;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: space-between;
 }
 
 .task-label {
@@ -60,34 +37,6 @@
   height: 40px;
 }
 
-.card-product-s {
-  height: 280px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  padding: 15px;
-  border-radius: 10px;
-  justify-content: space-between;
-}
-
-// .card-product-s h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-//   position: relative;
-//   left: 150%;
-// }
-.task-description-s {
-  display: flex;
-  align-items: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  position: absolute;
-  top: 0px;
-  height: 150px;
-}
 
 .head-card {
   display: flex;
@@ -113,9 +62,10 @@
 }
 
 .card-title-top {
-  position: relative;
+  //position: relative;
   bottom: 90px;
   left: 100px;
+  text-align: center;
 }
 
 .right-side-card {
@@ -123,7 +73,7 @@
   flex-direction: column;
   position: relative;
   width: 33%;
-  align-items: center
+  align-items: center;
 }
 
 .edit-status {
