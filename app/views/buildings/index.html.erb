@@ -55,11 +55,11 @@
               <% end %>
                 <th>All expenses</th>
                 <th>
-                  <%= number_to_currency(Task.calculate_overall_expenses_for_building(building)) %>
+                  <%= number_to_currency(Task.calculate_overall_expenses_for_building(building).to_i) %>
                 </th>
               </tr>
               <th>Balance</th>
-              <th><%= number_to_currency(Unit.calculate_income(building) - Task.calculate_overall_expenses_for_building(building)) %></th>
+              <th><%= number_to_currency(Unit.calculate_income(building).to_i - Task.calculate_overall_expenses_for_building(building).to_i) %></th>
             </tbody>
           </table>
         </div>
@@ -146,7 +146,7 @@
               <div class="card-body expenses-chart">
                 <h5 class="card-title">Expenses</h5>
                   <% if unit.tasks.exists? %>
-                    <canvas id="unit-expense-chart" data-unit-expense-data="<%= Task.calculate_expenses_array_for_unit(unit).to_json %>" height="350"></canvas>
+                    <canvas id="unit-expense-chart" data-unit-expense-data="<%= Task.calculate_expenses_array_for_unit(unit).to_json %>" height="300"></canvas>
                     <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
                   <% else %>
                     <p>No expenses yet</p>
