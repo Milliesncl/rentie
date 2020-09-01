@@ -36,21 +36,57 @@
 
     <div class="top-unit-card col-sm-12 col-md-6 col-lg-8 row">
       <h3>Unit Information</h3>
-        <p class="col-4">Purchase price: $<%= @unit.purchase_price %></p>
-        <p class="col-4">Rent amount: $<%= @unit.rent_amount %></p>
-        <p class="col-4">Expenses: None </p>
-        <p class="col-4">SQ M: <%= @unit.square_meters %></p>
-        <p class="col-4">Bathrooms: <%= @unit.bathrooms %></p>
-        <p class="col-4">Bedsrooms: <%= @unit.bedrooms %></p>
-        <% if @unit.lease != nil %>
-          <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
+      <div class="unit-information">
+        <div class="unit-info-row">
+          <div class="column col-4">
+            <div class="unit-info-title">
+              <p>Purchase price</p>
+            </div>
+          <p> $<%= @unit.purchase_price %></p>
+        </div>
+        <div class="column col-4">
+          <div class="unit-info-title">
+            <p>Rent amount</p>
+          </div>
+          <p><%= @unit.rent_amount %></p>
+        </div>
+          <div class="column col-4">
+            <div class="unit-info-title">
+              <p>Expenses</p>
+            </div>
+            <p>None</p>
+          </div>
+        </div>
+        <div class="unit-info-row">
+          <div class="column col-4">
+            <div class="unit-info-title">
+              <p>SQ M</p>
+            </div>
+            <p><%= @unit.square_meters %></p>
+          </div>
+          <div class="column col-4">
+            <div class="unit-info-title">
+              <p>Bathrooms</p>
+            </div>
+            <p><%= @unit.bathrooms %></p>
+          </div>
+          <div class="column col-4">
+            <div class="unit-info-title">
+              <p>Bedrooms</p>
+            </div>
+            <p><%= @unit.bedrooms %></p>
+          </div>
+          <% if @unit.lease != nil %>
+            <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
         <% end %>
+        </div>
+      </div>
     </div>
 </div>
 
 
 <div class="unit-page row">
-    <div class="lease-info col-lg-4 col-md-4 col-sm-12">
+    <div class="lease-info">
       <p>Renewal date: <%= @unit.renewal_date %></p>
       <p>Payment day: <%= @unit.payment_date %></p>
     </div>
@@ -61,8 +97,10 @@
         <p>Email: <%= @unit.user.email %></p>
         <p>Number: <%= @unit.user.phone_number %> </p>
       <% else %>
-        <h3>No tenant</h3>
-        <%= link_to "Add a tenant", new_tenant_path %>
+        <p>No tenant</p>
+        <div class="task-btn">
+        <%= link_to "Add a tenant", new_tenant_path, class:"btn btn-primary" %>
+      </div>
       <% end %>
     </div>
 </div>
