@@ -1,29 +1,34 @@
 //renter scss
 .renter {
-  //position: absolute;
-  //width: 905px;
-  //height: 561px;
-  //left: 268px;
-  //top: 210px;
   background: #FFFFFF;
   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
   border-radius: 10px;
-.dashboard{
-  margin-top: 120px;
-}
-.pro-com {
-  display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  p {
+    text-align: center;
   }
-.payment {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 50%;
+
+  .dashboard {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    // grid-template-rows: auto;
+    // grid-template-columns: 1fr 1fr;
+
   }
-.avatar-large {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
+
+  .profile-communication {
+    flex-direction: row;
+
+  }
+
+  .avatar-large {
+    height: 100px;
+    width: 100px;
+    border: 1px solid lightgray;
   }
 }
