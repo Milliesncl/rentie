@@ -1,18 +1,20 @@
 <div class="renter">
-  <h1>Welcome: </h1>
-<div class="dashboard">
-  <div class="pro-com">
-    <div class="profile">
-      <a href=""><img class="avatar-large" alt="avatar-large" src="http://res.cloudinary.com/duc5z0utg/image/upload/oby4dd2y3xuh3g1mmxn0yhxltwhw" /></a>
-      <p>Profile</p>
+  <h1>Welcome <%= current_user.first_name %> </h1>
+
+  <div class="dashboard">
+    <div class="profile-communication">
+      <div class="profile">
+        <a href=""><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598975078/rentie/icons/iconmonstr-user-5-240_1_x5ptrj.png" /></a>
+        <p>Profile</p>
+      </div>
+      <div class="communication">
+        <a href="/tasks"><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598974680/rentie/icons/iconmonstr-speech-bubble-20-240_2_mnrorg.png" /></a>
+        <p>Communications</p>
+      </div>
     </div>
-    <div class="communication">
-      <a href=""><img class="avatar-large" alt="avatar-large" src=" https://res.cloudinary.com/duc5z0utg/image/upload/v1598735735/comment-alt-regular_inpeyv.svg" /></a>
-      <p>Communications</p>
+    <div class="payment">
+      <a href=""><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598974745/rentie/icons/iconmonstr-credit-card-thin-240_1_m7ni1j.png" /></a>
+      <p>Payments</p>
     </div>
-  </div>
-  <div class="payment">
-    <a href=""><img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598735715/cc-stripe-brands_pczihf.svg" /></a>
-    <p>Payments</p>
   </div>
 </div>

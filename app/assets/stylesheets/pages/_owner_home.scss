@@ -4,13 +4,13 @@
   padding-top: 60px;
 }
 
-.dashboard {
+.owner-dashboard {
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   "header header header header"
   "expenses expenses expenses expenses"
   "profits-loss profits-loss tasks tasks";
