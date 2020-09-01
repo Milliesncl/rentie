@@ -1,29 +1,32 @@
 //renter scss
-.renter {
+.renter-dashboard {
   background: #FFFFFF;
   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
   border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  padding: 16px;
+  margin-top: 20px;
 
-  p {
-    text-align: center;
+  h1 {
+    margin: 30px 0;
   }
 
-  .dashboard {
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    justify-content: center;
-    // grid-template-rows: auto;
-    // grid-template-columns: 1fr 1fr;
-
+  .profile,.communication,.payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .profile-communication {
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
 
+  .profile {
+    margin-right: 40px;
+  }
+
+  .communication {
+    margin-left: 40px;
   }
 
   .avatar-large {
