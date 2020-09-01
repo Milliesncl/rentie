@@ -101,10 +101,14 @@
                   <% end %>
           </ul>
               <% end %>
-              <%= link_to "Add a new task", new_task_path, class:"btn btn-primary" %>
+              <div class="add-task-btn">
+                <%= link_to "Add a new task", new_task_path, class:"btn btn-primary" %>
+              </div>
               </ul>
               <% else %>
-              <%= link_to "Add a task", new_task_path, class:"btn btn-primary" %>
+              <div class="add-task-btn">
+                <%= link_to "Add a task", new_task_path, class:"btn btn-primary" %>
+              </div>
             <% end %>
         </div>
       </div>

@@ -13,9 +13,10 @@
   border-radius: 8px;
 }
 
-.line-one {
+.form-background .line-one {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .line-two {
@@ -46,8 +47,6 @@ flex-grow: 1;
   padding-bottom: 7px;
   background: linear-gradient(120deg, #00486E 0%, #00486E 20%, #6ECBC1 100%);
   position: relative;
-  left: 35%;
-  margin-top: 20px;
 }
 
 .task-btn .btn-primary {
@@ -66,3 +65,8 @@ flex-grow: 1;
   display: flex;
   justify-content: space-around;
 }
+
+.list-group .btn-primary {
+  width: 50%;
+}
+
