@@ -21,7 +21,7 @@ class Task < ApplicationRecord
   end
 
   def self.calculate_expenses_for_building(building)
-    categories = Task.pluck(:category).uniq
+    categories = Task.where(building_id: building).pluck(:category).uniq
     all_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
@@ -33,7 +33,7 @@ class Task < ApplicationRecord
 
   def self.calculate_overall_expenses_for_building(building)
     mortgage_building = building.mortgage
-    categories = Task.pluck(:category).uniq
+    categories = Task.where(building_id: building).pluck(:category).uniq
     all_overall_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
@@ -57,7 +57,7 @@ class Task < ApplicationRecord
   end
 
   def self.calculate_expenses_array_for_unit(unit)
-    categories = Task.pluck(:category).uniq
+    categories = Task.where(unit_id: unit).pluck(:category).uniq
     all_expenses_array_unit_breakdown = []
     all_expenses_array_unit_breakdown << categories
     all_expenses_unit_array = []
@@ -69,7 +69,7 @@ class Task < ApplicationRecord
   end
 
   def self.all_buildings_expenses
-    categories = Task.pluck(:category).uniq
+    categories = Task.where(@buildings).pluck(:category).uniq
     overall_expenses_array_breakdown = []
     overall_expenses_array_breakdown << categories
     overall_expenses_array = []
