@@ -135,10 +135,12 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Information</h5>
-                <p class="card-text">Type: 3.5</p>
-                <p class="card-text">Lease end date: <%= unit.renewal_date %></p>
-                <p class="card-text">Purchase price: $<%= unit.purchase_price %></p>
-                <p class="card-text">Rent: $<%= unit.rent_amount %></p>
+                <p><%= '<i class="fas fa-bed"></i>'.html_safe %> <strong>Bedrooms:</strong> <%= unit.bedrooms %></p>
+                <p><%= '<i class="fas fa-bath"></i>'.html_safe %> <strong>Bathrooms:</strong> <%= unit.bathrooms %></p>
+                <p><%= '<i class="fas fa-pencil-ruler"></i>'.html_safe %> <strong>Sqm:</strong> <%= unit.square_meters %></p>
+                <p><%= '<i class="far fa-calendar-minus"></i>'.html_safe %> <strong>Lease end date:</strong> <%= unit.renewal_date %></p>
+                <p><%= '<i class="fas fa-money-check-alt"></i>'.html_safe %> <strong>Rent:</strong> $<%= unit.rent_amount %></p>
+                <p><%= '<i class="fas fa-university"></i>'.html_safe %> <strong>Purchase price:</strong> $<%= unit.purchase_price %></p>
                 <%= link_to "Edit the unit", building_unit_path(building, unit), class:"btn btn-primary" %>
               </div>
             </div>
