@@ -33,7 +33,7 @@ user5.photo.attach(io: picture5, filename: 'rentie.jpg', content_type: 'image/jp
 
 puts "Creating buildings"
 
-building1 = Building.create!(user: user1, address: "4641-4643 rue Chambord, H2J 3M8, Montréal, QC", mortgage: 4000, purchase_price: 700000, purchase_date: Date.new(2019,9,1), taxes: 800, )
+building1 = Building.create!(user: user1, address: "4641-4643 rue Chambord, H2J 3M8, Montréal, QC", mortgage: 4000, purchase_price: 700000, purchase_date: Date.new(2019,9,1), taxes: 800)
 building2 = Building.create!(user: user1, address: "4251-4255 rue Marquette, H2J 3W8, Montréal, QC", mortgage: 3500, purchase_price: 600000, purchase_date: Date.new(2017,3,19), taxes: 500)
 building3 = Building.create!(user: user2, address: "4421-4425 rue Saint-Urbain, H2W 1V7, Montréal, QC", mortgage: 2000, purchase_price: 506090, purchase_date: Date.new(2017,4,6), taxes: 1000)
 building4 = Building.create!(user: user2, address: "7074-7078 rue de la Roche, H2S 2E6, Montréal, QC", mortgage: 1600, purchase_price: 780000, purchase_date: Date.new(2020,5,27), taxes: 1200)
