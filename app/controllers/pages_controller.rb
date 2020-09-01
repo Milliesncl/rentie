@@ -11,7 +11,8 @@ class PagesController < ApplicationController
       # get all units from @buildings 
       @units = Unit.where(building: @buildings)
       # find sum of the rent_amount from units on line 12 
-      @income_of_buildings = @units.sum { |unit| unit.rent_amount }
+      @income_of_buildings = @units.to_a.reject{ |unit| unit.user_id.nil? }.sum(&:rent_amount)
+      raise
     end
   end
 end
