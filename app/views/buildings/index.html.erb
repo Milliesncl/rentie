@@ -67,19 +67,8 @@
       <div class="bottom-cards">
         <div class="expenses">
           <h3>Expenses</h3>
-          <svg width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="74.5" cy="74.5" r="64.5" stroke="#C4C4C4" stroke-width="20"/>
-          <path d="M74.5 10C38.8776 10 10 38.8776 10 74.5C10 110.122 38.8776 139 74.5 139C104.63 139 129.934 118.341 137.021 90.4156" stroke="#00486E" stroke-width="20"/>
-          <path d="M74.5 10C38.8776 10 10 38.8776 10 74.5C10 101.508 26.5993 124.638 50.1523 134.246" stroke="#55ADAE" stroke-width="20"/>
-          </svg>
           <% if building.tasks.exists? %>
-            <% Task.calculate_expenses_for_building(building).each do |expense| %>
-              <% expense.each do |category, expense| %>
-                <% if expense > 0 %>
-                  <li><%= category %> - $<%= expense %></li>
-                <% end %>
-              <% end %>
-            <% end %>
+            <canvas id="building-expense-chart" data-building-expense-data="<%= Task.calculate_expenses_array_for_building(building).to_json %>"></canvas>
             <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
           <% else %>
             <p>No expenses yet</p>

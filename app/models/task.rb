@@ -42,4 +42,17 @@ class Task < ApplicationRecord
     end
     all_overall_expenses_breakdown.first
   end
+
+  # [['plumbing', 'Electricity'], [0,3,4]]
+  def self.calculate_expenses_array_for_building(building)
+    categories = Task.pluck(:category).uniq
+    all_expenses_array_breakdown = []
+    all_expenses_array_breakdown << categories
+    all_expenses_array = []
+    categories.each do |category|
+      all_expenses_array << Task.where(building: building, category: category).sum(&:expense)
+    end
+    all_expenses_array_breakdown << all_expenses_array
+    all_expenses_array_breakdown
+  end
 end
