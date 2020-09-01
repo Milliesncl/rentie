@@ -89,7 +89,7 @@
                           <% elsif task.urgency == "Medium" %>
                             <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
                           <% else %>
-                            <span class="badge badge-warning badge-pill"><%= task.urgency %></span>
+                            <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
                           <% end %>
                         </li>
                     <% else %>
@@ -100,7 +100,7 @@
                       <% elsif task.urgency == "Medium" %>
                         <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
                       <% else %>
-                        <span class="badge badge-warning badge-pill"><%= task.urgency %></span>
+                        <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
                       <% end %>
                     </li>
                     <% end %>
