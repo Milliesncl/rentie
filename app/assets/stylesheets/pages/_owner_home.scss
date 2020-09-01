@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .container{
-  padding-left: 60px;
-  padding-top: 60px;
+   padding-left: 60px;
+   padding-top: 60px;
 }
 
 .dashboard {
@@ -10,7 +10,7 @@
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   "header header header header"
   "expenses expenses expenses expenses"
   "profits-loss profits-loss tasks tasks";
