@@ -35,12 +35,13 @@
   </div>
 
     <div class="top-unit-card col-sm-12 col-md-6 col-lg-8 row">
+      <h3>Unit Information</h3>
         <p class="col-4">Purchase price: $<%= @unit.purchase_price %></p>
         <p class="col-4">Rent amount: $<%= @unit.rent_amount %></p>
         <p class="col-4">Expenses: None </p>
-        <p class="col-4">SQ M: 50</p>
-        <p class="col-4">Bathrooms: 1.5</p>
-        <p class="col-4">Bedsrooms: 1</p>
+        <p class="col-4">SQ M: <%= @unit.square_meters %></p>
+        <p class="col-4">Bathrooms: <%= @unit.bathrooms %></p>
+        <p class="col-4">Bedsrooms: <%= @unit.bedrooms %></p>
         <% if @unit.lease != nil %>
           <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
         <% end %>
@@ -54,10 +55,11 @@
       <p>Payment day: <%= @unit.payment_date %></p>
     </div>
     <div class="first-tenant col-lg-8 col-md-8 col-sm-12">
+      <h3>Tenant infos</h3>
       <% if @unit.user != nil %>
-        <h3>Tenant infos</h3>
         <p>Name: <%= @unit.user.first_name %> <%= @unit.user.last_name %></p>
         <p>Email: <%= @unit.user.email %></p>
+        <p>Number: <%= @unit.user.phone_number %> </p>
       <% else %>
         <h3>No tenant</h3>
         <%= link_to "Add a tenant", new_tenant_path %>
@@ -67,6 +69,6 @@
 
   <div class="row unit-btn">
     <p><%= link_to "Edit this unit", edit_building_unit_path(@building.id, @unit.id), class:"btn btn-primary c"%></p>
-    <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-secondary"%></p>
+    <p><%= link_to "Delete this unit", unit_path(@unit.id), data: { confirm: "Are you sure to delete the unit number #{@unit.unit_number} ?" }, method: :delete, class:"btn btn-primary c"%></p>
   </div>
 </div>
