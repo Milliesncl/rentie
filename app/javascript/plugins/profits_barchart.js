@@ -1,31 +1,23 @@
 import Chart from 'chart.js';
 
-const createExpenseChart = () => {
-  const expenseChartElement = document.getElementById("expense-chart");
-  if (expenseChartElement === null)
+const createProfitsChart = () => {
+  const profitsChartElement = document.getElementById("profits-chart");
+  if (profitsChartElement === null)
     return;
-  const expenseData = JSON.parse(expenseChartElement.dataset.expenseData);
+  const profitsData = JSON.parse(profitsChartElement.dataset.profitsData);
   const data = {
     datasets: [{
       fill: false,
       backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
-      data: expenseData[1]
+      data: profitsData[1]
     }],
-    labels: expenseData[0]
+    labels: profitsData[0]
   };
 
-  const expenseChart = new Chart(expenseChartElement, {
-    type: 'bar',
+  const expenseChart = new Chart(profitsChartElement, {
+    type: 'horizontalBar',
     data: data,
     options: {
-      // scales: {
-      //   xAxes: [{
-      //       stacked: true
-      //   }],
-      //   yAxes: [{
-      //       stacked: true
-      //   }]
-      // },
       tooltips: {
         mode: 'index',
         intersect: false,
@@ -43,5 +35,5 @@ const createExpenseChart = () => {
   });
 };
 
-export { createExpenseChart };
+export { createProfitsChart };
 

@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.joins(:building).where(buildings: { user_id: current_user.id })
-    # @tasks = Task.all
   end
 
   def new
