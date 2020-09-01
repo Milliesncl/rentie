@@ -31,6 +31,7 @@ import { accordian } from '../plugins/unit_accordian';
 import { carouselBuildings } from "../plugins/building_display";
 import { createExpenseChart } from "../plugins/homepage_barchart";
 import { createBuildingExpensesChart } from "../plugins/building_expenses";
+import { createUnitExpensesChart } from "../plugins/unit_expenses";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   accordian();
   createBuildingExpensesChart();
   createExpenseChart();
+  createUnitExpensesChart();
 });
