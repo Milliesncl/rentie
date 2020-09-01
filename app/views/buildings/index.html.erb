@@ -83,8 +83,14 @@
                   <% if task.status != true %>
                     <% if task.unit != nil %>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          <%= task.unit.unit_number %> - <%= task.title %>
-                          <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
+                          Unit <%= task.unit.unit_number %> - <%= task.title %>
+                          <% if task.urgency == "High" %>
+                            <span class="badge badge-info badge-pill"><%= task.urgency %></span>
+                          <% elsif task.urgency == "Medium" %>
+                            <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
+                          <% else %>
+                            <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
+                          <% end %>
                         </li>
                     <% else %>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -94,7 +100,7 @@
                       <% elsif task.urgency == "Medium" %>
                         <span class="badge badge-primary badge-pill"><%= task.urgency %></span>
                       <% else %>
-                        <span class="badge badge-warning badge-pill"><%= task.urgency %></span>
+                        <span class="badge badge-warning text-white badge-pill"><%= task.urgency %></span>
                       <% end %>
                     </li>
                     <% end %>
