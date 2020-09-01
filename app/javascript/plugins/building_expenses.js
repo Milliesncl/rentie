@@ -21,6 +21,11 @@ const createBuildingExpensesChart = () => {
     tooltips: {
       mode: 'index',
       intersect: false,
+      callbacks: {
+        label: function(tooltipItems, data) {
+          return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
+        }
+      },
     },
     hover: {
       mode: 'nearest',
