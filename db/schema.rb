@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_144319) do
+ActiveRecord::Schema.define(version: 2020_09_02_154232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,10 +61,15 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
   end
 
   create_table "rent_payments", force: :cascade do |t|
-    t.date "receipt_date"
+    t.date "due_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "state", default: "pending"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "unit_id"
+    t.index ["unit_id"], name: "index_rent_payments_on_unit_id"
     t.index ["user_id"], name: "index_rent_payments_on_user_id"
   end
 
@@ -93,7 +98,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
     t.integer "purchase_price"
     t.string "payment_method"
     t.date "renewal_date"
-    t.integer "rent_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "payment_date"
@@ -102,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
     t.float "square_meters"
     t.float "bathrooms"
     t.float "bedrooms"
+    t.integer "rent_amount_cents", default: 0, null: false
     t.index ["building_id"], name: "index_units_on_building_id"
     t.index ["user_id"], name: "index_units_on_user_id"
   end
@@ -125,6 +130,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_144319) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buildings", "users"
   add_foreign_key "contractors", "users"
+  add_foreign_key "rent_payments", "units"
   add_foreign_key "rent_payments", "users"
   add_foreign_key "tasks", "contractors"
   add_foreign_key "units", "buildings"
