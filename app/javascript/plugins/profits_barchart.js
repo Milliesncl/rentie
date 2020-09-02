@@ -8,7 +8,7 @@ const createProfitsChart = () => {
   const data = {
     datasets: [{
       fill: false,
-      backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
+      backgroundColor: ["#80D0C7", "#07A3B2"],
       data: profitsData
     }],
     labels: ["Profits", "Loss"]
@@ -18,6 +18,13 @@ const createProfitsChart = () => {
     type: 'horizontalBar',
     data: data,
     options: {
+      scales: {
+        xAxes: [{
+            ticks: {
+                min: 0
+            }
+        }]
+      },
       tooltips: {
         mode: 'index',
         intersect: false,
