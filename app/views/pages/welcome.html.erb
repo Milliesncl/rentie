@@ -13,6 +13,9 @@
   </div>
   <div class="payment">
     <a href=""><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598974745/rentie/icons/iconmonstr-credit-card-thin-240_1_m7ni1j.png" /></a>
-    <p>Payments</p>
+    <%= form_tag rent_payments_path do %>
+      <%= hidden_field_tag 'unit_id', current_user.units.first.id %>
+      <%= submit_tag 'Payment', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

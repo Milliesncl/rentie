@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h1>Checkout <%= @rent_payment.due_date.strftime("%B %Y") %></h1>
+      <p>Rent payment <strong><%= @rent_payment.user.first_name %></strong> for <strong><%= humanized_money_with_symbol @rent_payment.amount %></strong></p>
+      <button id="paid" class="btn btn-primary">Pay</button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('paid');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @rent_payment.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>

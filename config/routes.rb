@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   get "welcome", to: 'pages#home'
   root to: 'pages#home'
 
+  resources :rent_payments, only: [:show, :create] do
+    resources :transactions, only: :new
+  end
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   resources :tenants, only: [:create, :new, :edit, :update]
   resources :contractors, except: [:destroy]
   resources :tasks, only: [:new, :index, :create, :edit, :update] do
@@ -14,5 +19,5 @@ Rails.application.routes.draw do
   end
 
   resources :units, only: [:destroy]
-  get "units/:id/lease", to: 'units#lease', as: 'units_lease'    
+  get "units/:id/lease", to: 'units#lease', as: 'units_lease'
 end
