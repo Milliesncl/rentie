@@ -1,5 +1,6 @@
 class Unit < ApplicationRecord
   belongs_to :building
+  has_many :rent_payments, dependent: :destroy
   belongs_to :user, optional: true
   has_many :tasks
   has_many_attached :photos
