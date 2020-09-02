@@ -8,7 +8,7 @@
           <div class="task-label">
             <p>Task</p>
           </div>
-          <p>
+          <p class="pe-tag">
             <%= task.title %>
           </p>
         </div>
@@ -16,7 +16,7 @@
           <div class="task-label">
             <p>Status</p>
           </div>
-          <p>
+          <p class="pe-tag">
             <% if task.status == false %>
               Incomplete
             <% else %>
@@ -28,32 +28,29 @@
           <div class="task-label">
             <p>Urgency</p>
           </div>
-          <p>
+          <p class="pe-tag">
             <%= task.urgency %>
           </p>
         </div>
         <div class="task-line-one">
           <div class="task-label">
-            <p>Renter:
+            <p class="pe-tag">Renter:
               <% if task.unit.user != nil %>
                 <%= task.unit.user.first_name %><%= task.unit.user.last_name %>
               <% end %>
             </p>
           </div>
-          <p>
-            <%= task.unit_id %>
-          </p>
         </div>
       </div>
       <% if task.status == false %>
         <div class="task-middle-s">
           <div class="card-title-top">
-            <h2><%= task.building.address %> -
+            <p><strong><%= task.building.address %> -
               <% if task.unit.unit_number? %>
                 <%= task.unit.unit_number %>
-              <% end %>
-            </h2>
-            <p><%= task.created_at %></p>
+              <% end %></strong>
+            </p>
+            <p><strong><%= task.created_at %></p></strong>
           </div>
           <div class="task-description">
             <div class="task-description-s">
@@ -63,17 +60,15 @@
         </div>
         <div class="right-side-card">
           <div class="edit-status">
-            <button class="btn btn-success btn-sm" id="task-complete">
-              <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
-            </button>
+              <a <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %></a>
             <a href="<%= edit_task_path(task) %>">
-              <i class="fas fa-pencil-alt"></i>
+              <i class="fas fa-pencil-alt task-pen"></i>
             </a>
           </div>
           <div class="img-s">
              <% if task.photos.exists? %>
               <% task.photos.each do |photo| %>
-                <%= cl_image_tag photo.key, height:200 %>
+                <%= cl_image_tag photo.key, height:100 %>
               <% end %>
             <% end %>
           </div>
