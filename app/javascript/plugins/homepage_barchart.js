@@ -1,41 +1,43 @@
 import Chart from 'chart.js';
 
-const createExpenseChart = () => {
-  const expenseChartElement = document.getElementById("expense-chart");
-  if (expenseChartElement === null)
+const createHeaderChart = () => {
+  const roiChartElement = document.getElementById("roi-chart");
+  if (roiChartElement === null)
     return;
-  const expenseData = JSON.parse(expenseChartElement.dataset.expenseData);
+  const roiData = JSON.parse(roiChartElement.dataset.roiData);
+  console.log(roiData)
   const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December'],
     datasets: [{
       fill: false,
       backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
-      data: expenseData[1]
-    }],
-    labels: expenseData[0]
+      data: roiData[0]
+    },{
+      fill: false,
+      backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
+      data: roiData[1]
+    }
+  ]
   };
 
-  const expenseChart = new Chart(expenseChartElement, {
+  const roiChart = new Chart(roiChartElement, {
 
-    type: 'bar',
+    type: 'line',
     data: data,
-
     options: {
-
       scales: {
+        // xAxes: [{
+        //   type: 'time',
+        //   time: {
+        //       unit: 'month'
+        //   }
+        // }],
         yAxes: [{
             ticks: {
                 min: 0
             }
         }]
       },
-      // scales: {
-      //   xAxes: [{
-      //       stacked: true
-      //   }],
-      //   yAxes: [{
-      //       stacked: true
-      //   }]
-      // },
       tooltips: {
         mode: 'index',
         intersect: false,
@@ -53,5 +55,5 @@ const createExpenseChart = () => {
   });
 };
 
-export { createExpenseChart };
+export { createHeaderChart };
 

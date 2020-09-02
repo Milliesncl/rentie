@@ -253,7 +253,13 @@ unit18.photos.attach(io: picture3unit18, filename: 'image3.jpg', content_type: '
 
 puts "Creating tasks"
 
-task1 = Task.create!(building: building1, contractor: contractor1, title: "Plumber needed", description: "My toilet exploded", category: "Plumbing", urgency: "High", unit: unit3)
-task2 = Task.create!(building: building2, contractor: contractor2, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", urgency: "Medium", unit: unit2)
+task1 = Task.create!(building: building6, contractor: contractor4, title: "Plumber needed", description: "My toilet exploded", category: "Plumbing", expense: 293.41, urgency: "High", unit: unit3, start_date: "2020-01-27")
+task2 = Task.create!(building: building6, contractor: contractor8, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", expense: 192.35, urgency: "Medium", unit: unit2, start_date: "2020-01-27")
+task3 = Task.create!(building: building6, contractor: contractor12, title: "Electrician needed", description: "Light switch doesn't work", category: "Furniture", expense: 92.11, urgency: "Medium", unit: unit2, start_date: "2020-02-27")
+task4 = Task.create!(building: building6, contractor: contractor16, title: "Electrician needed", description: "Light switch doesn't work", category: "Plumbing", expense: 605.3, urgency: "Medium", unit: unit2, start_date: "2020-03-27")
+task5 = Task.create!(building: building7, contractor: contractor20, title: "Electrician needed", description: "Light switch doesn't work", category: "Furniture", expense: 51.32, urgency: "Medium", unit: unit2, start_date: "2020-04-27")
+task6 = Task.create!(building: building7, contractor: contractor4, title: "Electrician needed", description: "Light switch doesn't work", category: "Other", expense: 11.02, urgency: "Medium", unit: unit2, start_date: "2020-05-27")
+task7 = Task.create!(building: building7, contractor: contractor8, title: "Electrician needed", description: "Light switch doesn't work", category: "Renovation", expense: 1002.09, urgency: "Medium", unit: unit2, start_date: "2020-06-27")
+
 
 puts "Done"

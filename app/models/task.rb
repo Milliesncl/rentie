@@ -67,17 +67,4 @@ class Task < ApplicationRecord
     all_expenses_array_unit_breakdown << all_expenses_unit_array
     all_expenses_array_unit_breakdown
   end
-
-  def self.all_buildings_expenses
-    categories = Task.where(@buildings).pluck(:category).uniq
-    overall_expenses_array_breakdown = []
-    overall_expenses_array_breakdown << categories
-    overall_expenses_array = []
-    categories.each do |category|
-      # next if category.expense.nil?
-      overall_expenses_array << Task.where(category: category).sum { |task| task.expense.to_i }
-    end
-    overall_expenses_array_breakdown << overall_expenses_array
-    overall_expenses_array_breakdown
-  end
 end
