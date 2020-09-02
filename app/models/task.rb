@@ -30,7 +30,7 @@ class Task < ApplicationRecord
     end
     all_expenses_breakdown
   end
-
+  
   def self.calculate_overall_expenses_for_building(building)
     mortgage_building = building.mortgage
     categories = Task.where(building_id: building).pluck(:category).uniq
