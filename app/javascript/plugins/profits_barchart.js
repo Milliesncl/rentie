@@ -9,9 +9,9 @@ const createProfitsChart = () => {
     datasets: [{
       fill: false,
       backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
-      data: profitsData[1]
+      data: profitsData
     }],
-    labels: profitsData[0]
+    labels: ["Profits", "Loss"]
   };
 
   const expenseChart = new Chart(profitsChartElement, {

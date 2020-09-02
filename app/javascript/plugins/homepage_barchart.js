@@ -15,9 +15,19 @@ const createExpenseChart = () => {
   };
 
   const expenseChart = new Chart(expenseChartElement, {
+
     type: 'bar',
     data: data,
+
     options: {
+
+      scales: {
+        yAxes: [{
+            ticks: {
+                min: 0
+            }
+        }]
+      },
       // scales: {
       //   xAxes: [{
       //       stacked: true
