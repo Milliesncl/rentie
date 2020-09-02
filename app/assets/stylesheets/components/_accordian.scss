@@ -1,18 +1,26 @@
 .panel {
-  padding: 15px;
   background-color: white;
-  display: none;
   overflow: hidden;
-  transition: 0.4s;
+  max-height: 0;
+  padding: 0 15px;
+  transition: max-height 0.6s ease-in-out;
+}
+
+.panel.active {
+  max-height: 700px;
 }
 
 .dropdown {
   background-color: white;
-  transition: 0.4s;
+  // transition: 0.4s;
   border: 1px solid #d6d6d6;
-  padding: 5px;
 }
 
 .btn.accordion {
   font-size: 18px;
+  padding: 10px;
+}
+
+.accordion {
+  cursor: pointer;
 }

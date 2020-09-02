@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.joins(:building).where(buildings: { user_id: current_user.id })
+    if current_user.renter == false
+      @tasks = Task.joins(:building).where(buildings: { user_id: current_user.id })
+    else
+     @tasks = Task.joins(:unit).where(units: { user_id: current_user.id })
+    end
   end
 
   def new

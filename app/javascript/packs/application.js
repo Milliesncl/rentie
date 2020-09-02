@@ -32,6 +32,7 @@ import { carouselBuildings } from "../plugins/building_display";
 import { createExpenseChart } from "../plugins/homepage_barchart";
 import { createBuildingExpensesChart } from "../plugins/building_expenses";
 import { createProfitsChart } from "../plugins/profits_barchart";
+import { createUnitExpensesChart } from "../plugins/unit_expenses";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   createBuildingExpensesChart();
   createExpenseChart();
   createProfitsChart();
+  createUnitExpensesChart();
 });
