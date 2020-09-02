@@ -51,7 +51,7 @@ body {
   align-items: center;
   background-color: white;
   width: 33%;
-  padding-top: 10px;
+  padding: 16px;
   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
   i {
     color: #009BA5;
@@ -75,8 +75,7 @@ body {
   width: 66%;
   margin-left: 20px;
   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
-  padding-bottom: 15px;
-  padding-top: 10px;
+  padding: 16px;
 }
 #income {
   background-color: #009BA5;
@@ -98,8 +97,7 @@ body {
   align-items: center;
   background-color: white;
   width: 48%;
-  padding-top: 10px;
-  padding-bottom: 15px;
+  padding: 16px;
   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
 }
 
@@ -159,5 +157,10 @@ margin-top: 15px;
 }
 
 #unit-expense-chart {
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.dropdown-title {
+  display: flex;
+  justify-content: space-between;
 }
