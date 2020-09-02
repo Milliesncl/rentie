@@ -3,11 +3,11 @@
 
   <div class="profile-communication">
     <div class="profile">
-      <a href=""><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598975078/rentie/icons/iconmonstr-user-5-240_1_x5ptrj.png" /></a>
+      <%= link_to '<img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598975078/rentie/icons/iconmonstr-user-5-240_1_x5ptrj.png" />'.html_safe, edit_user_registration_path %>
       <p>Profile</p>
     </div>
     <div class="communication">
-      <a href="/tasks"><img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598974680/rentie/icons/iconmonstr-speech-bubble-20-240_2_mnrorg.png" /></a>
+      <%= link_to '<img class="avatar-large" src="https://res.cloudinary.com/duc5z0utg/image/upload/v1598974680/rentie/icons/iconmonstr-speech-bubble-20-240_2_mnrorg.png" />'.html_safe, tasks_path %>
       <p>Communications</p>
     </div>
   </div>
