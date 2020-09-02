@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     if current_user.renter == false
       @tasks = Task.joins(:building).where(buildings: { user_id: current_user.id }).order(:status)
     else
-     @tasks = Task.joins(:unit).where(units: { user_id: current_user.id })
+     @tasks = Task.joins(:unit).where(units: { user_id: current_user.id }).order(:status)
     end
   end
 
