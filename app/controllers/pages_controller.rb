@@ -52,7 +52,9 @@ class PagesController < ApplicationController
       # PROFITS/LOSS CHART
       @profits_loss = []
       # find sum of the rent_amount from units
-      overall_profit = units.to_a.reject{ |unit| unit.user_id.nil? }.sum(&:rent_amount)
+      overall_profit = units.to_a.reject{ |unit| unit.user_id.nil? }.sum do |unit|
+        unit.rent_amount_cents / 100
+      end
       current_month_tasks = @tasks.where("start_date >= ?", Date.today.beginning_of_month)
       expenses_total = current_month_tasks.sum(&:expense).round(2)
 
@@ -61,7 +63,7 @@ class PagesController < ApplicationController
       @profits_loss << overall_profit
       @profits_loss << overall_loss
       
-      @roi = overall_profit.fractional - overall_loss
+      @roi = overall_profit - overall_loss
     end
   end
 end
