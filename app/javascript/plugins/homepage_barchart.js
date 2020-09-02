@@ -10,11 +10,11 @@ const createHeaderChart = () => {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December'],
     datasets: [{
       fill: false,
-      backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
+      backgroundColor: ["#F4F4F4"],
       data: roiData[0]
     },{
       fill: false,
-      backgroundColor: ["#F4F4F4", "#13547A", "#80D0C7", "#07A3B2", "#D9ECC7", "#009BA5"],
+      backgroundColor: ["#009BA5"],
       data: roiData[1]
     }
   ]

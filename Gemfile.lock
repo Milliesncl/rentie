@@ -275,7 +275,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass
-  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.2)
   money-rails

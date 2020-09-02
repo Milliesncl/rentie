@@ -28,13 +28,14 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params_task)
-
+    @task.expense.to_f
     if current_user.renter == true
       unit = Unit.find_by(user: current_user)
       building = unit.building
 
       @task.unit = unit
       @task.building = building
+      @task.start_date = @task.created_at
     end
 
     if @task.save!
