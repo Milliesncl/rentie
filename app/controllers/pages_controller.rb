@@ -13,7 +13,7 @@ class PagesController < ApplicationController
         # INCOME LINE
           @income_array = [] 
           units_income = units.sum do |unit| 
-             unit.rent_amount 
+             unit.rent_amount_cents / 100
           end
           12.times do
             @income_array << units_income
@@ -53,17 +53,15 @@ class PagesController < ApplicationController
       @profits_loss = []
       # find sum of the rent_amount from units
       overall_profit = units.to_a.reject{ |unit| unit.user_id.nil? }.sum(&:rent_amount)
-
-      # @task = @task.where('extract(month from date_column) = ?', desired_month).where(start_date.month: Time.current.beginning_of_month..Time.current.end_of_month)
       current_month_tasks = @tasks.where("start_date >= ?", Date.today.beginning_of_month)
       expenses_total = current_month_tasks.sum(&:expense).round(2)
-# raise
+
       overall_loss = @mortgage_total + expenses_total
 
       @profits_loss << overall_profit
       @profits_loss << overall_loss
       
-      @roi = overall_profit - overall_loss
+      @roi = overall_profit.fractional - overall_loss
     end
   end
 end
