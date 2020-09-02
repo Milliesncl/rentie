@@ -101,8 +101,6 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    groupdate (5.1.0)
-      activesupport (>= 5)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -276,7 +274,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass
-  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.2)
   money-rails
