@@ -56,6 +56,7 @@
 .user-update {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .user-update .email {
@@ -85,5 +86,10 @@
 
 .edit-user-title {
   display: flex;
-  justify-content: center;
 }
+
+.edit-user-title .avatar-large {
+  display: flex;
+  margin-right: 33%;
+}
+

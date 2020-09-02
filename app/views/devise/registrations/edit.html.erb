@@ -1,6 +1,11 @@
 <div class="form-background">
   <div class="edit-user-title">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <% if user_signed_in? && current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class:'avatar-large', alt:'avatar' %>
+  <% else %>
+    <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+  <% end %>
+    <h2><%= @user.first_name %></h2>
   </div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -14,7 +19,7 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                placeholder: "leave blank if you don't want to change",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     </div>
@@ -25,7 +30,7 @@
                 input_html: { autocomplete: "new-password" } %>
     </div>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                placeholder: "needed to confirm your change",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
     </div>
