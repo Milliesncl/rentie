@@ -1,4 +1,4 @@
-<h1>All tasks</h1>
+<h1 class="building-index-h1">All tasks</h1>
 
 <% if current_user.renter == false %>
   <% @tasks.each do |task| %>
@@ -34,7 +34,11 @@
         </div>
         <div class="task-line-one">
           <div class="task-label">
-            <p>Renter</p>
+            <p>Renter:
+              <% if task.unit.user != nil %>
+                <%= task.unit.user.first_name %><%= task.unit.user.last_name %>
+              <% end %>
+            </p>
           </div>
           <p>
             <%= task.unit_id %>
@@ -44,7 +48,11 @@
       <% if task.status == false %>
         <div class="task-middle-s">
           <div class="card-title-top">
-            <h2>Building - <%= task.unit_id %></h2>
+            <h2><%= task.building.address %> -
+              <% if task.unit.unit_number? %>
+                <%= task.unit.unit_number %>
+              <% end %>
+            </h2>
             <p><%= task.created_at %></p>
           </div>
           <div class="task-description">

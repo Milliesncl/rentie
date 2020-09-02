@@ -133,6 +133,7 @@ body {
     padding: 4px;
     padding-right: 8px;
     padding-left: 8px;
+    border-bottom: 2px solid white;
   }
   td:nth-child(2n), th:nth-child(2n) {
     text-align: right;
@@ -155,4 +156,8 @@ margin-top: 15px;
 
 .purchase-date {
   color: gray;
+}
+
+#unit-expense-chart {
+  margin-bottom: 10px;
 }

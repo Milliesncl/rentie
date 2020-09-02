@@ -47,17 +47,6 @@
       <p>This Month</p>
     </div>
 
-    <div class="profit">
-      <p>$40,000 </p>
-        <svg width="354" height="38" viewBox="0 0 354 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="354" height="38" fill="#50A8AB"/>
-        </svg>
-    </div>
-    <div class="loss">
-      <p>$17,000</p>
-      <svg width="234" height="38" viewBox="0 0 234 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="234" height="38" fill="#13547A"/>
-      </svg>
-    </div>
+    <canvas id="profits-chart" data-profits-data="<%= @income_of_buildings.to_json %>"></canvas>
   </div>
 </div>

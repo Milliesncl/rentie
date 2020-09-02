@@ -15,9 +15,19 @@ const createExpenseChart = () => {
   };
 
   const expenseChart = new Chart(expenseChartElement, {
+
     type: 'bar',
     data: data,
+
     options: {
+
+      scales: {
+        yAxes: [{
+            ticks: {
+                min: 0
+            }
+        }]
+      },
       // scales: {
       //   xAxes: [{
       //       stacked: true
@@ -28,12 +38,12 @@ const createExpenseChart = () => {
       // },
       tooltips: {
         mode: 'index',
-        intersect: false
-        // callbacks: {
-        //   label: function(tooltipItems, data) {
-        //     return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
-        //   }
-        // },
+        intersect: false,
+        callbacks: {
+          label: function(tooltipItems, data) {
+            return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
+          }
+        },
       },
       hover: {
         mode: 'nearest',
