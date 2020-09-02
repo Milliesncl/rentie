@@ -21,7 +21,7 @@ user1 = User.create!(phone_number: "+1 438 123 2345", email: "francesca@email.co
 user2 = User.create!(phone_number: "+1 438 123 2345", email: "kyle@email.com", password: "123456", first_name: "Kyle", last_name: "Masterson")
 user3 = User.create!(phone_number: "+1 438 123 2345", email: "millie@email.com", password: "123456", first_name: "Millie", last_name: "Senecal")
 user4 = User.create!(phone_number: "+1 438 123 2345", email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
-user5 = User.create!(phone_number: "+1 438 123 2345", email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
+user5 = User.create!(phone_number: "+1 438 123 2345", email: "rentie@email.com", password: "123456", first_name: "Francesca", last_name: "Hall", renter: true)
 
 puts "Add photos for users"
 
