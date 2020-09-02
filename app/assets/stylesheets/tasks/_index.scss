@@ -1,7 +1,8 @@
 @import "new";
 //renter
 .building-index-h1 {
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 .card-product-s {
   // height: 280px;
@@ -20,10 +21,7 @@
 .task-label {
   background-color: #009BA5;
   border-radius: 0 10px 10px 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px 10px;
   margin: 5px;
   margin-right: 50px;
 }
@@ -38,7 +36,9 @@
   width: max-content;
   height: 40px;
 }
-
+.pe-tag {
+ margin: auto;
+}
 .task-description {
   padding-top: 50px;
 }
@@ -76,6 +76,7 @@
   position: relative;
   width: 33%;
   align-items: center;
+  height: 180px;
 }
 
 .edit-status {
@@ -96,3 +97,6 @@
   display: flex;
 }
 
+.task-pen {
+  padding-left: 20px;
+}
