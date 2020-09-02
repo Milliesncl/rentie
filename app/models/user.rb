@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :units
   has_many :tasks, through: :units
   has_many :tasks, through: :buildings
+  has_many :rent_payments
   has_one_attached :photo
 
   # Include default devise modules. Others available are:

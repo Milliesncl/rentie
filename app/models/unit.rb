@@ -3,8 +3,9 @@ class Unit < ApplicationRecord
   belongs_to :user, optional: true
   has_many :tasks
   has_many_attached :photos
+  monetize :rent_amount_cents
 
-  validates :unit_number, :purchase_price, :rent_amount, presence: true
+  validates :unit_number, :purchase_price, :rent_amount_cents, presence: true
 
   def self.calculate_income(building)
     units = building.units

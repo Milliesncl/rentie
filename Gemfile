@@ -6,6 +6,9 @@ ruby '2.6.6'
 # Custom gems
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
+gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'

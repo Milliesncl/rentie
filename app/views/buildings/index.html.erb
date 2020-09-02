@@ -69,10 +69,10 @@
           <h3>Expenses</h3>
           <% if building.tasks.exists? %>
             <canvas id="building-expense-chart" data-building-expense-data="<%= Task.calculate_expenses_array_for_building(building).to_json %>"></canvas>
-            <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
+            <%= link_to "Add a new expense", new_task_path %>
           <% else %>
             <p>No expenses yet</p>
-            <%= link_to "Add an expense", new_task_path, class:"btn btn-primary" %>
+            <%= link_to "Add an expense", new_task_path %>
           <% end %>
         </div>
         <div class="tasks-to-do col-sm-12 col-md-6">
@@ -108,12 +108,12 @@
           </ul>
               <% end %>
               <div class="add-task-btn">
-                <%= link_to "Add a new task", new_task_path, class:"btn btn-primary" %>
+                <%= link_to "Add a new task", new_task_path %>
               </div>
               </ul>
               <% else %>
               <div class="add-task-btn">
-                <%= link_to "Add a task", new_task_path, class:"btn btn-primary" %>
+                <%= link_to "Add a task", new_task_path %>
               </div>
             <% end %>
         </div>
@@ -134,25 +134,37 @@
               <div class="card-deck">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Information</h5>
+                <div class="dropdown-title">
+                  <h5>Information</h5>
+                  <%= link_to building_unit_path(building, unit) do %>
+                      <i class="fas fa-pencil-alt"></i>
+                    <% end %>
+                  </div>
                 <p><%= '<i class="fas fa-bed"></i>'.html_safe %> <strong>Bedrooms:</strong> <%= unit.bedrooms %></p>
                 <p><%= '<i class="fas fa-bath"></i>'.html_safe %> <strong>Bathrooms:</strong> <%= unit.bathrooms %></p>
                 <p><%= '<i class="fas fa-pencil-ruler"></i>'.html_safe %> <strong>Sqm:</strong> <%= unit.square_meters %></p>
                 <p><%= '<i class="far fa-calendar-minus"></i>'.html_safe %> <strong>Lease end date:</strong> <%= unit.renewal_date %></p>
                 <p><%= '<i class="fas fa-money-check-alt"></i>'.html_safe %> <strong>Rent:</strong> $<%= unit.rent_amount %></p>
                 <p><%= '<i class="fas fa-university"></i>'.html_safe %> <strong>Purchase price:</strong> $<%= unit.purchase_price %></p>
-                <%= link_to "Edit the unit", building_unit_path(building, unit), class:"btn btn-primary" %>
               </div>
             </div>
             <div class="card">
               <div class="card-body expenses-chart">
-                <h5 class="card-title">Expenses</h5>
                   <% if unit.tasks.exists? %>
+                    <div class="dropdown-title">
+                    <h5>Expenses</h5>
+                    <%= link_to new_task_path do %>
+                    <i class="fas fa-pencil-alt"></i>
+                    <% end %>
+                </div>
                     <canvas id="unit-expense-chart" data-unit-expense-data="<%= Task.calculate_expenses_array_for_unit(unit).to_json %>" height="300"></canvas>
-                    <%= link_to "Add a new expense", new_task_path, class:"btn btn-primary" %>
                   <% else %>
-                    <p>No expenses yet</p>
-                    <%= link_to "Add an expense", new_task_path, class:"btn btn-primary" %>
+                  <div class="dropdown-title">
+                    <h5>No expenses yet</h5>
+                    <%= link_to new_task_path do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  </div>
+                    <% end %>
                   <% end %>
               </div>
             </div>
@@ -162,10 +174,14 @@
                   <h5 class="card-title">Tenant</h5>
                   <p class="card-text"><%= unit.user.first_name %> <%= unit.user.last_name %></p>
                   <p class="card-text"><%= unit.user.email %></p>
-                  <%= link_to "Edit tenant", edit_tenant_path(unit.user), class:"btn btn-primary"%>
+                  <%= link_to "Edit tenant", edit_tenant_path(unit.user) %>
                 <% else %>
-                  <h5 class="card-title">No tenant</h5>
-                  <%= link_to "Add a tenant", new_tenant_path, class:"btn btn-primary" %>
+                <div class="dropdown-title">
+                  <h5>No tenant</h5>
+                    <%= link_to new_tenant_path do %>
+                    <i class="fas fa-pencil-alt"></i>
+                    <% end %>
+                </div>
                 <% end %>
               </div>
             </div>

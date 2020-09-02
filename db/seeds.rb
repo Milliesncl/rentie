@@ -21,7 +21,7 @@ user1 = User.create!(phone_number: "+1 438 123 2345", email: "francesca@email.co
 user2 = User.create!(phone_number: "+1 438 123 2345", email: "kyle@email.com", password: "123456", first_name: "Kyle", last_name: "Masterson")
 user3 = User.create!(phone_number: "+1 438 123 2345", email: "millie@email.com", password: "123456", first_name: "Millie", last_name: "Senecal")
 user4 = User.create!(phone_number: "+1 438 123 2345", email: "meagan@email.com", password: "123456", first_name: "Meagan", last_name: "Butters")
-user5 = User.create!(phone_number: "+1 438 123 2345", email: "rentie@email.com", password: "123456", first_name: "Rentie", last_name: "Lewagon", renter: true)
+user5 = User.create!(phone_number: "+1 438 123 2345", email: "rentie@email.com", password: "123456", first_name: "Francesca", last_name: "Hall", renter: true)
 
 puts "Add photos for users"
 
@@ -150,7 +150,7 @@ unit8 = Unit.create!(building: building3, unit_number: 4425, square_meters: 913.
 unit9 = Unit.create!(building: building4, unit_number: 7074, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 300000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 1000)
 unit10 = Unit.create!(building: building4, unit_number: 7076, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 280000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
 unit11 = Unit.create!(building: building4, unit_number: 7078, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,8,1), payment_date: 5, rent_amount: 1200)
-unit12 = Unit.create!(building: building5, unit_number: 7344, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1150)
+unit12 = Unit.create!(building: building5, unit_number: 7344, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.0, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,9,1), payment_date: 1, rent_amount: 1100)
 unit13 = Unit.create!(building: building5, unit_number: 7346, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 200000, payment_method: "Interac", renewal_date: Date.new(2021,5,1), payment_date: 1, rent_amount: 900)
 unit14 = Unit.create!(user: user5, building: building6, unit_number: 6250, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 150900, payment_method: "Interac", renewal_date: Date.new(2021,6,1), payment_date: 1, rent_amount: 800)
 unit15 = Unit.create!(building: building6, unit_number: 6252, square_meters: 900.0, bathrooms: 1.0, bedrooms: 2.5, purchase_price: 250000, payment_method: "Interac", renewal_date: Date.new(2021,7,1), payment_date: 1, rent_amount: 900)
