@@ -50,7 +50,13 @@
                 <%= task.unit.unit_number %>
               <% end %></strong>
             </p>
-            <p><strong><%= task.created_at %></p></strong>
+            <p><strong>
+              <% if task.start_date.nil? %>
+                <%= task.created_at.strftime("%Y-%m-%d") %>
+              <% else %>
+                <%= task.start_date %>
+              <% end %>
+            </p></strong>
           </div>
           <div class="task-description">
             <div class="task-description-s">
