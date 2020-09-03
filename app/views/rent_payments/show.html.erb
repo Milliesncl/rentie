@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row py-4">
     <div class="col">
-      <h3>Payment history</h3>
+      <h3 class="payment-title">Payment history</h3>
       <div class="payment-history">
-        <%= @rent_payment.id %> <small><span class="badge badge-primary"><%= @rent_payment.state %></span></small>
+        <h3>Payment received</h3>
           <ul class="list-unstyled">
             <li><strong>ISSUED ON</strong> <%= @rent_payment.created_at.to_date %></li>
             <li><strong>TENANT</strong> <%= @rent_payment.user.first_name %> </li>
