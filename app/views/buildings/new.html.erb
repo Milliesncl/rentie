@@ -6,7 +6,7 @@
     <%= f.input :address, label: "Address" %>
     <%= f.input :mortgage, label: "Mortgage" %>
     <%= f.input :purchase_price, label: "Purchase price" %>
-    <%= f.input :date, as: :date, label: "Purcahse Date:", start_year: Date.today.year, order: [:day, :month, :year], html5: true, input_html: { min: Date.today.to_s, value: Date.today.to_s } %>
+    <%= f.input :purchase_date, as: :date, label: "Purchase Date:", start_year: Date.today.year, order: [:day, :month, :year], html5: true, input_html: { min: Date.today.to_s, value: Date.today.to_s } %>
     <div class="task-btn">
     <%= f.submit "Create a building", class:"btn btn-primary" %>
   </div>
