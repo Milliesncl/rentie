@@ -21,9 +21,7 @@ class UnitsController < ApplicationController
     @unit = Unit.new(params_unit)
     @building = Building.find(params[:building_id])
     @unit.building = @building
-    if @unit.lease
-      @unit.lease = params[:unit][:lease].read
-    end
+    @unit.lease = params[:unit][:lease].read
 
     if @unit.save
       redirect_to buildings_path
@@ -41,7 +39,8 @@ class UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     @building = Building.find(params[:building_id])
     @unit.building = @building
-    if @unit.lease
+
+    if params[:unit][:lease]
       @unit.lease = params[:unit][:lease].read
     end
 

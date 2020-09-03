@@ -76,10 +76,16 @@
             </div>
             <p><%= @unit.bedrooms %></p>
           </div>
-          <% if @unit.lease != nil %>
-            <p class="col-12 align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank", class: "btn btn-primary" %></p>
-        <% end %>
         </div>
+          <% if @unit.lease != nil %>
+            <div class="unit-info-row">
+              <div class="column col-12 mt-2">
+                <p class="align-self-center"> <%= link_to "Download leasing contract", units_lease_path(@unit), target: "_blank" %></p>
+              </div>
+            </div>
+          <% end %>
+<!--           </div>
+        </div> -->
       </div>
     </div>
 </div>
