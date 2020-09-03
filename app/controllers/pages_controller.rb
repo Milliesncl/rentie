@@ -27,7 +27,7 @@ class PagesController < ApplicationController
 
       @tasks.each do |task|
         next if task.start_date.nil?
-        yearly_loss[task.start_date.month] += task.expense
+        yearly_loss[task.start_date.month] += task.expense.to_i
       end
 
       @unit_expenses = units.map do |unit|
@@ -57,7 +57,7 @@ class PagesController < ApplicationController
         unit.rent_amount_cents / 100
       end
       current_month_tasks = @tasks.where("start_date >= ?", Date.today.beginning_of_month)
-      expenses_total = current_month_tasks.sum(&:expense).round(2)
+      expenses_total = current_month_tasks.sum { |task| task.expense.to_i }.round(2)
 
       overall_loss = @mortgage_total + expenses_total
 

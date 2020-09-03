@@ -8,6 +8,7 @@ const createProfitsChart = () => {
   console.log(profitsData)
   const data = {
     datasets: [{
+      labels: ["Profits", "Loss"],
       fill: false,
       backgroundColor: ["#80D0C7", "#07A3B2"],
       data: profitsData
