@@ -172,10 +172,14 @@
             <div class="card">
               <div class="card-body">
                 <% if unit.user != nil %>
+                <div class="dropdown-title">
                   <h5 class="card-title">Tenant</h5>
+                    <%= link_to edit_tenant_path(unit.user) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                    <% end %>
+                  </div>
                   <p class="card-text"><%= unit.user.first_name %> <%= unit.user.last_name %></p>
                   <p class="card-text"><%= unit.user.email %></p>
-                  <%= link_to "Edit tenant", edit_tenant_path(unit.user) %>
                 <% else %>
                 <div class="dropdown-title">
                   <h5>No tenant</h5>
