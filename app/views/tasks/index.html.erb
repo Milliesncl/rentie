@@ -32,22 +32,24 @@
             <%= task.urgency %>
           </p>
         </div>
-        <div class="task-line-one">
-          <div class="task-label">
-            <p>Renter</p>
-          </div>
+          <div class="task-line-one">
+          <% if task.unit != nil %>
+            <% if task.unit.user != nil %>
+              <div class="task-label">
+                <p>Renter</p>
+              </div>
               <p class="pe-tag">
-                <% if task.unit.user != nil %>
-                  <%= task.unit.user.first_name %> <%= task.unit.user.last_name %>
-                <% end %>
+                <%= task.unit.user.first_name %> <%= task.unit.user.last_name %>
               </p>
-        </div>
+            <% end %>
+          <% end %>
+          </div>
       </div>
       <% if task.status == false %>
         <div class="task-middle-s">
           <div class="card-title-top">
             <p><strong><%= task.building.address %> -
-              <% if task.unit.unit_number? %>
+              <% if task.unit != nil %>
                 <%= task.unit.unit_number %>
               <% end %></strong>
             </p>
