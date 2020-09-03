@@ -7,7 +7,6 @@ puts "Deleting everything"
   Contractor.destroy_all
   Task.destroy_all
   User.destroy_all
-  # RentPayment.destroy_all
 puts "Creating users"
 
 picture1 = URI.open('https://res.cloudinary.com/duc5z0utg/image/upload/v1598549834/0xo0ydt8vwsui4si6t1ezj7mra5j.jpg')
