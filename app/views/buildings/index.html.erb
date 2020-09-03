@@ -10,7 +10,7 @@
         <div class="information">
           <h3>Information</h3>
           <div id="home-page-info">
-            <p style="font-size: 35px;"><%= number_to_currency(building.purchase_price, precision: 0) %></p>
+            <p class="building-cost" style="font-size: 20px;"><%= number_to_currency(building.purchase_price, precision: 0) %></p>
             <p><%= '<i <i class="far fa-building"></i>'.html_safe %>  <strong><%= building.units.count %></strong> units</p>
             <p><%= '<i class="fas fa-file-invoice-dollar"></i>'.html_safe %>  <strong><%= number_to_currency(Task.calculate_overall_expenses_for_building(building)) %></strong> of expenses</p>
             <p><%= '<i class="fas fa-percentage"></i>'.html_safe %>  <strong><%= number_to_currency(building.taxes) %></strong> of taxes to pay</p>
