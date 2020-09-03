@@ -35,7 +35,7 @@ class TasksController < ApplicationController
 
       @task.unit = unit
       @task.building = building
-      @task.start_date = @task.created_at
+      @task.start_date = Date.now
     end
 
     if @task.save!

@@ -24,9 +24,10 @@ class PagesController < ApplicationController
           @yearly_mortgage = Array.new(12, @mortgage_total)
 
           yearly_loss = Hash.new(0)
-
-          #@tasks.each do |task|
-            #yearly_loss[task.start_date.month] += task.expense
+      
+          @tasks.each do |task|
+            next if task.start_date.nil?
+            yearly_loss[task.start_date.month] += task.expense
           end
 
           @unit_expenses = units.map do |unit|
