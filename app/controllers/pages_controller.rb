@@ -67,4 +67,4 @@ class PagesController < ApplicationController
       @roi = overall_profit - overall_loss
     end
   end
-#end
+end
