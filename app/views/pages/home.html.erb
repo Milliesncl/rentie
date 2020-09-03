@@ -43,8 +43,8 @@
   <div class="profits-loss">
     <div class="total">
       <h3>Profit and Loss</h3>
+      <p class="purchase-date"><%= Time.now.strftime("%B")  %></p>
       <p><%= number_to_currency(@roi) %></p>
-      <p>This Month</p>
     </div>
 
     <canvas id="profits-chart" data-profits-data="<%= @profits_loss.to_json %>"></canvas>

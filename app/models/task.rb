@@ -21,11 +21,12 @@ class Task < ApplicationRecord
   end
 
   def self.calculate_expenses_for_building(building)
-    categories = Task.where(building_id: building).pluck(:category).uniq
+    current_month_tasks = Task.where("start_date >= ?", Date.today.beginning_of_month)
+    categories = current_month_tasks.where(building_id: building).pluck(:category).uniq
     all_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
-      expense_hash[category] = Task.where(building: building, category: category).sum { |task| task.expense.to_i }
+      expense_hash[category] = current_month_tasks.where(building: building, category: category).sum { |task| task.expense.to_i }
       all_expenses_breakdown << expense_hash
     end
     all_expenses_breakdown
@@ -33,11 +34,12 @@ class Task < ApplicationRecord
   
   def self.calculate_overall_expenses_for_building(building)
     mortgage_building = building.mortgage
-    categories = Task.where(building_id: building).pluck(:category).uniq
+    current_month_tasks = Task.where("start_date >= ?", Date.today.beginning_of_month)
+    categories = current_month_tasks.where(building_id: building).pluck(:category).uniq
     all_overall_expenses_breakdown = []
     categories.each do |category|
       expense_hash = Hash.new
-      expense_hash = Task.where(building: building).sum { |task| task.expense.to_i }
+      expense_hash = current_month_tasks.where(building: building).sum { |task| task.expense.to_i }
       all_overall_expenses_breakdown << expense_hash + mortgage_building
     end
     all_overall_expenses_breakdown.first
@@ -45,12 +47,13 @@ class Task < ApplicationRecord
 
   # [['plumbing', 'Electricity'], [0,3,4]]
   def self.calculate_expenses_array_for_building(building)
+    current_month_tasks = Task.where("start_date >= ?", Date.today.beginning_of_month)
     categories = Task.pluck(:category).uniq
     all_expenses_array_breakdown = []
     all_expenses_array_breakdown << categories
     all_expenses_array = []
     categories.each do |category|
-      all_expenses_array << Task.where(building: building, category: category).sum { |task| task.expense.to_i }
+      all_expenses_array << current_month_tasks.where(building: building, category: category).sum { |task| task.expense.to_i }
     end
     all_expenses_array_breakdown << all_expenses_array
     all_expenses_array_breakdown
