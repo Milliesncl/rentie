@@ -1,3 +1,5 @@
+require 'date'
+
 class TasksController < ApplicationController
   def index
     if current_user.renter == false
@@ -35,7 +37,7 @@ class TasksController < ApplicationController
 
       @task.unit = unit
       @task.building = building
-      @task.start_date = Date.now
+      @task.start_date = DateTime.now
     end
 
     if @task.save!
