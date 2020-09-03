@@ -1,5 +1,5 @@
 <h2>Incomplete Tasks</h2>
-<% if @incomplete_tasks.nil? %>
+<% if @incomplete_tasks.count == 0 %>
   <p>No tasks to do!</p>
 <% else %>
   <% @incomplete_tasks.each do |task| %>
