@@ -3,7 +3,7 @@
 <%= simple_form_for [@contractor] do |f| %>
   <%= f.input :first_name, label: "First Name" %>
   <%= f.input :last_name, label: "Last Name" %>
-  <%= f.input :speciality, label: "Speciality" %>
+  <%= f.input :speciality, label: "Speciality", collection: [ "Roofer", "Electrician", "Plumber", "Other" ] %>
   <%= f.input :phone_number, label: "Phone Number" %>
   <%= f.submit "Update contractor", class:"btn btn-primary" %>
 <% end %>
