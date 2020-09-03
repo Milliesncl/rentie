@@ -8,6 +8,11 @@
     ". task-header task-update"
     "task-details task-description task-img-upload";
   margin-bottom:3%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
 }
 .card-product-r {
   display: grid;
@@ -16,6 +21,11 @@
   grid-template-areas: 
     "task-details task-description task-img-upload";
   margin-bottom:3%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .task-header {
@@ -49,19 +59,7 @@
   margin-top: 40px;
   margin-bottom: 20px;
 }
-.card-product-s {
-  // height: 280px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  // display: flex;
-  // flex-wrap: no-wrap;
-  // flex-direction: row;
-  // align-items: center;
-  margin-top: 10px;
-  padding: 15px;
-  border-radius: 10px;
-  // justify-content: space-between;
-}
+
 
 .task-label {
   background-color: #009BA5;
