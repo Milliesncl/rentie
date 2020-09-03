@@ -244,12 +244,12 @@ unit11.photos.attach(io: picture3unit11, filename: 'image3.jpg', content_type: '
 
 puts "Creating tasks"
 
-task1 = Task.create!(building: building1, contractor: contractor2, title: "Toilet exploded! 911!!", description: "My toilet exploded, there's water everywhere!! Please contact me as soon as possible", category: "Plumbing", expense: 293.41, urgency: "High", unit: unit3, start_date: "2020-09-27")
-task2 = Task.create!(building: building1, contractor: contractor3, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", expense: 192.35, urgency: "Medium", unit: unit2, start_date: "2020-01-27")
-task3 = Task.create!(building: building1, title: "Electrician needed", description: "Light switch doesn't work", category: "Furniture", expense: 92.11, urgency: "Medium", unit: unit2, start_date: "2020-02-27")
-task4 = Task.create!(building: building1, contractor: contractor5, title: "Electrician needed", description: "Light switch doesn't work", category: "Plumbing", expense: 605.3, urgency: "Medium", unit: unit4, start_date: "2020-03-27")
-task5 = Task.create!(building: building2, title: "Electrician needed", description: "Light switch doesn't work", category: "Other", expense: 51.32, urgency: "Medium", unit: unit6, start_date: "2020-04-27")
-task6 = Task.create!(building: building2, title: "Electrician needed", description: "Light switch doesn't work", category: "Other", expense: 11.02, urgency: "Medium", unit: unit8, start_date: "2020-05-27")
-task7 = Task.create!(building: building2, contractor: contractor4, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", expense: 1002.09, urgency: "Medium", unit: unit5, start_date: "2020-06-27")
+task1 = Task.create!(building: building1, contractor: contractor2, title: "Toilet exploded! 911!!", description: "My toilet exploded, there's water everywhere!! Please contact me as soon as possible", category: "Plumbing", expense: 293.41, urgency: "High", unit: unit3, start_date: "2020-09-27", status: true)
+task2 = Task.create!(building: building1, contractor: contractor3, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", expense: 192.35, urgency: "Medium", unit: unit2, start_date: "2020-01-27", status: true)
+task3 = Task.create!(building: building1, title: "Electrician needed", description: "Light switch doesn't work", category: "Furniture", expense: 92.11, urgency: "Medium", unit: unit2, start_date: "2020-02-27", status: true)
+task4 = Task.create!(building: building1, contractor: contractor5, title: "Electrician needed", description: "Light switch doesn't work", category: "Plumbing", expense: 605.3, urgency: "Medium", unit: unit4, start_date: "2020-03-27", status: true)
+task5 = Task.create!(building: building2, title: "Electrician needed", description: "Light switch doesn't work", category: "Other", expense: 51.32, urgency: "Medium", unit: unit6, start_date: "2020-04-27", status: true)
+task6 = Task.create!(building: building2, title: "Electrician needed", description: "Light switch doesn't work", category: "Other", expense: 11.02, urgency: "Medium", unit: unit8, start_date: "2020-05-27", status: true)
+task7 = Task.create!(building: building2, contractor: contractor4, title: "Electrician needed", description: "Light switch doesn't work", category: "Electricity", expense: 1002.09, urgency: "Medium", unit: unit5, start_date: "2020-06-27", status: true)
 
 puts "Done"
