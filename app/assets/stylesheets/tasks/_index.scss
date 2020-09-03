@@ -1,4 +1,49 @@
 @import "new";
+// new task cards
+.card-product-s {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    ". task-header task-update"
+    "task-details task-description task-img-upload";
+  margin-bottom:3%;
+}
+.card-product-s {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "task-details task-description task-img-upload";
+  margin-bottom:3%;
+}
+
+.task-header {
+  grid-area: task-header;
+  text-align: center;
+}
+.task-update {
+  grid-area: task-update;
+  text-align: right;
+}
+.task-details {
+  grid-area: task-details;
+  border-right: 1px solid lightgrey;
+  padding:5%;
+  padding-left:0;
+}
+
+.task-description {
+  grid-area: task-description;
+  border-right: 1px solid lightgrey;
+  padding:5%;
+}
+.task-img-upload {
+  grid-area: task-img-upload;
+  padding:5%;
+}
+
+
 //renter
 .building-index-h1 {
   margin-top: 40px;
@@ -8,14 +53,14 @@
   // height: 280px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-wrap: no-wrap;
-  flex-direction: row;
-  align-items: center;
+  // display: flex;
+  // flex-wrap: no-wrap;
+  // flex-direction: row;
+  // align-items: center;
   margin-top: 10px;
   padding: 15px;
   border-radius: 10px;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .task-label {
@@ -39,9 +84,6 @@
 .pe-tag {
  margin: auto;
 }
-.task-description {
-  padding-top: 50px;
-}
 .head-card {
   display: flex;
   position: absolute;
@@ -54,20 +96,6 @@
   width: 180px;
 }
 
-
-.task-middle-s {
-  position: relative;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.task-middle-r{
-  width: 332.43px;
-  height: 160px;
-  padding-left: 50px;
-}
-
 .card-title-top {
   //position: relative;
   bottom: 90px;
@@ -75,31 +103,8 @@
   text-align: center;
 }
 
-.right-side-card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 33%;
-  align-items: center;
-  height: 180px;
-}
-
-.edit-status {
-  // position: absolute;
-  // bottom: 110px;
-}
-
-.edit-status .fa-pencil-alt:before {
-  top: -35px;
-  left: 180px;
-}
-
 .img-s {
   bottom: 20px;
-}
-
-.task-line-one p {
-  display: flex;
 }
 
 .task-pen {
