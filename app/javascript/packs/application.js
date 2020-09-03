@@ -33,6 +33,7 @@ import { createHeaderChart } from "../plugins/homepage_barchart";
 import { createBuildingExpensesChart } from "../plugins/building_expenses";
 import { createProfitsChart } from "../plugins/profits_barchart";
 import { createUnitExpensesChart } from "../plugins/unit_expenses";
+import { autoUnitRefresh } from "../plugins/auto_unit_refresh";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   createHeaderChart();
   createProfitsChart();
   createUnitExpensesChart();
+  autoUnitRefresh();
 });

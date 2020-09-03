@@ -1,11 +1,14 @@
 
 <div class="navbar" id="navbar">
   <% if user_signed_in? && current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, class:'avatar', alt:'avatar' %>
+      <%= link_to cl_image_tag(current_user.photo.key, class:'avatar', alt:'avatar'), edit_user_registration_path %>
   <% else %>
-    <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+    <%= link_to '<img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />'.html_safe, edit_user_registration_path %>
   <% end %>
   <%= link_to '<i class="fas fa-house-user"></i>'.html_safe, '/' %>
+  <div class="navbar-logo">
+    <%= image_tag "rentie.png" %>
+  </div>
 </div>
 
 
@@ -16,11 +19,12 @@
     <%= link_to '<i class="far fa-calendar-alt"></i>'.html_safe, tasks_path %>
     <button class="plus" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></button>
     <div class="dropdown-menu">
-          <!-- Dropdown menu links -->
-          <%= link_to 'Task', new_task_path %><br>
-          <%= link_to 'Building', new_building_path %><br>
-          <%= link_to 'Tenant', new_tenant_path %><br>
-          <%= link_to 'Contractor', new_contractor_path %>
+       <%# <ul>
+        <li><%= link_to 'Task', new_task_path %></li>
+        <li><%= link_to 'Building', new_building_path %></li>
+        <li><%= link_to 'Tenant', new_tenant_path %></li>
+        <li><%= link_to 'Contractor', new_contractor_path %></li>
+      </ul> %>
     </div>
   </div>
 </div>
