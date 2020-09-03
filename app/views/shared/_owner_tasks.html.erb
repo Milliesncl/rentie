@@ -6,7 +6,7 @@
         <div class="card-product-s">
       <div class="task-header">
         <p><strong><%= task.building.address %> -
-          <% if task.unit.unit_number? %>
+          <% if task.unit != nil %>
            Unit <%= task.unit.unit_number %>
           <% end %>
         </strong></p>
@@ -48,14 +48,16 @@
           </p>
         </div>
         <div class="task-line-one">
-          <div class="task-label">
-            <p>Renter</p>
-          </div>
+          <% if task.unit != nil %>
+            <% if task.unit.user != nil %>
+              <div class="task-label">
+                <p>Renter</p>
+              </div>
               <p class="pe-tag">
-                <% if task.unit.user != nil %>
                   <%= task.unit.user.first_name %> <%= task.unit.user.last_name %>
-                <% end %>
               </p>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="task-description">
@@ -83,10 +85,10 @@
   <% @complete_tasks.each do |task| %>
         <div class="card-product-s">
       <div class="task-header">
-        <p><strong><%= task.building.address %> -
-          <% if task.unit.unit_number? %>
-           Unit <%= task.unit.unit_number %>
-          <% end %>
+        <p><strong><%= task.building.address %>
+        <% if task.unit != nil %>
+          - Unit <%= task.unit.unit_number %>
+        <% end %>
         </strong></p>
         <p><strong>
           <% if task.start_date.nil? %>
@@ -126,14 +128,16 @@
           </p>
         </div>
         <div class="task-line-one">
-          <div class="task-label">
-            <p>Renter</p>
-          </div>
+          <% if task.unit != nil %>
+            <% if task.unit.user != nil %>
+              <div class="task-label">
+                <p>Renter</p>
+              </div>
               <p class="pe-tag">
-                <% if task.unit.user != nil %>
                   <%= task.unit.user.first_name %> <%= task.unit.user.last_name %>
-                <% end %>
               </p>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="task-description">

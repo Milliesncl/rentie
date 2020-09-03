@@ -4,20 +4,6 @@
 <% else %>
   <% @incomplete_tasks.each do |task| %>
         <div class="card-product-s">
-      <div class="task-header">
-        <p><strong><%= task.building.address %> -
-          <% if task.unit.unit_number? %>
-           Unit <%= task.unit.unit_number %>
-          <% end %>
-        </strong></p>
-        <p><strong>
-          <% if task.start_date.nil? %>
-            <%= task.created_at.strftime("%Y-%m-%d") %>
-          <% else %>
-            <%= task.start_date %>
-          <% end %>
-        </p></strong>
-      </div>
       <div class="task-details">
         <div class="task-line-one">
           <div class="task-label">
@@ -82,20 +68,6 @@
 <h2>Completed Tasks</h2>
   <% @complete_tasks.each do |task| %>
         <div class="card-product-s">
-      <div class="task-header">
-        <p><strong><%= task.building.address %> -
-          <% if task.unit.unit_number? %>
-           Unit <%= task.unit.unit_number %>
-          <% end %>
-        </strong></p>
-        <p><strong>
-          <% if task.start_date.nil? %>
-            <%= task.created_at.strftime("%Y-%m-%d") %>
-          <% else %>
-            <%= task.start_date %>
-          <% end %>
-        </p></strong>
-      </div>
       <div class="task-details">
         <div class="task-line-one">
           <div class="task-label">
