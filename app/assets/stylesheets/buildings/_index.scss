@@ -15,6 +15,7 @@ Z.btn-primary {
 
 .building-index h1 {
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .button-navigation {
@@ -126,12 +127,13 @@ body {
   width: 90%;
   padding: 5%;
   th {
-    background-color: #C1C1C1;
-    color: white;
-    padding: 4px;
-    padding-right: 8px;
-    padding-left: 8px;
-    border-bottom: 2px solid white;
+    // // background-color: #C1C1C1;
+    // // color: white;
+    // padding: 4px;
+    // padding-right: 8px;
+    // padding-left: 8px;
+    // border-bottom: 2px solid white;
+
   }
   td:nth-child(2n), th:nth-child(2n) {
     text-align: right;
@@ -147,9 +149,9 @@ body {
 }
 
 .add-task-btn {
-display: flex;
-justify-content: center;
-margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .purchase-date {
@@ -167,4 +169,14 @@ margin-top: 15px;
 
 .card-body i {
   color: #009BA5;
+}
+
+.building-index h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.building-cost {
+  display: flex;
+ justify-content: center;
 }
