@@ -1,7 +1,7 @@
 
 <div class="navbar-r" id="navbar">
   <% if user_signed_in? && current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, class:'avatar', alt:'avatar' %>
+      <%= link_to cl_image_tag(current_user.photo.key, class:'avatar', alt:'avatar'), edit_user_registration_path %>
   <% else %>
       <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
   <% end %>
