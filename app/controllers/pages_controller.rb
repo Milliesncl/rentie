@@ -10,44 +10,44 @@ class PagesController < ApplicationController
       units = Unit.where(building: buildings)
 
       # HEADER CHART
-        # INCOME LINE
-          @income_array = []
-          units_income = units.sum do |unit|
-             unit.rent_amount_cents / 100
-          end
-          12.times do
-            @income_array << units_income
-          end
+      # INCOME LINE
+      @income_array = []
+      units_income = units.sum do |unit|
+         unit.rent_amount_cents / 100
+      end
+      12.times do
+        @income_array << units_income
+      end
 
-        # LOSSES LINE
-          @mortgage_total = buildings.sum(&:mortgage).to_i
-          @yearly_mortgage = Array.new(12, @mortgage_total)
+      # LOSSES LINE
+      @mortgage_total = buildings.sum(&:mortgage).to_i
+      @yearly_mortgage = Array.new(12, @mortgage_total)
 
-          yearly_loss = Hash.new(0)
-      
-          @tasks.each do |task|
-            next if task.start_date.nil?
-            yearly_loss[task.start_date.month] += task.expense
-          end
+      yearly_loss = Hash.new(0)
 
-          @unit_expenses = units.map do |unit|
-            #unit.tasks.sum(&:expense)
-          end
-          @final_array = []
-          for k in 1..12
-            if yearly_loss.key?(k)
-              @final_array << yearly_loss[k]
-            else
-              @final_array << 0
-            end
-          end
-          @final_array = @final_array.map { |num| num + @mortgage_total }
+      @tasks.each do |task|
+        next if task.start_date.nil?
+        yearly_loss[task.start_date.month] += task.expense
+      end
+
+      @unit_expenses = units.map do |unit|
+        #unit.tasks.sum(&:expense)
+      end
+      @final_array = []
+      for k in 1..12
+        if yearly_loss.key?(k)
+          @final_array << yearly_loss[k]
+        else
+          @final_array << 0
+        end
+      end
+      @final_array = @final_array.map { |num| num + @mortgage_total }
 
 
-        # PROFIT/LOSS
-          @yearly = Array.new
-          @yearly << @final_array
-          @yearly << @income_array
+      # PROFIT/LOSS
+      @yearly = Array.new
+      @yearly << @final_array
+      @yearly << @income_array
 
 
       # PROFITS/LOSS CHART
@@ -67,4 +67,4 @@ class PagesController < ApplicationController
       @roi = overall_profit - overall_loss
     end
   end
-#end
+end
