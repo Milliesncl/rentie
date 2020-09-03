@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   def home
     if current_user.renter?
       render 'welcome'
-    else 
-      # get all tasks from current user's buildings 
+    else
+      # get all tasks from current user's buildings
       @tasks = Task.joins(:unit).joins(:building).where(buildings: { user_id: current_user.id })
       # get all buildings and units belonging to current user
       buildings = Building.where(user: current_user)
@@ -11,8 +11,8 @@ class PagesController < ApplicationController
 
       # HEADER CHART
         # INCOME LINE
-          @income_array = [] 
-          units_income = units.sum do |unit| 
+          @income_array = []
+          units_income = units.sum do |unit|
              unit.rent_amount_cents / 100
           end
           12.times do
@@ -24,17 +24,17 @@ class PagesController < ApplicationController
           @yearly_mortgage = Array.new(12, @mortgage_total)
 
           yearly_loss = Hash.new(0)
-
+      
           @tasks.each do |task|
             next if task.start_date.nil?
             yearly_loss[task.start_date.month] += task.expense
           end
-        
+
           @unit_expenses = units.map do |unit|
-            unit.tasks.sum(&:expense)
+            #unit.tasks.sum(&:expense)
           end
           @final_array = []
-          for k in 1..12 
+          for k in 1..12
             if yearly_loss.key?(k)
               @final_array << yearly_loss[k]
             else
@@ -63,8 +63,8 @@ class PagesController < ApplicationController
 
       @profits_loss << overall_profit
       @profits_loss << overall_loss
-      
+
       @roi = overall_profit - overall_loss
     end
   end
-end
+#end
