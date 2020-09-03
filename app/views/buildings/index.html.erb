@@ -23,7 +23,7 @@
             <thead>
               <tr>
                 <th>Income</th>
-                <th> August 20</th>
+                <th><%= Time.now.strftime("%B")  %></th>
               </tr>
             </thead>
             <tbody>
@@ -67,6 +67,7 @@
       <div class="bottom-cards">
         <div class="expenses">
           <h3>Expenses</h3>
+          <p><%= Time.now.strftime("%B")  %></p>
           <% if building.tasks.exists? %>
             <canvas id="building-expense-chart" data-building-expense-data="<%= Task.calculate_expenses_array_for_building(building).to_json %>"></canvas>
             <%= link_to "Add a new expense", new_task_path %>

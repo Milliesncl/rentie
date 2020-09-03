@@ -8,7 +8,10 @@
 
 
   <div class="tasks">
-      <h3>Tasks to do</h3>
+      <div class="todo-btn">
+        <h3 style="padding-left: 140px">Tasks to do</h3>
+        <button class="plus-home" type="buttom"><i class="fas fa-plus"></i></button>
+      </div>
       <ul class="list-group">
         <% @tasks.last(5).each do |task| %>
           <% if task.status != true %>
@@ -43,8 +46,8 @@
   <div class="profits-loss">
     <div class="total">
       <h3>Profit and Loss</h3>
+      <p class="purchase-date"><%= Time.now.strftime("%B")  %></p>
       <p><%= number_to_currency(@roi) %></p>
-      <p>This Month</p>
     </div>
 
     <canvas id="profits-chart" data-profits-data="<%= @profits_loss.to_json %>"></canvas>

@@ -39,6 +39,7 @@
   color: white;
 }
 
+
 .navbar-logo {
   width: 90%;
   height: 45px;
@@ -49,3 +50,19 @@
 .navbar-logo img {
   height: 45px;
 }
+
+.dropdown-menu {
+  ul {
+    list-style-type: none;
+  }
+  li {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    padding-right: -100px;
+    margin-left: -15%;
+  }
+  li:first-child{
+    border-top: 1px solid gray;
+  }
+}
+

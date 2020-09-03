@@ -24,6 +24,17 @@
     text-align: center;
     margin-top: 30px;
   }
+  .todo-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .plus-home {
+    margin-left: 120px;
+    background: none;
+    border: none;
+    color: #009BA5;
+  }
 
   .dashboard-expenses-chart {
     grid-area: expenses;
@@ -40,6 +51,8 @@
   }
 
   .tasks {
+    height: 385.98px;
+    width: 492.5px;
     text-align: center;
     grid-area: tasks;
     align-items: center;
@@ -64,39 +77,3 @@
   }
 }
 
-// body {
-//   background-color: #F8F8F8;
-// }
-
-
-  // .tasks-profits {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   background-color: white;
-  //   margin-left: 20px;
-  //   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
-  //   .tasks li {
-  //     margin: 15px;
-  //   }
-  // }
-  // .profits-and-loss {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   background-color: white;
-  //   width: 50%;
-  //   margin-left: 20px;
-  //   box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.11);
-  //   .loss {
-  //     display: flex;
-  //     flex-grow: 1;
-  //     margin-top: 20px;
-  //     padding-right: 125px;
-  //   }
-  // }
-
-  // .profit {
-  //   display: flex;
-  //   flex-grow: 1;
-  // }

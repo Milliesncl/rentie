@@ -19,11 +19,12 @@
     <%= link_to '<i class="far fa-calendar-alt"></i>'.html_safe, tasks_path %>
     <button class="plus" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></button>
     <div class="dropdown-menu">
-          <!-- Dropdown menu links -->
-          <%= link_to 'Task', new_task_path %><br>
-          <%= link_to 'Building', new_building_path %><br>
-          <%= link_to 'Tenant', new_tenant_path %><br>
-          <%= link_to 'Contractor', new_contractor_path %>
+       <ul>
+        <li><%= link_to 'Task', new_task_path %></li>
+        <li><%= link_to 'Building', new_building_path %></li>
+        <li><%= link_to 'Tenant', new_tenant_path %></li>
+        <li><%= link_to 'Contractor', new_contractor_path %></li>
+      </ul>
     </div>
   </div>
 </div>

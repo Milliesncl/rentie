@@ -11,11 +11,11 @@
     <% @contractors.each do |contractor| %>
     <div class="contractors-list">
       <div class="grid">
-        <% if contractor.speciality == "plumber" %>
+        <% if contractor.speciality == "Plumber" %>
           <img class="avatar-large" src="https://static.vecteezy.com/system/resources/previews/000/582/369/original/faucet-icon-vector.jpg" height="54" width="54" alt="avatar-large">
-        <% elsif contractor.speciality == "roofer" %>
+        <% elsif contractor.speciality == "Roofer" %>
           <img class="avatar-large" src="https://image.freepik.com/free-icon/roof-house_318-28785.jpg" height="54" width="54" alt="avatar-large">
-        <% elsif contractor.speciality == "electrician" %>
+        <% elsif contractor.speciality == "Electrician" %>
           <img class="avatar-large" src="https://i.ebayimg.com/images/i/332516495799-0-1/s-l1000.jpg" height="54" width="54" alt="avatar-large">
         <% else %>
         <img class="avatar-large" alt="avatar-large" src='<i class="fas fa-faucet"></i>'>
