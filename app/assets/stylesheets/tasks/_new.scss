@@ -17,6 +17,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  .form-group {
+    width: 49%;
+  }
 }
 
 .line-two {

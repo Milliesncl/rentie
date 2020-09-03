@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
     units = Unit.joins(:building).where(buildings: { user: current_user })
     @units = units.map do |unit|
-      [unit.unit_number, unit.id]
+      [unit.unit_number, unit.id, {data: {building_id: unit.building_id}}]
     end
   end
 
