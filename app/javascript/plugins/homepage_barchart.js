@@ -5,17 +5,16 @@ const createHeaderChart = () => {
   if (roiChartElement === null)
     return;
   const roiData = JSON.parse(roiChartElement.dataset.roiData);
-  console.log(roiData)
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December'],
     datasets: [{
-      label: "Profit",
+      label: "Loss",
       fill: false,
       backgroundColor: ["#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7"],
       borderColor: ["#80D0C7"],
       data: roiData[0]
     },{
-      label:"Loss",
+      label:"Profit",
       fill: false,
       backgroundColor: ["#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2"],
       borderColor: ["#07A3B2"],
@@ -38,7 +37,7 @@ const createHeaderChart = () => {
         // }],
         yAxes: [{
             ticks: {
-                min: 0
+              min: 0
             }
         }]
       },

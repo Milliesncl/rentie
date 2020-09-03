@@ -5,6 +5,7 @@ const createProfitsChart = () => {
   if (profitsChartElement === null)
     return;
   const profitsData = JSON.parse(profitsChartElement.dataset.profitsData);
+  console.log(profitsData)
   const data = {
     datasets: [{
       fill: false,
@@ -18,6 +19,7 @@ const createProfitsChart = () => {
     type: 'horizontalBar',
     data: data,
     options: {
+      labels: false,
       scales: {
         xAxes: [{
             ticks: {
