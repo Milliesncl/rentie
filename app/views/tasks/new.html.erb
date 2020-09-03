@@ -10,8 +10,8 @@
         <%= f.input :urgency, label: "Urgency", collection: [ "High", "Medium", "Low" ] %>
         <%= f.input :expense, label: "Expense" %>
       </div>
-      <%= f.input :start_date, label: "Start date", include_blank: true %>
-      <%= f.input :end_date, label: "End date", include_blank: true %>
+      <%= f.input :start_date, as: :date, label: "Start Date:", start_year: Date.today.year, order: [:day, :month, :year], html5: true, input_html: { min: Date.today.to_s, value: Date.today.to_s } %>
+      <%= f.input :end_date, as: :date, label: "End Date:", start_year: Date.today.year, order: [:day, :month, :year], html5: true, input_html: { min: Date.today.to_s, value: Date.today.to_s } %>
       <div class="line-one">
         <%= f.input :building_id, label: "Building", collection: @buildings, as: :select %>
         <%= f.input :unit_id, label: "Unit", collection: @units, as: :select %>
