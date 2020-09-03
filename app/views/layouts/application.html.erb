@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rentie</title>
+    <title>Rentie - Manage your real estate Properties</title>
+    <meta name="description" content="Make better use of your time by tracking your expenses and monthly leases in one single platform.">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Rentie - Manage your real estate Properties" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:description" content="Make better use of your time by tracking your expenses and monthly leases in one single platform." />
+    <meta property="og:site_name" content="Rentie - Manage your real estate Properties" />
   </head>
 
   <body>
