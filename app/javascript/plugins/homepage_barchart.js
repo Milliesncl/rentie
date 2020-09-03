@@ -9,12 +9,16 @@ const createHeaderChart = () => {
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December'],
     datasets: [{
+      label: "Profit",
       fill: false,
-      backgroundColor: ["#F4F4F4"],
+      backgroundColor: ["#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7","#80D0C7"],
+      borderColor: ["#80D0C7"],
       data: roiData[0]
     },{
+      label:"Loss",
       fill: false,
-      backgroundColor: ["#009BA5"],
+      backgroundColor: ["#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2","#07A3B2"],
+      borderColor: ["#07A3B2"],
       data: roiData[1]
     }
   ]
@@ -41,11 +45,6 @@ const createHeaderChart = () => {
       tooltips: {
         mode: 'index',
         intersect: false,
-        callbacks: {
-          label: function(tooltipItems, data) {
-            return ` ${data.labels[tooltipItems.index]}: $${data.datasets[0].data[tooltipItems.index]}`;
-          }
-        },
       },
       hover: {
         mode: 'nearest',
