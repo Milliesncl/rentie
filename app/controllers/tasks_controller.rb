@@ -4,6 +4,8 @@ class TasksController < ApplicationController
   def index
     if current_user.renter == false
       @tasks = Task.joins(:building).where(buildings: { user_id: current_user.id }).order(:status)
+      @complete_tasks = @tasks.select { |t| t.status == true }
+      @incomplete_tasks = @tasks.select { |t| t.status == false }
     else
      @tasks = Task.joins(:unit).where(units: { user_id: current_user.id }).order(:status)
     end
