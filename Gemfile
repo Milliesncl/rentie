@@ -9,6 +9,7 @@ gem 'devise'
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
+gem 'date', '~> 0.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'

@@ -26,6 +26,7 @@ class PagesController < ApplicationController
           yearly_loss = Hash.new(0)
 
           @tasks.each do |task|
+            next if task.start_date.nil?
             yearly_loss[task.start_date.month] += task.expense
           end
         
