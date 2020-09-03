@@ -9,7 +9,7 @@
     <%= f.input :bathrooms, label: "Number of bathrooms" %>
     <%= f.input :purchase_price, label: "Purchase price" %>
     <%= f.input :payment_method, label: "Payment method" %>
-    <%= f.input :renewal_date, label: "Renewal date" %>
+    <%= f.input :date, as: :date, label: "Start Date:", start_year: Date.today.year, order: [:day, :month, :year], html5: true, input_html: { min: Date.today.to_s, value: Date.today.to_s } %>
     <%= f.input :rent_amount, label: "Rent amount" %>
     <%= f.input :payment_date, label: "Payment day" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
