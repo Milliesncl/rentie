@@ -147,12 +147,6 @@
         <% end %>
       </div>
       <div class="task-update">
-        <% if task.status == false %>
-           <div class="edit-status">
-            <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
-            <%= link_to '<i class="fas fa-pencil-alt task-pen"></i>'.html_safe, edit_task_path(task) %>
-          </div>
-        <% end %>
       </div>
     </div>
   <% end %>

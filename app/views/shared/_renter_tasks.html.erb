@@ -1,0 +1,150 @@
+<h2>Incomplete Tasks</h2>
+<% if @incomplete_tasks.nil? %>
+  <p>No tasks to do!</p>
+<% else %>
+  <% @incomplete_tasks.each do |task| %>
+        <div class="card-product-s">
+      <div class="task-header">
+        <p><strong><%= task.building.address %> -
+          <% if task.unit.unit_number? %>
+           Unit <%= task.unit.unit_number %>
+          <% end %>
+        </strong></p>
+        <p><strong>
+          <% if task.start_date.nil? %>
+            <%= task.created_at.strftime("%Y-%m-%d") %>
+          <% else %>
+            <%= task.start_date %>
+          <% end %>
+        </p></strong>
+      </div>
+      <div class="task-details">
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Task</p>
+          </div>
+          <p class="pe-tag">
+            <%= task.title %>
+          </p>
+        </div>
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Status</p>
+          </div>
+          <p class="pe-tag">
+            <% if task.status == false %>
+              Incomplete
+            <% else %>
+              Complete
+            <% end %>
+          </p>
+        </div>
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Urgency</p>
+          </div>
+          <p class="pe-tag">
+            <%= task.urgency %>
+          </p>
+        </div>
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Renter</p>
+          </div>
+              <p class="pe-tag">
+                <% if task.unit.user != nil %>
+                  <%= task.unit.user.first_name %> <%= task.unit.user.last_name %>
+                <% end %>
+              </p>
+        </div>
+      </div>
+      <div class="task-description">
+        <p>Description: <%= task.description  %></p>
+      </div>
+      <div class="task-img-upload">
+        <% if task.photos.exists? %>
+          <% task.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height:100 %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="task-update">
+        <% if task.status == false %>
+           <div class="edit-status">
+            <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
+            <%= link_to '<i class="fas fa-pencil-alt task-pen"></i>'.html_safe, edit_task_path(task) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<h2>Completed Tasks</h2>
+  <% @complete_tasks.each do |task| %>
+        <div class="card-product-s">
+      <div class="task-header">
+        <p><strong><%= task.building.address %> -
+          <% if task.unit.unit_number? %>
+           Unit <%= task.unit.unit_number %>
+          <% end %>
+        </strong></p>
+        <p><strong>
+          <% if task.start_date.nil? %>
+            <%= task.created_at.strftime("%Y-%m-%d") %>
+          <% else %>
+            <%= task.start_date %>
+          <% end %>
+        </p></strong>
+      </div>
+      <div class="task-details">
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Task</p>
+          </div>
+          <p class="pe-tag">
+            <%= task.title %>
+          </p>
+        </div>
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Status</p>
+          </div>
+          <p class="pe-tag">
+            <% if task.status == false %>
+              Incomplete
+            <% else %>
+              Complete
+            <% end %>
+          </p>
+        </div>
+        <div class="task-line-one">
+          <div class="task-label">
+            <p>Urgency</p>
+          </div>
+          <p class="pe-tag">
+            <%= task.urgency %>
+          </p>
+        </div>
+        <div class="task-line-one">
+        </div>
+      </div>
+      <div class="task-description">
+        <p>Description: <%= task.description  %></p>
+      </div>
+      <div class="task-img-upload">
+        <% if task.photos.exists? %>
+          <% task.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height:100 %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="task-update">
+        <% if task.status == false %>
+           <div class="edit-status">
+            <%= link_to "Mark task as complete", update_status_task_path(task), method: :patch %>
+            <%= link_to '<i class="fas fa-pencil-alt task-pen"></i>'.html_safe, edit_task_path(task) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
