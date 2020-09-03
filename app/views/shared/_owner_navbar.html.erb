@@ -1,11 +1,14 @@
 
 <div class="navbar" id="navbar">
   <% if user_signed_in? && current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, class:'avatar', alt:'avatar' %>
+      <%= link_to cl_image_tag(current_user.photo.key, class:'avatar', alt:'avatar'), edit_user_registration_path %>
   <% else %>
-    <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+    <%= link_to '<img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />'.html_safe, edit_user_registration_path %>
   <% end %>
   <%= link_to '<i class="fas fa-house-user"></i>'.html_safe, '/' %>
+  <div class="navbar-logo">
+    <%= image_tag "rentie.png" %>
+  </div>
 </div>
 
 
