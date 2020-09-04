@@ -19,10 +19,10 @@
         </div>
         <div class="accounting">
           <h3>Accounting</h3>
-          <table class="building-accounting">
+          <table class="building-accounting table">
             <thead>
               <tr>
-                <th>Income</th>
+                <th scope="col">Income</th>
                 <th><%= Time.now.strftime("%B")  %></th>
               </tr>
             </thead>
@@ -34,7 +34,7 @@
                 </td>
               </tr>
               <tr>
-                <th colspan="2">Expenses</th>
+                <th colspan="2" scope="col">Expenses</th>
               </tr>
               <tr>
                 <td>Mortgage</td>
@@ -53,12 +53,14 @@
                 <% end %>
               <tr>
               <% end %>
-                <th>All expenses</th>
+              <thead>
+                <th scope="col">All expenses</th>
                 <th>
                   <%= number_to_currency(Task.calculate_overall_expenses_for_building(building).to_i) %>
                 </th>
+              </thead>
               </tr>
-              <th>Balance</th>
+              <th scope="col">Balance</th>
               <th><%= number_to_currency(Unit.calculate_income(building).to_i - Task.calculate_overall_expenses_for_building(building).to_i) %></th>
             </tbody>
           </table>
