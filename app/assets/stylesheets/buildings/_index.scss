@@ -186,3 +186,13 @@ body {
  justify-content: center;
 
 }
+
+.table th, .table td {
+  padding: 0.23rem;
+}
+
+.table tr > td {
+  padding-left: 12px;
+  padding-right: 12px;
+  color: grey;
+}
